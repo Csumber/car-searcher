@@ -1,0 +1,2 @@
+# auto-vasarlas
+BSc Szakdolgozat - 
