@@ -13,11 +13,11 @@ A hallgató feladatának a következőkre kell kiterjednie:
 technikai döntések indoklására.
 
 ## User stories
-|As a |I want |so that  |
+|As a |I want |so that|
 |:---|:---|:---|
-|Visitor |filtering by parameters|I can seach vehicles|
-|Visitor |filtering by parameters|I can seach vehicles|
-|User |everything Visitor has | |
+|Visitor |filtering by parameters|I can search vehicles|
+|Visitor |a comparator page|I can compare vehicles|
+|User |everything *visitor* has | |
 |User |login| I can save my searches|
 |User |to make statistics from my saved searches| I can get recommendations|
-|Manufacturer |save vehicles with parameters||
+|Manufacturer |admin page|I can add or edit my vehicles|
