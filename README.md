@@ -13,4 +13,8 @@ A hallgató feladatának a következőkre kell kiterjednie:
 technikai döntések indoklására.
 
 ## User stories
-- 
+|As a |I want |so that  |
+|--- |---|---|
+|Visitor |seach vehicles |I can choose from the results|
+|User |save searches |the site can make statistics |
+|Manufacturer |save vehicles with parameters||
