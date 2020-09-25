@@ -14,7 +14,10 @@ technikai döntések indoklására.
 
 ## User stories
 |As a |I want |so that  |
-|--- |---|---|
-|Visitor |seach vehicles |I can choose from the results|
-|User |save searches |the site can make statistics |
+|:---|:---|:---|
+|Visitor |filtering by parameters|I can seach vehicles|
+|Visitor |filtering by parameters|I can seach vehicles|
+|User |everything Visitor has | |
+|User |login| I can save my searches|
+|User |to make statistics from my saved searches| I can get recommendations|
 |Manufacturer |save vehicles with parameters||
