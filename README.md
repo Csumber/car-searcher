@@ -28,4 +28,5 @@ technikai döntések indoklására.
  - Account service
  - Car sevice
  - Recommendation service
- - Storefront Webapp
+ - Front-end Webapp
+ - Admin-page Webapp
