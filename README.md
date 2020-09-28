@@ -21,3 +21,11 @@ technikai döntések indoklására.
 |User |login| I can save my searches|
 |User |to make statistics from my saved searches| I can get recommendations|
 |Manufacturer |admin page|I can add or edit my vehicles|
+ 
+ ## Architektúra ötletek
+ - User DB
+ - Car DB
+ - Account service
+ - Car sevice
+ - Recommendation service
+ - Storefront Webapp
