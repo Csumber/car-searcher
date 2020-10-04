@@ -42,7 +42,7 @@ java -jar vehicle-service\target\vehicle-service-0.0.1-SNAPSHOT.jar
 java -jar auth-server\target\auth-server-0.0.1-SNAPSHOT.jar
 ```
 
-# Spring Security using JWT (Json Web Token) in Spring Boot
+### [Authentication](https://github.com/TechPrimers/jwt-security-example)
 
 This Project uses JWT to secure the REST endpoints.
 
