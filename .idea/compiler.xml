@@ -7,20 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="vehicle-service" />
+        <module name="auth-server" />
         <module name="api-gateway" />
-        <module name="car-searcher" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api-gateway" target="1.8" />
-      <module name="car-searcher" target="1.8" />
-      <module name="vehicle-service" target="1.8" />
+      <module name="demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="auth-server" options="-parameters" />
       <module name="car-searcher" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="vehicle-service" options="-parameters" />
     </option>
   </component>
