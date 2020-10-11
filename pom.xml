@@ -15,7 +15,6 @@
     <version>0.0.2-SNAPSHOT</version>
     <name>car-searcher</name>
     <packaging>pom</packaging>
-
     <modules>
         <module>api-gateway</module>
         <module>vehicle-service</module>

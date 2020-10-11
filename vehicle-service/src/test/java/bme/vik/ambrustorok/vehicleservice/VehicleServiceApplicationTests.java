@@ -1,6 +1,6 @@
 package bme.vik.ambrustorok.vehicleservice;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

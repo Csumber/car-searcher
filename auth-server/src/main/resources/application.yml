@@ -2,11 +2,12 @@ server:
   port: 8081
 
 management:
-  security:
-    enabled: true
-
-
-spring:
-  resources:
-    chain:
-      enabled: true
+  data:
+    mongodb:
+      user: admin
+      password: admin
+      uri: cluster0.fpiga.mongodb.net/test
+ambrustorok:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000
