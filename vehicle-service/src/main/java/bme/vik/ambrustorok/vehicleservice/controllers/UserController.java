@@ -1,39 +1,32 @@
 package bme.vik.ambrustorok.vehicleservice.controllers;
 
 import bme.vik.ambrustorok.vehicleservice.model.Engine;
+import bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import bme.vik.ambrustorok.vehicleservice.repository.EngineRepository;
+import bme.vik.ambrustorok.vehicleservice.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-public class VehicleController {
+@RequestMapping("/user")
+public class UserController {
 
     @Autowired
     EngineRepository engineRepository;
 
-    @GetMapping("/admin")
-    public String admin() {
-        return "Hello Admin!";
-    }
-
-    @GetMapping("/user")
-    public String user() {
-        return "Hello User!";
-    }
-
-    @GetMapping("/guest")
-    public String guest() {
-        return "Hello Guest!";
-    }
+    @Autowired
+    VehicleRepository vehicleRepository;
 
     @GetMapping("/vehicles")
-    public List<Engine> vehicles() {
-        return engineRepository.findAll();
+    public List<Vehicle> vehicles() {
+        return vehicleRepository.findAll();
     }
+
     @PostMapping("/vehicles")
     String newVehicle() {
         Engine engine = new Engine();
