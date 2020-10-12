@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="77927a6b-2127-4e74-8ffb-e763384f9036" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/model/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/payload/request/SearchRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/payload/request/VehicleRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/repository/EngineRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/repository/VehicleRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.properties" afterDir="false" />
@@ -27,7 +28,8 @@
       <change beforePath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/model/EFuel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/test/java/bme/vik/ambrustorok/vehicleservice/VehicleServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/test/java/bme/vik/ambrustorok/vehicleservice/VehicleServiceApplicationTests.java" afterDir="false" />
@@ -125,7 +127,7 @@
       <updated>1601833217586</updated>
       <workItem from="1601833220824" duration="8630000" />
       <workItem from="1601880831087" duration="6535000" />
-      <workItem from="1602424991303" duration="15067000" />
+      <workItem from="1602424991303" duration="15513000" />
     </task>
     <servers />
   </component>
