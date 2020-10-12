@@ -27,19 +27,38 @@ technikai döntések indoklására.
  
 ## Run and Verify
 
-### 1. Compile and package
+### 1. Go to the directory (:
+```bash
+D:
+cd D:\Windows\Documents\Szakdolgozat\v1\car-searcher
+```
+
+### 2. Compile and package
 ```bash
 mvn clean package
 ```
 
-### 2. Start services
+### 3. Start services
+```bash
+@echo off
+
+start "api-gateway" java -jar api-gateway\target\api-gateway-0.0.1-SNAPSHOT.jar
+start "vehicle-service" java -jar vehicle-service\target\vehicle-service-0.0.1-SNAPSHOT.jar
+start "auth-server" java -jar auth-server\target\auth-server-0.0.1-SNAPSHOT.jar
+pause
+```
+
+### Togerher....
 ```bash
 D:
 cd D:\Windows\Documents\Szakdolgozat\v1\car-searcher
+mvn clean package
+@echo off
 
-java -jar api-gateway\target\api-gateway-0.0.1-SNAPSHOT.jar
-java -jar vehicle-service\target\vehicle-service-0.0.1-SNAPSHOT.jar
-java -jar auth-server\target\auth-server-0.0.1-SNAPSHOT.jar
+start "api-gateway" java -jar api-gateway\target\api-gateway-0.0.1-SNAPSHOT.jar
+start "vehicle-service" java -jar vehicle-service\target\vehicle-service-0.0.1-SNAPSHOT.jar
+start "auth-server" java -jar auth-server\target\auth-server-0.0.1-SNAPSHOT.jar
+pause
 ```
 
 ### [Authentication](https://github.com/TechPrimers/jwt-security-example)

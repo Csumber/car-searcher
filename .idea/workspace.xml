@@ -2,37 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77927a6b-2127-4e74-8ffb-e763384f9036" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/model/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/payload/request/SearchRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/payload/request/VehicleRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/repository/EngineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/repository/VehicleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/services/VehicleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/services/VehicleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/AuthServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/AuthServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/config/JwtSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/controller/TokenController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/model/JwtAuthenticationToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/model/JwtUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/model/JwtUserDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/security/JwtAuthenticationEntryPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/security/JwtAuthenticationProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/security/JwtAuthenticationTokenFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/security/JwtGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/security/JwtSuccessHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/bme/vik/ambrustorok/authserver/security/JwtValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/model/EFuel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/src/test/java/bme/vik/ambrustorok/vehicleservice/VehicleServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/test/java/bme/vik/ambrustorok/vehicleservice/VehicleServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +103,7 @@
       <workItem from="1601833220824" duration="8630000" />
       <workItem from="1601880831087" duration="6535000" />
       <workItem from="1602424991303" duration="15513000" />
+      <workItem from="1602488436709" duration="6860000" />
     </task>
     <servers />
   </component>
@@ -139,10 +115,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1032" y="177" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1601833243347" />
-    <state x="445" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1602459052929">
+    <state x="445" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1602496772346">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="445" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1602459052929" />
+    <state x="445" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1602496772346" />
     <state x="1054" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1601846485825">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -175,10 +151,14 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1224" y="165" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1601884113057" />
-    <state x="975" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1602425059591">
+    <state x="824" y="358" key="com.intellij.ide.util.TipDialog" timestamp="1602488436248">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="975" y="343" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602425059591" />
+    <state x="824" y="358" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602488436248" />
+    <state x="1273" y="0" width="1294" height="1047" key="dock-window-1" timestamp="1602488776831">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1273" y="0" width="1294" height="1047" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1602488776831" />
     <state x="1420" y="255" width="606" height="536" key="find.popup" timestamp="1601883911483">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
