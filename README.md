@@ -30,7 +30,7 @@ technikai döntések indoklására.
 ### 1. Go to the directory (:
 ```bash
 D:
-cd D:\Windows\Documents\Szakdolgozat\v1\car-searcher
+cd D:\Windows\Documents\Szakdolgozat\v2\car-searcher
 ```
 
 ### 2. Compile and package
