@@ -51,7 +51,7 @@ pause
 ### Togerher....
 ```bash
 D:
-cd D:\Windows\Documents\Szakdolgozat\v1\car-searcher
+cd D:\Windows\Documents\Szakdolgozat\v2\car-searcher
 mvn clean package
 @echo off
 
