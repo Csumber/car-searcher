@@ -1,73 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="77927a6b-2127-4e74-8ffb-e763384f9036" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/services/VehicleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/services/VehicleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle-service/src/main/java/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1035d57-d938-4afc-8449-234305f6eeef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="FxmlFile" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1iQI6x4Nht5eQtTMRLBw5GJXLQh" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1j47dYQcQZSiIAvMiy3ovnDkS7s" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/api-gateway/src/main/java" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean package" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication (1)">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
@@ -75,101 +65,103 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="auth-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="bme.vik.ambrustorok.authserver.AuthServerApplication" />
+    <configuration name="VehicleServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="car-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.vehicleservice.VehicleServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="VehicleServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="vehicle-service" />
+      <module name="car-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bme.vik.ambrustorok.vehicleservice.VehicleServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="77927a6b-2127-4e74-8ffb-e763384f9036" name="Default Changelist" comment="" />
-      <created>1601833217586</created>
+      <changelist id="b1035d57-d938-4afc-8449-234305f6eeef" name="Default Changelist" comment="" />
+      <created>1603051600908</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1601833217586</updated>
-      <workItem from="1601833220824" duration="8630000" />
-      <workItem from="1601880831087" duration="6535000" />
-      <workItem from="1602424991303" duration="15513000" />
-      <workItem from="1602488436709" duration="6860000" />
+      <updated>1603051600908</updated>
+      <workItem from="1603051608154" duration="1166000" />
+      <workItem from="1603052870298" duration="338000" />
+      <workItem from="1603053240225" duration="245000" />
+      <workItem from="1603056038500" duration="1237000" />
+      <workItem from="1603057522119" duration="1537000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1032" y="177" key="#Project_Structure" timestamp="1601833243347">
+    <state x="1400" y="94" key="#Project_Structure" timestamp="1603058346879">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1032" y="177" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1601833243347" />
-    <state x="445" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1602496772346">
+    <state x="1400" y="94" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1603058346879" />
+    <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603053470809">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="445" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1602496772346" />
-    <state x="1054" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1601846485825">
+    <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053470809" />
+    <state width="1234" height="278" key="GridCell.Tab.0.bottom" timestamp="1603056252489">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1054" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1601846485825" />
-    <state x="1549" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601882919068">
+    <state width="1234" height="278" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state width="1234" height="278" key="GridCell.Tab.0.center" timestamp="1603056252488">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1549" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1601882919068" />
-    <state width="1233" height="281" key="GridCell.Tab.0.bottom" timestamp="1602454763996">
+    <state width="1234" height="278" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252488" />
+    <state width="1234" height="278" key="GridCell.Tab.0.left" timestamp="1603056252487">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1233" height="281" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1602454763996" />
-    <state width="1233" height="281" key="GridCell.Tab.0.center" timestamp="1602454763996">
+    <state width="1234" height="278" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252487" />
+    <state width="1234" height="278" key="GridCell.Tab.0.right" timestamp="1603056252489">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1233" height="281" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1602454763996" />
-    <state width="1233" height="281" key="GridCell.Tab.0.left" timestamp="1602454763996">
+    <state width="1234" height="278" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state width="1234" height="278" key="GridCell.Tab.1.bottom" timestamp="1603056252489">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1233" height="281" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1602454763996" />
-    <state width="1233" height="281" key="GridCell.Tab.0.right" timestamp="1602454763996">
+    <state width="1234" height="278" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state width="1234" height="278" key="GridCell.Tab.1.center" timestamp="1603056252489">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1233" height="281" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1602454763996" />
-    <state x="257" y="205" key="Maven.ArtifactSearchDialog" timestamp="1602453194271">
+    <state width="1234" height="278" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state width="1234" height="278" key="GridCell.Tab.1.left" timestamp="1603056252489">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="257" y="205" key="Maven.ArtifactSearchDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602453194271" />
-    <state x="1224" y="165" key="SettingsEditor" timestamp="1601884113057">
+    <state width="1234" height="278" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state width="1234" height="278" key="GridCell.Tab.1.right" timestamp="1603056252489">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1224" y="165" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1601884113057" />
-    <state x="824" y="358" key="com.intellij.ide.util.TipDialog" timestamp="1602488436248">
+    <state width="1234" height="278" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state x="1450" y="178" key="Maven.ArtifactSearchDialog" timestamp="1603053077658">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="824" y="358" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602488436248" />
-    <state x="1273" y="0" width="1294" height="1047" key="dock-window-1" timestamp="1602488776831">
+    <state x="1450" y="178" key="Maven.ArtifactSearchDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053077658" />
+    <state x="1421" y="164" width="998" height="829" key="SettingsEditor" timestamp="1603057285942">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1273" y="0" width="1294" height="1047" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1602488776831" />
-    <state x="1420" y="255" width="606" height="536" key="find.popup" timestamp="1601883911483">
+    <state x="1421" y="164" width="998" height="829" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1603057285942" />
+    <state x="1736" y="301" width="556" height="445" key="chooseDestDirectoryDialog" timestamp="1603052716524">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1420" y="255" width="606" height="536" key="find.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1601883911483" />
-    <state x="934" y="199" key="new project wizard" timestamp="1601837930982">
+    <state x="1736" y="301" width="556" height="445" key="chooseDestDirectoryDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603052716524" />
+    <state x="1615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1603053245887">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="934" y="199" key="new project wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1601837930982" />
-    <state x="296" y="244" width="672" height="677" key="run.anything.popup" timestamp="1602453939802">
+    <state x="1615" y="343" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053245887" />
+    <state x="1470" y="221" key="new project wizard" timestamp="1603051774130">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="296" y="244" width="672" height="677" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1602453939802" />
+    <state x="1470" y="221" key="new project wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1603051774130" />
   </component>
 </project>
