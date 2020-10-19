@@ -22,7 +22,7 @@ public class UserController {
         return vehicleService.getAllManufacturers();
     }
 
-    @GetMapping("/manufacturers")
+    @GetMapping("/manufacturers/{manufacturer}")
     @ResponseBody
     public List<String> getAllModelsOfManufacturer(@RequestParam String manufacturer) {
         return vehicleService.getAllModels(manufacturer);

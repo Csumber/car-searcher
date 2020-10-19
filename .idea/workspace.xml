@@ -10,6 +10,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -31,13 +38,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/api-gateway/src/main/java" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication (1)">
+  <component name="RunManager" selected="Spring Boot.VehicleServiceApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -51,13 +64,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiGatewayApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="api-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
@@ -65,9 +71,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VehicleServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="car-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.vehicleservice.VehicleServiceApplication" />
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,6 +86,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VehicleServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="car-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.vehicleservice.VehicleServiceApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.VehicleServiceApplication" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -95,7 +114,7 @@
       <workItem from="1603052870298" duration="338000" />
       <workItem from="1603053240225" duration="245000" />
       <workItem from="1603056038500" duration="1237000" />
-      <workItem from="1603057522119" duration="1537000" />
+      <workItem from="1603057522119" duration="5563000" />
     </task>
     <servers />
   </component>
@@ -107,42 +126,66 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1400" y="94" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1603058346879" />
+    <state x="1374" y="174" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603061463949">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1374" y="174" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603061463949" />
+    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1603065566333">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1603065566333" />
     <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603053470809">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053470809" />
-    <state width="1234" height="278" key="GridCell.Tab.0.bottom" timestamp="1603056252489">
+    <state width="1234" height="278" key="GridCell.Tab.0.bottom" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
-    <state width="1234" height="278" key="GridCell.Tab.0.center" timestamp="1603056252488">
+    <state width="1234" height="278" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.0.center" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252488" />
-    <state width="1234" height="278" key="GridCell.Tab.0.left" timestamp="1603056252487">
+    <state width="1234" height="278" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.0.left" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252487" />
-    <state width="1234" height="278" key="GridCell.Tab.0.right" timestamp="1603056252489">
+    <state width="1234" height="278" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.0.right" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
-    <state width="1234" height="278" key="GridCell.Tab.1.bottom" timestamp="1603056252489">
+    <state width="1234" height="278" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.1.bottom" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
-    <state width="1234" height="278" key="GridCell.Tab.1.center" timestamp="1603056252489">
+    <state width="1234" height="278" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.1.center" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
-    <state width="1234" height="278" key="GridCell.Tab.1.left" timestamp="1603056252489">
+    <state width="1234" height="278" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.1.left" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
-    <state width="1234" height="278" key="GridCell.Tab.1.right" timestamp="1603056252489">
+    <state width="1234" height="278" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="278" key="GridCell.Tab.1.right" timestamp="1603063334410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="278" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603056252489" />
+    <state width="1234" height="278" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603063334410" />
+    <state width="1234" height="344" key="GridCell.Tab.2.bottom" timestamp="1603061442575">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1234" height="344" key="GridCell.Tab.2.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603061442575" />
+    <state width="1234" height="344" key="GridCell.Tab.2.center" timestamp="1603061442575">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1234" height="344" key="GridCell.Tab.2.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603061442575" />
+    <state width="1234" height="344" key="GridCell.Tab.2.left" timestamp="1603061442575">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1234" height="344" key="GridCell.Tab.2.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603061442575" />
+    <state width="1234" height="344" key="GridCell.Tab.2.right" timestamp="1603061442575">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1234" height="344" key="GridCell.Tab.2.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603061442575" />
     <state x="1450" y="178" key="Maven.ArtifactSearchDialog" timestamp="1603053077658">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
