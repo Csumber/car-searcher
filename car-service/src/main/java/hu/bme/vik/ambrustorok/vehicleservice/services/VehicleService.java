@@ -1,6 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.services;
 
-import hu.bme.vik.ambrustorok.vehicleservice.model.Facet;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
@@ -22,7 +22,7 @@ public interface VehicleService {
 
     List<SearchResult> search(SearchRequest searchRequest);
 
-    List<Facet> getAllFacets(String manufacturer, String model);
+    List<Option> getAllFacets(String manufacturer, String model);
 
     List<Vehicle> getallVehicles();
 }

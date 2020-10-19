@@ -17,20 +17,30 @@ public class Engine {
     private String fuel;
 
     @NotBlank
+    private String transmission;
+
+    @NotBlank
+    private int average_consumption;
+
+    @NotBlank
     private int cylinder_capacity;
 
     @NotBlank
-    private int price_from_base;
+    private int price;
 
     public Engine() {
     }
 
-    public Engine(@NotBlank int horsepower, @NotBlank String fuel, @NotBlank int cylinder_capacity, @NotBlank int price_from_base) {
+    public Engine(String id, @NotBlank int horsepower, @NotBlank String fuel, @NotBlank String transmission, @NotBlank int average_consumption, @NotBlank int cylinder_capacity, @NotBlank int price) {
+        this.id = id;
         this.horsepower = horsepower;
         this.fuel = fuel;
+        this.transmission = transmission;
+        this.average_consumption = average_consumption;
         this.cylinder_capacity = cylinder_capacity;
-        this.price_from_base = price_from_base;
+        this.price = price;
     }
+
 
     public String getId() {
         return id;
@@ -56,6 +66,14 @@ public class Engine {
         this.fuel = fuel;
     }
 
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
     public int getCylinder_capacity() {
         return cylinder_capacity;
     }
@@ -64,11 +82,19 @@ public class Engine {
         this.cylinder_capacity = cylinder_capacity;
     }
 
-    public int getPrice_from_base() {
-        return price_from_base;
+    public int getPrice() {
+        return price;
     }
 
-    public void setPrice_from_base(int price_from_base) {
-        this.price_from_base = price_from_base;
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getAverage_consumption() {
+        return average_consumption;
+    }
+
+    public void setAverage_consumption(int average_consumption) {
+        this.average_consumption = average_consumption;
     }
 }

@@ -7,32 +7,34 @@ import javax.validation.constraints.NotBlank;
 // Automatic: $1200.00
 // Manual: $500.00
 
-public class Facet {
+//when adding a new car, you can choose from already existing facets
+
+public class Option {
 
     @NotBlank
-    String type;
+    String name;
 
     @NotBlank
     String value;
 
     @NotBlank
-    String price;
+    int price;
 
-    public Facet() {
+    public Option() {
     }
 
-    public Facet(@NotBlank String type, @NotBlank String value, @NotBlank String price) {
-        this.type = type;
+    public Option(@NotBlank String name, @NotBlank String value, @NotBlank int price) {
+        this.name = name;
         this.value = value;
         this.price = price;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getValue() {
@@ -43,11 +45,11 @@ public class Facet {
         this.value = value;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

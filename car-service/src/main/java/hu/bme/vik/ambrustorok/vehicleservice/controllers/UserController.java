@@ -1,11 +1,8 @@
 package hu.bme.vik.ambrustorok.vehicleservice.controllers;
 
-import hu.bme.vik.ambrustorok.vehicleservice.model.Facet;
-import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
-import hu.bme.vik.ambrustorok.vehicleservice.repository.EngineRepository;
-import hu.bme.vik.ambrustorok.vehicleservice.repository.VehicleRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,10 +27,9 @@ public class UserController {
         return vehicleService.getAllModels(manufacturer);
     }
 
-
     @GetMapping("/manufacturers/{manufacturer}/{model}")
     @ResponseBody
-    public List<Facet> getAllModelsOfManufacturer(@RequestParam String manufacturer, @RequestParam String model) {
+    public List<Option> getAllModelsOfManufacturer(@RequestParam String manufacturer, @RequestParam String model) {
         return vehicleService.getAllFacets(manufacturer, model);
     }
 

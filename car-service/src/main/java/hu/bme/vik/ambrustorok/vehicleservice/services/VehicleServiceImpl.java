@@ -1,6 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.services;
 
-import hu.bme.vik.ambrustorok.vehicleservice.model.Facet;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
@@ -72,7 +72,7 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<Facet> getAllFacets(String manufacturer, String model) {
+    public List<Option> getAllFacets(String manufacturer, String model) {
         return null;
     }
 
