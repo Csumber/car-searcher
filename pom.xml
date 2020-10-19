@@ -8,13 +8,22 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
+
     <groupId>bme.vik.ambrustorok</groupId>
     <artifactId>car-searcher</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
-    <name>car-searcher</name>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+    </dependencies>
     <modules>
         <module>api-gateway</module>
         <module>vehicle-service</module>

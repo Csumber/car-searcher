@@ -20,7 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="auth-server" options="-parameters" />
-      <module name="car-searcher" options="-parameters" />
+      <module name="car-searcher" options="" />
       <module name="demo" options="-parameters" />
       <module name="vehicle-service" options="-parameters" />
     </option>
