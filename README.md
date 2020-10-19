@@ -48,7 +48,7 @@ start "auth-server" java -jar auth-server\target\auth-server-0.0.1-SNAPSHOT.jar
 pause
 ```
 
-### Togerher....
+### Together....
 ```bash
 D:
 cd D:\Windows\Documents\Szakdolgozat\v2\car-searcher
@@ -61,10 +61,5 @@ start "auth-server" java -jar auth-server\target\auth-server-0.0.1-SNAPSHOT.jar
 pause
 ```
 
-### [Authentication](https://github.com/TechPrimers/jwt-security-example)
-
-This Project uses JWT to secure the REST endpoints.
-
-The Following are the REST end points available in the example.
-- `/auth-server/token` - Generates the JWT token based on the JSON sent. Its a POST method which expects the JSON: `{ "username": "name", "id": 123, "role": "admin"}` 
-- `/rest/hello` - Requires a JWT Token with Header `key - "Authorisation"` and `value - "Token <JWT_Token>"`
+### Swagger-ui
+Swagger ui is available at http://localhost:8080/swagger-ui/.

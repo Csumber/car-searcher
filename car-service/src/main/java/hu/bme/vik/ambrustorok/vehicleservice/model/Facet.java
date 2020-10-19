@@ -16,9 +16,15 @@ public class Facet {
     String value;
 
     @NotBlank
-    String priceOfValue;
+    String price;
 
     public Facet() {
+    }
+
+    public Facet(@NotBlank String type, @NotBlank String value, @NotBlank String price) {
+        this.type = type;
+        this.value = value;
+        this.price = price;
     }
 
     public String getType() {
@@ -35,5 +41,13 @@ public class Facet {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }

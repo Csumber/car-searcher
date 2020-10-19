@@ -1,7 +1,9 @@
 package hu.bme.vik.ambrustorok.vehicleservice.services;
 
+import hu.bme.vik.ambrustorok.vehicleservice.model.Facet;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
 import hu.bme.vik.ambrustorok.vehicleservice.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -65,7 +67,17 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<String> search(SearchRequest searchRequest) {
+    public List<SearchResult> search(SearchRequest searchRequest) {
+        return null;
+    }
+
+    @Override
+    public List<Facet> getAllFacets(String manufacturer, String model) {
+        return null;
+    }
+
+    @Override
+    public List<Vehicle> getallVehicles() {
         return null;
     }
 }

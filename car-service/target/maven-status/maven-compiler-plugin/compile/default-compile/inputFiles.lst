@@ -9,3 +9,4 @@ D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\b
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\repository\VehicleRepository.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\request\SearchRequest.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\services\VehicleServiceImpl.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\model\Facet.java
