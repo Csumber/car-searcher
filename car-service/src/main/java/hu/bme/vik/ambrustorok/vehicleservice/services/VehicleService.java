@@ -3,12 +3,13 @@ package hu.bme.vik.ambrustorok.vehicleservice.services;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.payload.response.EngineResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.payload.response.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
 
 import java.util.List;
 
 public interface VehicleService {
-    List<Vehicle> listAll();
 
     Vehicle getById(String id);
 
@@ -22,7 +23,11 @@ public interface VehicleService {
 
     List<SearchResult> search(SearchRequest searchRequest);
 
-    List<Option> getAllFacets(String manufacturer, String model);
+    List<Option> getAllOptions(String manufacturer, String model);
+
+    List<OptionResponse> getAllOptions();
+
+    List<EngineResponse> getAllEngines();
 
     List<Vehicle> getallVehicles();
 }

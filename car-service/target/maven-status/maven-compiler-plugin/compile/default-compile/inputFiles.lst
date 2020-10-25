@@ -1,5 +1,7 @@
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\services\VehicleService.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\response\EngineResponse.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\model\Option.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\response\VehicleResponse.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\VehicleServiceApplication.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\controllers\AdminController.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\model\Vehicle.java
@@ -8,7 +10,10 @@ D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\b
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\repository\VehicleRepository.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\model\Engine.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\controllers\UserController.java
-D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\request\FacetRequest.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\request\OptionRequest.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\repository\EngineRepository.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\response\OptionResponse.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\request\SearchRequest.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\model\Style.java
 D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\services\VehicleServiceImpl.java
+D:\Windows\Documents\Szakdolgozat\v2\car-searcher\car-service\src\main\java\hu\bme\vik\ambrustorok\vehicleservice\payload\response\VehicleModel.java

@@ -1,43 +1,35 @@
-package hu.bme.vik.ambrustorok.vehicleservice.model;
+package hu.bme.vik.ambrustorok.vehicleservice.payload.response;
 
+import hu.bme.vik.ambrustorok.vehicleservice.model.Engine;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Style;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
-@Document(collection = "vehicles")
-public class Vehicle {
-    @Id
+public class VehicleResponse {
     private String id;
 
-    @NotBlank
     private String manufacturer;
 
-    @NotBlank
     private String model;
 
-    @NotBlank
     private Style style;
 
-    @NotBlank
     private Set<Engine> engines;
 
     private Set<Option> options;
 
-    @NotBlank
     private int base_price;
 
-    @NotBlank
     private int number_of_doors;
 
-    @NotBlank
     private int warranty;
 
-    @NotBlank
     private int weight;
 
-    public Vehicle(String id, @NotBlank String manufacturer, @NotBlank String model, @NotBlank Style style, @NotBlank Set<Engine> engines, Set<Option> options, @NotBlank int base_price, @NotBlank int number_of_doors, @NotBlank int warranty, @NotBlank int weight) {
+    public VehicleResponse(String id, String manufacturer, String model, Style style, Set<Engine> engines, Set<Option> options, int base_price, int number_of_doors, int warranty, int weight) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.model = model;
@@ -49,16 +41,8 @@ public class Vehicle {
         this.warranty = warranty;
         this.weight = weight;
     }
-    
-    public int getWeight() {
-        return weight;
-    }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public Vehicle() {
+    public VehicleResponse() {
     }
 
     public String getId() {
@@ -101,11 +85,11 @@ public class Vehicle {
         this.engines = engines;
     }
 
-    public Set<Option>  getOptions() {
+    public Set<Option> getOptions() {
         return options;
     }
 
-    public void setOptions(Set<Option>  options) {
+    public void setOptions(Set<Option> options) {
         this.options = options;
     }
 
@@ -131,5 +115,13 @@ public class Vehicle {
 
     public void setWarranty(int warranty) {
         this.warranty = warranty;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 }

@@ -2,13 +2,6 @@ package hu.bme.vik.ambrustorok.vehicleservice.model;
 
 import javax.validation.constraints.NotBlank;
 
-// For example
-// Air conditioning
-// Automatic: $1200.00
-// Manual: $500.00
-
-//when adding a new car, you can choose from already existing facets
-
 public class Option {
 
     @NotBlank

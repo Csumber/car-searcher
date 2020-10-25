@@ -1,6 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.controllers;
 
 import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
 import hu.bme.vik.ambrustorok.vehicleservice.services.VehicleService;
@@ -12,8 +13,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/guest")
 public class UserController {
+
     @Autowired
     VehicleService vehicleService;
+
+    @GetMapping("/vehicles")
+    @ResponseBody
+    public List<Vehicle> getAllVehicles() {
+        return vehicleService.getallVehicles();
+    }
 
     @GetMapping("/manufacturers")
     @ResponseBody
@@ -30,7 +38,7 @@ public class UserController {
     @GetMapping("/manufacturers/{manufacturer}/{model}")
     @ResponseBody
     public List<Option> getAllModelsOfManufacturer(@RequestParam String manufacturer, @RequestParam String model) {
-        return vehicleService.getAllFacets(manufacturer, model);
+        return vehicleService.getAllOptions(manufacturer, model);
     }
 
     @PostMapping("/search")

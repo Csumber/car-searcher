@@ -1,35 +1,26 @@
-package hu.bme.vik.ambrustorok.vehicleservice.model;
-
-import org.springframework.data.mongodb.core.mapping.Document;
+package hu.bme.vik.ambrustorok.vehicleservice.payload.response;
 
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
-@Document(collection = "engines")
-public class Engine {
+public class EngineResponse {
 
-    @NotBlank
     private int horsepower;
 
-    @NotBlank
     private String fuel;
 
-    @NotBlank
     private String transmission;
 
-    @NotBlank
     private int average_consumption;
 
-    @NotBlank
     private int cylinder_capacity;
 
-    @NotBlank
     private int price;
 
-    public Engine() {
+    public EngineResponse() {
     }
 
-    public Engine(@NotBlank int horsepower, @NotBlank String fuel, @NotBlank String transmission, @NotBlank int average_consumption, @NotBlank int cylinder_capacity, @NotBlank int price) {
+    public EngineResponse(int horsepower, String fuel, String transmission, int average_consumption, int cylinder_capacity, int price) {
         this.horsepower = horsepower;
         this.fuel = fuel;
         this.transmission = transmission;
@@ -62,6 +53,14 @@ public class Engine {
         this.transmission = transmission;
     }
 
+    public int getAverage_consumption() {
+        return average_consumption;
+    }
+
+    public void setAverage_consumption(int average_consumption) {
+        this.average_consumption = average_consumption;
+    }
+
     public int getCylinder_capacity() {
         return cylinder_capacity;
     }
@@ -78,25 +77,17 @@ public class Engine {
         this.price = price;
     }
 
-    public int getAverage_consumption() {
-        return average_consumption;
-    }
-
-    public void setAverage_consumption(int average_consumption) {
-        this.average_consumption = average_consumption;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Engine engine = (Engine) o;
-        return horsepower == engine.horsepower &&
-                average_consumption == engine.average_consumption &&
-                cylinder_capacity == engine.cylinder_capacity &&
-                price == engine.price &&
-                fuel.equals(engine.fuel) &&
-                transmission.equals(engine.transmission);
+        EngineResponse that = (EngineResponse) o;
+        return horsepower == that.horsepower &&
+                average_consumption == that.average_consumption &&
+                cylinder_capacity == that.cylinder_capacity &&
+                price == that.price &&
+                Objects.equals(fuel, that.fuel) &&
+                Objects.equals(transmission, that.transmission);
     }
 
     @Override

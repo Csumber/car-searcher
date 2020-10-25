@@ -1,7 +1,10 @@
 hu\bme\vik\ambrustorok\vehicleservice\repository\VehicleRepository.class
 hu\bme\vik\ambrustorok\vehicleservice\repository\EngineRepository.class
+hu\bme\vik\ambrustorok\vehicleservice\payload\response\VehicleResponse.class
+hu\bme\vik\ambrustorok\vehicleservice\model\Style.class
 hu\bme\vik\ambrustorok\vehicleservice\model\Engine.class
 hu\bme\vik\ambrustorok\vehicleservice\controllers\UserController.class
+hu\bme\vik\ambrustorok\vehicleservice\payload\response\EngineResponse.class
 hu\bme\vik\ambrustorok\vehicleservice\payload\response\SearchResult.class
 hu\bme\vik\ambrustorok\vehicleservice\services\VehicleServiceImpl.class
 hu\bme\vik\ambrustorok\vehicleservice\controllers\AdminController.class
@@ -9,6 +12,8 @@ hu\bme\vik\ambrustorok\vehicleservice\model\Option.class
 hu\bme\vik\ambrustorok\vehicleservice\services\VehicleService.class
 hu\bme\vik\ambrustorok\vehicleservice\payload\request\SearchRequest.class
 hu\bme\vik\ambrustorok\vehicleservice\payload\request\VehicleRequest.class
+hu\bme\vik\ambrustorok\vehicleservice\payload\request\OptionRequest.class
+hu\bme\vik\ambrustorok\vehicleservice\payload\response\OptionResponse.class
 hu\bme\vik\ambrustorok\vehicleservice\VehicleServiceApplication.class
 hu\bme\vik\ambrustorok\vehicleservice\model\Vehicle.class
-hu\bme\vik\ambrustorok\vehicleservice\payload\request\FacetRequest.class
+hu\bme\vik\ambrustorok\vehicleservice\payload\response\VehicleModel.class

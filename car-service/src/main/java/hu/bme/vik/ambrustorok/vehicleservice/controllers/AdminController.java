@@ -2,9 +2,12 @@ package hu.bme.vik.ambrustorok.vehicleservice.controllers;
 
 import hu.bme.vik.ambrustorok.vehicleservice.model.Engine;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
+import hu.bme.vik.ambrustorok.vehicleservice.model.Style;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.VehicleRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.payload.response.EngineResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.payload.response.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
 import hu.bme.vik.ambrustorok.vehicleservice.repository.EngineRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.repository.VehicleRepository;
@@ -42,7 +45,12 @@ public class AdminController {
     @GetMapping("/manufacturers/{manufacturer}/{model}")
     @ResponseBody
     public List<Option> getAllModelsOfManufacturer(@RequestParam String manufacturer, @RequestParam String model) {
-        return vehicleService.getAllFacets(manufacturer, model);
+        return vehicleService.getAllOptions(manufacturer, model);
+    }
+    @GetMapping("/options")
+    @ResponseBody
+    public List<OptionResponse> getAllModelsOfManufacturer() {
+        return vehicleService.getAllOptions();
     }
 
     @PostMapping("/search")
@@ -59,45 +67,48 @@ public class AdminController {
         return vehicleService.getallVehicles();
     }
 
-    /*
-        this.id = id;
-        this.manufacturer = manufacturer;
-        this.model = model;
-        this.type = type;
-        this.engines = engines;
-        this.options = options;
-        this.base_price = base_price;
-        this.number_of_doors = number_of_doors;
-        this.warranty = warranty;
-        * */
     @PostMapping("/vehicles")
     public String addNewVehicle(@Valid @RequestBody VehicleRequest vehicleRequest) {
-        Vehicle vehicle = new Vehicle();
-        vehicle.setManufacturer("Audi");
-        vehicle.setModel("A4");
-        vehicle.setType("sedan");
-        vehicle.setBase_price(50000);
-        vehicle.setNumber_of_doors(4);
-        vehicle.setWarranty(5);
-        vehicle.setWeight(1500);
+        Vehicle vehicle1 = new Vehicle();
+        vehicle1.setManufacturer("Audi");
+        vehicle1.setModel("A4");
+        vehicle1.setStyle(Style.Sedan);
+        vehicle1.setBase_price(50000);
+        vehicle1.setNumber_of_doors(4);
+        vehicle1.setWarranty(5);
+        vehicle1.setWeight(1500);
 
         Set<Engine> engines = new HashSet<>();
-        Engine e1 = new Engine("", 220, "Diesel", "Automatic", 5, 1945, 5000);
-        Engine e2 = new Engine("", 372, "Gasoline", "Automatic", 9, 2945, 15000);
+        Engine e1 = new Engine(220, "Diesel", "Automatic", 5, 1945, 5000);
+        Engine e2 = new Engine(372, "Gasoline", "Automatic", 9, 2945, 15000);
         engines.add(e1);
         engines.add(e2);
         engineRepository.save(e1);
         engineRepository.save(e2);
 
-        vehicle.setEngines(engines);
+        vehicle1.setEngines(engines);
 
         Set<Option> options = new HashSet<>();
         options.add(new Option("AC", "No AC", 0));
         options.add(new Option("AC", "Manual", 500));
         options.add(new Option("AC", "Automatic", 1000));
-        vehicle.setOptions(options);
+        vehicle1.setOptions(options);
 
-        vehicleRepository.save(vehicle);
+        vehicleRepository.save(vehicle1);
+
+        Vehicle vehicle2 = new Vehicle();
+        vehicle2.setManufacturer("BMW");
+        vehicle2.setModel("Series 5");
+        vehicle2.setStyle(Style.Sedan);
+        vehicle2.setBase_price(55000);
+        vehicle2.setNumber_of_doors(4);
+        vehicle2.setWarranty(3);
+        vehicle2.setWeight(1700);
+
+        vehicle2.setEngines(engines);
+        vehicle2.setOptions(options);
+
+        vehicleRepository.save(vehicle2);
 
         return "Adding new vehicle....";
     }
@@ -105,6 +116,11 @@ public class AdminController {
     @PutMapping("/vehicles")
     public String addFacetToExistingVehicles(@Valid @RequestBody String id, @Valid @RequestBody Option facet) {
         return "Adding new facet to vehicle....";
+    }
+
+    @GetMapping("/engines")
+    public List<EngineResponse> getAllEngines() {
+        return vehicleService.getAllEngines();
     }
 
     @DeleteMapping("/flush")
