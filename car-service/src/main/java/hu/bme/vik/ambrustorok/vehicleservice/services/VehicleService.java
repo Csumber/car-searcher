@@ -1,20 +1,12 @@
 package hu.bme.vik.ambrustorok.vehicleservice.services;
 
-import hu.bme.vik.ambrustorok.vehicleservice.model.Engine;
-import hu.bme.vik.ambrustorok.vehicleservice.model.Option;
 import hu.bme.vik.ambrustorok.vehicleservice.model.Vehicle;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.request.SearchRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.EngineResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.payload.response.SearchResult;
-import hu.bme.vik.ambrustorok.vehicleservice.payload.response.VehicleModel;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public interface VehicleService {
 

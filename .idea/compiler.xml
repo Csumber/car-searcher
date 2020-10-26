@@ -3,12 +3,17 @@
   <component name="CompilerConfiguration">
     <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for car-searcher" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.0.Final/mapstruct-processor-1.4.0.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.0.Final/mapstruct-1.4.0.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
+        </processorPath>
         <module name="api-gateway" />
-        <module name="car-service" />
         <module name="common" />
         <module name="auth-server" />
       </profile>
@@ -25,7 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="auth-server" options="-parameters" />
-      <module name="car-searcher" options="-parameters" />
+      <module name="car-searcher" options="" />
       <module name="car-service" options="-parameters" />
       <module name="common" options="-parameters" />
     </option>

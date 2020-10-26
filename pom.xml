@@ -7,7 +7,7 @@
         <module>api-gateway</module>
         <module>car-service</module>
         <module>common</module>
-        <!-- <module>auth-server</module> -->
+        <module>auth-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -26,6 +26,7 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <maven.compiler.release>11</maven.compiler.release>
         <io.springfox.version>3.0.0</io.springfox.version>
+        <mapstruct.version>1.4.0.Final</mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +69,12 @@
                 <version>${io.springfox.version}</version>
             </dependency>
 
+            <!-- Apache commons io for io operations -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.6</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -83,6 +90,20 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Annotacio alapu validacio -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+
+        <!-- Annotacio alapu mappeles -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -96,4 +117,29 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <!-- Ezt a Spring Boot Starter Parent definiálja, nem mi-->
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
