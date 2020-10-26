@@ -33,12 +33,6 @@ public class UserController {
         return ResponseEntity.ok(vehicleService.getModelsOfManufacturer(manufacturer));
     }
 
-    @GetMapping("/{manufacturer}/{model}")
-    @ResponseBody
-    public ResponseEntity<List<Vehicle>> getCarsOfModel(@RequestParam String manufacturer, @RequestParam String model) {
-        return ResponseEntity.ok(vehicleService.getCarsOfModel(manufacturer, model));
-    }
-
     // <========================================================
 
     @GetMapping("/options")
