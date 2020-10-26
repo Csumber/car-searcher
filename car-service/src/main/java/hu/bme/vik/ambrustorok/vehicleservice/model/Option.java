@@ -1,6 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.model;
 
 import javax.validation.constraints.NotBlank;
+import java.util.Objects;
 
 public class Option {
 
@@ -44,5 +45,20 @@ public class Option {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Option option = (Option) o;
+        return price == option.price &&
+                Objects.equals(name, option.name) &&
+                Objects.equals(value, option.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, value, price);
     }
 }

@@ -33,24 +33,24 @@ public class AdminController {
     @GetMapping("/manufacturers")
     @ResponseBody
     public List<String> getAllManufacturers() {
-        return vehicleService.getAllManufacturers();
+        return vehicleService.getManufacturers();
     }
 
     @GetMapping("/manufacturers/{manufacturer}")
     @ResponseBody
     public List<String> getAllModelsOfManufacturer(@RequestParam String manufacturer) {
-        return vehicleService.getAllModels(manufacturer);
+        return vehicleService.getModelsOfManufacturer(manufacturer);
     }
 
     @GetMapping("/manufacturers/{manufacturer}/{model}")
     @ResponseBody
-    public List<Option> getAllModelsOfManufacturer(@RequestParam String manufacturer, @RequestParam String model) {
-        return vehicleService.getAllOptions(manufacturer, model);
+    public List<OptionResponse> getAllModelsOfManufacturer(@RequestParam String manufacturer, @RequestParam String model) {
+        return vehicleService.getOptions();
     }
     @GetMapping("/options")
     @ResponseBody
     public List<OptionResponse> getAllModelsOfManufacturer() {
-        return vehicleService.getAllOptions();
+        return vehicleService.getOptions();
     }
 
     @PostMapping("/search")
@@ -64,7 +64,7 @@ public class AdminController {
 
     @GetMapping("/vehicles")
     public List<Vehicle> getAllVehicles() {
-        return vehicleService.getallVehicles();
+        return vehicleService.getVehicles();
     }
 
     @PostMapping("/vehicles")
@@ -110,6 +110,24 @@ public class AdminController {
 
         vehicleRepository.save(vehicle2);
 
+        Vehicle vehicle3 = new Vehicle();
+       vehicle3.setManufacturer("Audi");
+       vehicle3.setModel("A5");
+       vehicle3.setStyle(Style.Coupe);
+       vehicle3.setBase_price(65000);
+       vehicle3.setNumber_of_doors(4);
+       vehicle3.setWarranty(5);
+       vehicle3.setWeight(1300);
+
+        engines.add(e1);
+        engines.add(e2);
+
+        vehicle3.setEngines(engines);
+
+        vehicle3.setOptions(options);
+
+        vehicleRepository.save(vehicle3);
+
         return "Adding new vehicle....";
     }
 
@@ -120,7 +138,7 @@ public class AdminController {
 
     @GetMapping("/engines")
     public List<EngineResponse> getAllEngines() {
-        return vehicleService.getAllEngines();
+        return vehicleService.getEngines();
     }
 
     @DeleteMapping("/flush")

@@ -12,10 +12,9 @@ import hu.bme.vik.ambrustorok.vehicleservice.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.stereotype.Service;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -44,19 +43,29 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void delete(String id) {
-        vehicleRepository.deleteById(id);
+        Criteria criteria = Criteria.where("_id").is(id);
+        Query query = new Query();
+        query.addCriteria(criteria);
+        mongoTemplate.findAndRemove(query, Vehicle.class);
     }
 
     @Override
-    public List<String> getAllManufacturers() {
+    public void delete(Vehicle vehicle) {
+        Criteria criteria = Criteria.where("_id").is(vehicle.getId());
+        Query query = new Query();
+        query.addCriteria(criteria);
+        mongoTemplate.findAndRemove(query, Vehicle.class);
+    }
+
+    @Override
+    public List<String> getManufacturers() {
 
         List<String> list = mongoTemplate.findDistinct("manufacturer", Vehicle.class, String.class);
-
         return list;
     }
 
     @Override
-    public List<String> getAllModels(String manufacturer) {
+    public List<String> getModelsOfManufacturer(String manufacturer) {
 
         Criteria criteria = Criteria.where("manufacturer").is(manufacturer);
         Query query = new Query();
@@ -65,40 +74,18 @@ public class VehicleServiceImpl implements VehicleService {
         List<VehicleModel> list = mongoTemplate.find(query, VehicleModel.class, "vehicles");
 
         return list.stream().map(vehiclemodel -> vehiclemodel.getModel()).distinct().collect(Collectors.toList());
-
     }
 
     @Override
-    public List<Option> getAllOptions(String manufacturer, String model) {
-        return null;
-
-    }
-
-    @Override
-    public List<SearchResult> search(SearchRequest searchRequest) {
+    public List<Vehicle> getCarsOfModel(String manufacturer, String model) {
+        //TODO
         return null;
     }
 
+    // <========================================================
 
     @Override
-    public List<OptionResponse> getAllOptions() {
-//        Query query = new Query();
-//        query.fields().include("options").exclude("_id");
-//        List<Option> list = mongoTemplate.find(query, Option.class);
-//
-//        return list.stream().map(option -> new OptionResponse(option.getName(), option.getValue())).collect(Collectors.toList());
-
-
-      /*  Aggregation aggregation = Aggregation.newAggregation(
-                Aggregation.unwind("options")
-        );
-        AggregationResults<Option> results = mongoTemplate.aggregate(aggregation,
-                "vehicles", Option.class);
-
-        List<Option> list  = results.getMappedResults();
-
-
-        return list;//list.stream().map(option -> new OptionResponse(option.getName(), option.getValue())).collect(Collectors.toList());*/
+    public List<OptionResponse> getOptions() {
 
         Query query = new Query();
         query.fields().include("options").exclude("_id");
@@ -111,7 +98,52 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<EngineResponse> getAllEngines() {
+    public List<OptionResponse> getManufacturerOptions(String manufacturer) {
+        //TODO
+        Criteria criteria = Criteria.where("manufacturer").is(manufacturer);
+        Query query = new Query();
+        query.addCriteria(criteria);
+        query.fields().include("model").include("manufacturer").include("options").exclude("_id");
+        List<Vehicle> list = mongoTemplate.find(query, Vehicle.class);
+
+        List<Set<Option>> asd = list.stream().map(Vehicle::getOptions).collect(Collectors.toList());
+        return asd.stream().flatMap(Set::stream).map(option -> new OptionResponse(option.getName(), option.getValue())).distinct().collect(Collectors.toList());
+    }
+
+    @Override
+    public List<OptionResponse> getModelOptions(String manufacturer, String model) {
+        //TODO
+        Criteria criteria = Criteria.where("manufacturer").is(manufacturer).and("model").is(model);
+        Query query = new Query();
+        query.addCriteria(criteria);
+        query.fields().include("model").include("manufacturer").include("options").exclude("_id");
+        List<Vehicle> list = mongoTemplate.find(query, Vehicle.class);
+
+        List<Set<Option>> asd = list.stream().map(Vehicle::getOptions).collect(Collectors.toList());
+        return asd.stream().flatMap(Set::stream).map(option -> new OptionResponse(option.getName(), option.getValue())).distinct().collect(Collectors.toList());
+    }
+
+    // <========================================================
+
+    @Override
+    public List<Vehicle> getVehicles() {
+        return mongoTemplate.findAll(Vehicle.class);
+    }
+
+    public List<Vehicle> getManufacturerVehicles(String manufacturer) {
+        //TODO
+        return mongoTemplate.findAll(Vehicle.class);
+    }
+
+    public List<Vehicle> getModelVehicles(String manufacturer, String Model) {
+        //TODO
+        return mongoTemplate.findAll(Vehicle.class);
+    }
+
+    // <========================================================
+
+    @Override
+    public List<EngineResponse> getEngines() {
 
         Query query = new Query();
         query.fields().include("engines").exclude("_id");
@@ -124,7 +156,35 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<Vehicle> getallVehicles() {
-        return mongoTemplate.findAll(Vehicle.class);
+    public List<EngineResponse> getManufacturerEngines(String manufacturer) {
+
+        Query query = new Query();
+        query.fields().include("engines").exclude("_id");
+        List<Vehicle> list = mongoTemplate.findAll(Vehicle.class);
+
+        List<Set<Engine>> asd = list.stream().map(Vehicle::getEngines).collect(Collectors.toList());
+        List<EngineResponse> options = asd.stream().flatMap(Set::stream).map(engine -> new EngineResponse(engine.getHorsepower(), engine.getFuel(), engine.getTransmission(), engine.getAverage_consumption(), engine.getCylinder_capacity(), engine.getPrice())).collect(Collectors.toList());
+
+        return options.stream().distinct().collect(Collectors.toList());
     }
+
+    @Override
+    public List<EngineResponse> getModelEngines(String manufacturer, String model) {
+
+        Query query = new Query();
+        query.fields().include("engines").exclude("_id");
+        List<Vehicle> list = mongoTemplate.findAll(Vehicle.class);
+
+        List<Set<Engine>> asd = list.stream().map(Vehicle::getEngines).collect(Collectors.toList());
+        List<EngineResponse> options = asd.stream().flatMap(Set::stream).map(engine -> new EngineResponse(engine.getHorsepower(), engine.getFuel(), engine.getTransmission(), engine.getAverage_consumption(), engine.getCylinder_capacity(), engine.getPrice())).collect(Collectors.toList());
+
+        return options.stream().distinct().collect(Collectors.toList());
+    }
+
+
+    @Override
+    public List<SearchResult> search(SearchRequest searchRequest) {
+        return null;
+    }
+
 }

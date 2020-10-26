@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1035d57-d938-4afc-8449-234305f6eeef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Style.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/response/EngineResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/response/OptionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/response/VehicleModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/response/VehicleResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/model/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/request/FacetRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/request/OptionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/request/VehicleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/request/VehicleRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/response/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/payload/response/SearchResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/services/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/services/VehicleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/services/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/services/VehicleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/target/car-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/target/car-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +48,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/api-gateway/src/main/java" />
@@ -78,6 +64,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="hu.bme.vik.ambrustorok.vehicleservice.services" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.VehicleServiceApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -148,12 +139,24 @@
       <workItem from="1603126452246" duration="345000" />
       <workItem from="1603403996490" duration="390000" />
       <workItem from="1603479650710" duration="810000" />
-      <workItem from="1603632763096" duration="21192000" />
+      <workItem from="1603632763096" duration="28044000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementing Vehicle Service">
+      <created>1603667048066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603667048066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implementing Vehicle Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Vehicle Service" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1400" y="94" key="#Project_Structure" timestamp="1603058346879">
@@ -165,64 +168,68 @@
     </state>
     <state x="1374" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603646948305" />
     <state x="1374" y="174" width="1092" height="787" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603103150719" />
-    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1603661213688">
+    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1603676646164">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603650750427" />
-    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1603661213688" />
+    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1603676646164" />
     <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603053470809">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053470809" />
-    <state x="785" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603661156176">
+    <state x="785" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603676807774">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="363" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603646299354" />
-    <state x="785" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603661156176" />
+    <state x="785" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603676807774" />
+    <state x="842" y="88" key="CommitChangelistDialog2" timestamp="1603667043857">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="842" y="88" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603667043857" />
     <state x="327" y="92" width="1055" height="902" key="FileChooserDialogImpl" timestamp="1603480956545">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="327" y="92" width="1055" height="902" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1603480956545" />
-    <state width="2517" height="203" key="GridCell.Tab.0.bottom" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.0.bottom" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="203" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.0.center" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
+    <state width="2517" height="203" key="GridCell.Tab.0.center" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074802" />
-    <state width="2517" height="203" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.0.left" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
+    <state width="2517" height="203" key="GridCell.Tab.0.left" timestamp="1603679290090">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074802" />
-    <state width="2517" height="203" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.0.right" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290090" />
+    <state width="2517" height="203" key="GridCell.Tab.0.right" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="203" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.1.bottom" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
+    <state width="2517" height="203" key="GridCell.Tab.1.bottom" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.1.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="203" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.1.center" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
+    <state width="2517" height="203" key="GridCell.Tab.1.center" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.1.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="203" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.1.left" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
+    <state width="2517" height="203" key="GridCell.Tab.1.left" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.1.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="203" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
-    <state width="2517" height="203" key="GridCell.Tab.1.right" timestamp="1603665093749">
+    <state width="2517" height="203" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
+    <state width="2517" height="203" key="GridCell.Tab.1.right" timestamp="1603679290091">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="203" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="203" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603665093749" />
+    <state width="2517" height="203" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603679290091" />
     <state width="2517" height="285" key="GridCell.Tab.2.bottom" timestamp="1603664016633">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
