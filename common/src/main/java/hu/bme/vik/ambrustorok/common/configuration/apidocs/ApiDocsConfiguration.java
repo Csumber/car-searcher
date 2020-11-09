@@ -22,42 +22,58 @@ import java.util.Collections;
 @Configuration
 public class ApiDocsConfiguration {
 
-    @Value("http://localhost:9000/oauth2")
+    @Value("${cs.auth-sever-url}")
     private String authServerUrl;
 
-    private static final String CLIENT_SECRET = "ca8831eb-e504-46f1-a514-8be84ba892ed";
+    @Value("${cs.client-id}")
+    private String CLIENT_ID;
+
+    @Value("${cs.client-secret}")
+    private String CLIENT_SECRET;
 
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("hu.jlaci.ac"))
+                .apis(RequestHandlerSelectors.basePackage("hu.bme.vik.ambrustorok"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .securitySchemes(Collections.singletonList(securityScheme()))
+                .securityContexts(Collections.singletonList(securityContext()));
     }
 
     @Bean
     public SecurityConfiguration security() {
         return SecurityConfigurationBuilder.builder()
+                .clientId(CLIENT_ID)
                 .clientSecret(CLIENT_SECRET)
                 .scopeSeparator(" ")
                 .useBasicAuthenticationWithAccessCodeGrant(true)
                 .build();
     }
 
+    /**
+     * A security scheme mondja meg hogy működik a security.
+     * @return
+     */
     private SecurityScheme securityScheme() {
         GrantType grantType = new AuthorizationCodeGrantBuilder()
                 .tokenEndpoint(b -> b.url(authServerUrl + "/token").tokenName("oauthtoken"))
-                .tokenRequestEndpoint(b -> b.url(authServerUrl + "/authorize").clientSecretName(CLIENT_SECRET)).build();
+                .tokenRequestEndpoint(b -> b.url(authServerUrl + "/authorize").clientIdName(CLIENT_ID).clientSecretName(CLIENT_SECRET)).build();
 
         return new OAuthBuilder().name("spring_oauth")
                 .grantTypes(Collections.singletonList(grantType))
                 .build();
     }
 
+
+    /**
+     * A security context mondja meg, mikor kell a security-t használni. Most akkor használjuk ha a végpontban nincs /public
+     * @return
+     */
     private SecurityContext securityContext() {
         return SecurityContext.builder()
-                .securityReferences(Collections.singletonList(new SecurityReference("spring_oauth", new AuthorizationScope[]{})))
+                .securityReferences(Collections.singletonList(new SecurityReference("spring_oauth", new AuthorizationScope[] {})))
                 .operationSelector(s -> !s.requestMappingPattern().matches(".*/public.*"))
                 .build();
     }

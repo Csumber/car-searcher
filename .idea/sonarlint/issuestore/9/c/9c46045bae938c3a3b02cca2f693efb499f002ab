@@ -1,11 +1,0 @@
-
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰îÿÂ
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰îÿÂ
-e	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚çùf
-f	java:S117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¯èˆ
-q	java:S116"\Rename this field "cylinder_capacity" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ–º
-o	java:S116"ZRename this field "price_from_base" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”ÖÒ
-c	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ»×
-b	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚çùf
-h	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ëş®ıÿÿÿÿ
-c	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¯èˆ

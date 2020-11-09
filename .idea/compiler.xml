@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Annotation profile for car-searcher" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -13,26 +11,62 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.0.Final/mapstruct-1.4.0.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
         </processorPath>
-        <module name="api-gateway" />
-        <module name="common" />
+        <module name="investment-api" />
         <module name="auth-server" />
+        <module name="vc-core" />
+        <module name="startup-core" />
+        <module name="config-server" />
+        <module name="common" />
+        <module name="investment-core" />
+        <module name="entrepreneur-core" />
+        <module name="api-gateway" />
+        <module name="entrepreneur-api" />
+        <module name="startup-api" />
+        <module name="vehicle-core" />
+        <module name="vc-api" />
+        <module name="vehicle-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="11" />
       <module name="auth-server" target="11" />
       <module name="car-searcher" target="11" />
-      <module name="car-service" target="11" />
       <module name="common" target="11" />
+      <module name="config-server" target="11" />
+      <module name="entrepreneur-api" target="11" />
+      <module name="entrepreneur-core" target="11" />
+      <module name="entrepreneur-service" target="11" />
+      <module name="investment-api" target="11" />
+      <module name="investment-core" target="11" />
+      <module name="investment-service" target="11" />
+      <module name="parent" target="11" />
+      <module name="startup-api" target="11" />
+      <module name="startup-core" target="11" />
+      <module name="startup-service" target="11" />
+      <module name="vc-api" target="11" />
+      <module name="vc-core" target="11" />
+      <module name="vc-service" target="11" />
+      <module name="vehicle-api" target="11" />
+      <module name="vehicle-core" target="11" />
+      <module name="vehicle-service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="auth-server" options="-parameters" />
-      <module name="car-searcher" options="" />
-      <module name="car-service" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="entrepreneur-api" options="-parameters" />
+      <module name="entrepreneur-core" options="-parameters" />
+      <module name="investment-api" options="-parameters" />
+      <module name="investment-core" options="-parameters" />
+      <module name="startup-api" options="-parameters" />
+      <module name="startup-core" options="-parameters" />
+      <module name="vc-api" options="-parameters" />
+      <module name="vc-core" options="-parameters" />
+      <module name="vehicle-api" options="-parameters" />
+      <module name="vehicle-core" options="-parameters" />
     </option>
   </component>
 </project>

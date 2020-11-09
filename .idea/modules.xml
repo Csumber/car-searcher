@@ -5,8 +5,20 @@
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/auth-server/auth-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/car-searcher.iml" filepath="$PROJECT_DIR$/car-searcher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/car-service/car-service.iml" filepath="$PROJECT_DIR$/car-service/car-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entrepreneur-service/entrepreneur-api/entrepreneur-api.iml" filepath="$PROJECT_DIR$/entrepreneur-service/entrepreneur-api/entrepreneur-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entrepreneur-service/entrepreneur-core/entrepreneur-core.iml" filepath="$PROJECT_DIR$/entrepreneur-service/entrepreneur-core/entrepreneur-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/investment-service/investment-api/investment-api.iml" filepath="$PROJECT_DIR$/investment-service/investment-api/investment-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/investment-service/investment-core/investment-core.iml" filepath="$PROJECT_DIR$/investment-service/investment-core/investment-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/startup-service/startup-api/startup-api.iml" filepath="$PROJECT_DIR$/startup-service/startup-api/startup-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/startup-service/startup-core/startup-core.iml" filepath="$PROJECT_DIR$/startup-service/startup-core/startup-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vc-service/vc-api/vc-api.iml" filepath="$PROJECT_DIR$/vc-service/vc-api/vc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vc-service/vc-core/vc-core.iml" filepath="$PROJECT_DIR$/vc-service/vc-core/vc-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vehicle-service/vehicle-api/vehicle-api.iml" filepath="$PROJECT_DIR$/vehicle-service/vehicle-api/vehicle-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vehicle-service/vehicle-core/vehicle-core.iml" filepath="$PROJECT_DIR$/vehicle-service/vehicle-core/vehicle-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vehicle-service/vehicle-service.iml" filepath="$PROJECT_DIR$/vehicle-service/vehicle-service.iml" />
     </modules>
   </component>
 </project>

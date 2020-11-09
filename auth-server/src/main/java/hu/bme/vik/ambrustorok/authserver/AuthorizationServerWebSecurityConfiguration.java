@@ -1,12 +1,10 @@
 package hu.bme.vik.ambrustorok.authserver;
 
-import hu.bme.vik.ambrustorok.authserver.workaround.WorkAroundFilter;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.authorization.OAuth2AuthorizationServerConfigurer;
 import org.springframework.security.oauth2.server.authorization.web.OAuth2TokenEndpointFilter;
-import org.springframework.security.web.context.SecurityContextPersistenceFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.OrRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -16,6 +14,9 @@ import java.util.List;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+/**
+ * This is the defualt auth server web security config with added cors and modified rquest matchers to catch the pre-flight OPTIONS requests.
+ */
 public class AuthorizationServerWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -28,7 +29,6 @@ public class AuthorizationServerWebSecurityConfiguration extends WebSecurityConf
 
         http
                 .cors().and()
-                .addFilterAfter(new WorkAroundFilter(), SecurityContextPersistenceFilter.class)
                 .requestMatcher(new OrRequestMatcher(requestMatchers))
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests

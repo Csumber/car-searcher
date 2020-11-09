@@ -1,2 +1,3 @@
-hu\bme\vik\ambrustorok\apigateway\config\GatewayApiDocsConfiguration.class
-hu\bme\vik\ambrustorok\apigateway\ApiGatewayApplication.class
+hu\bme\vik\ambrustorok\apigw\ApiGatewayApplication.class
+hu\bme\vik\ambrustorok\apigw\config\GatewayWebSecurityConfig.class
+hu\bme\vik\ambrustorok\apigw\config\GatewayApiDocsConfiguration.class

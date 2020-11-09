@@ -1,49 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="ALL" />
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1035d57-d938-4afc-8449-234305f6eeef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/hu/bme/vik/ambrustorok/authserver/AuthServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/hu/bme/vik/ambrustorok/authserver/AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/hu/bme/vik/ambrustorok/authserver/AuthorizationServerWebSecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/hu/bme/vik/ambrustorok/authserver/workaround/WorkAroundFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_3_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/auth-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/auth-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-searcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/car-searcher.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/car-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/car-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/services/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/services/VehicleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-service/target/car-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/target/car-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/hu/bme/vik/ambrustorok/common/configuration/apidocs/ApiDocsConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/hu/bme/vik/ambrustorok/common/configuration/apidocs/ApiDocsConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="35406fde-4809-421d-b4b7-68d407bc91d7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -52,10 +33,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1j47dYQcQZSiIAvMiy3ovnDkS7s" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1k1N2WrhAUrtkRGgBZCHQzFApWW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,13 +43,11 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/api-gateway/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/vc-service/vc-core/src/main/java/hu/bme/vik/ambrustorok/vc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vehicle-service" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,16 +56,25 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="hu.bme.vik.ambrustorok.vehicleservice.services" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Windows\Documents\Szakdolgozat\v3\car-searcher" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthServerApplication">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.StartupServiceApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -103,16 +88,7 @@
     </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="api-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.apigateway.ApiGatewayApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.apigw.ApiGatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,209 +100,132 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VehicleServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="car-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.vehicleservice.VehicleServiceApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntrepeneurServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="entrepreneur-core" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.entrepreneur.EntrepeneurServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InvestmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="investment-core" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.investment.InvestmentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartupServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="startup-core" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.startup.StartupServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VCServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="vc-core" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.vc.VCServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="VehicleServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="car-service" />
+      <module name="vehicle-core" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="hu.bme.vik.ambrustorok.vehicleservice.VehicleServiceApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.ApiGatewayApplication" />
-      <item itemvalue="Spring Boot.VehicleServiceApplication" />
-      <item itemvalue="Spring Boot.AuthServerApplication" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b1035d57-d938-4afc-8449-234305f6eeef" name="Default Changelist" comment="" />
-      <created>1603051600908</created>
+      <changelist id="35406fde-4809-421d-b4b7-68d407bc91d7" name="Default Changelist" comment="" />
+      <created>1604863935069</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603051600908</updated>
-      <workItem from="1603051608154" duration="1166000" />
-      <workItem from="1603052870298" duration="338000" />
-      <workItem from="1603053240225" duration="245000" />
-      <workItem from="1603056038500" duration="1237000" />
-      <workItem from="1603057522119" duration="10106000" />
-      <workItem from="1603093888897" duration="9376000" />
-      <workItem from="1603126452246" duration="345000" />
-      <workItem from="1603403996490" duration="390000" />
-      <workItem from="1603479650710" duration="810000" />
-      <workItem from="1603632763096" duration="28961000" />
-      <workItem from="1603698576892" duration="1246000" />
-      <workItem from="1603699855966" duration="1484000" />
+      <updated>1604863935069</updated>
+      <workItem from="1604863936310" duration="8827000" />
+      <workItem from="1604877594965" duration="7947000" />
+      <workItem from="1604890972429" duration="136000" />
+      <workItem from="1604909536234" duration="4999000" />
     </task>
-    <task id="LOCAL-00001" summary="Implementing Vehicle Service">
-      <created>1603667048066</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1603667048066</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Implementing Vehicle Service">
-      <created>1603679452673</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1603679452673</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Implementing Vehicle Service">
-      <created>1603680235527</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1603680235527</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementing Vehicle Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Vehicle Service" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="1400" y="94" key="#Project_Structure" timestamp="1603700484893">
+    <state x="760" y="94" key="#Project_Structure" timestamp="1604883630937">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1400" y="94" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1603700484893" />
-    <state x="1374" y="174" width="1092" height="787" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603646948305">
+    <state x="760" y="94" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1604883630937" />
+    <state x="1498" y="447" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1604886138485">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1374" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603646948305" />
-    <state x="1374" y="174" width="1092" height="787" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603103150719" />
-    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1603676646164">
+    <state x="1498" y="447" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1604886138485" />
+    <state x="1038" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604877705581">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603650750427" />
-    <state x="1725" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1603676646164" />
-    <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603053470809">
+    <state x="1038" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1040@0.0.2560.1040" timestamp="1604877705581" />
+    <state x="1595" y="195" key="FileChooserDialogImpl" timestamp="1604878258176">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1600" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053470809" />
-    <state x="785" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603676807774">
+    <state x="1595" y="195" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1604878258176" />
+    <state width="1741" height="198" key="GridCell.Tab.0.bottom" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="363" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603646299354" />
-    <state x="785" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603676807774" />
-    <state x="842" y="88" key="CommitChangelistDialog2" timestamp="1603680233709">
+    <state width="1741" height="198" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.0.center" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="842" y="88" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603680233709" />
-    <state x="327" y="92" width="1055" height="902" key="FileChooserDialogImpl" timestamp="1603480956545">
+    <state width="1741" height="198" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.0.left" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="327" y="92" width="1055" height="902" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1603480956545" />
-    <state width="2517" height="204" key="GridCell.Tab.0.bottom" timestamp="1603700996663">
+    <state width="1741" height="198" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.0.right" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="204" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.0.center" timestamp="1603700996663">
+    <state width="1741" height="198" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.1.bottom" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074802" />
-    <state width="2517" height="204" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.0.left" timestamp="1603700996663">
+    <state width="1741" height="198" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.1.center" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074802" />
-    <state width="2517" height="204" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.0.right" timestamp="1603700996663">
+    <state width="1741" height="198" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.1.left" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="204" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.1.bottom" timestamp="1603700996663">
+    <state width="1741" height="198" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state width="1741" height="198" key="GridCell.Tab.1.right" timestamp="1604919217885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.1.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="204" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.1.center" timestamp="1603700996663">
+    <state width="1741" height="198" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1604919217885" />
+    <state x="945" y="224" key="NewModule_or_Project.wizard" timestamp="1604878229852">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.1.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="204" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.1.left" timestamp="1603700996663">
+    <state x="945" y="224" key="NewModule_or_Project.wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1604878229852" />
+    <state x="760" y="94" key="SettingsEditor" timestamp="1604911895967">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.1.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="204" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="204" key="GridCell.Tab.1.right" timestamp="1603700996663">
+    <state x="760" y="94" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1604911895967" />
+    <state x="973" y="240" key="chooseDestDirectoryDialog" timestamp="1604878093939">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="203" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603652074803" />
-    <state width="2517" height="204" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603700996663" />
-    <state width="2517" height="285" key="GridCell.Tab.2.bottom" timestamp="1603680323231">
+    <state x="584" y="190" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1604870062228" />
+    <state x="973" y="240" key="chooseDestDirectoryDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1604878093939" />
+    <state x="917" y="180" key="new project wizard" timestamp="1604878186203">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="285" key="GridCell.Tab.2.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1603680323231" />
-    <state width="2517" height="285" key="GridCell.Tab.2.center" timestamp="1603680323231">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="285" key="GridCell.Tab.2.center/0.0.2560.1040@0.0.2560.1040" timestamp="1603680323231" />
-    <state width="2517" height="285" key="GridCell.Tab.2.left" timestamp="1603680323231">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="285" key="GridCell.Tab.2.left/0.0.2560.1040@0.0.2560.1040" timestamp="1603680323231" />
-    <state width="2517" height="285" key="GridCell.Tab.2.right" timestamp="1603680323231">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="285" key="GridCell.Tab.2.right/0.0.2560.1040@0.0.2560.1040" timestamp="1603680323231" />
-    <state x="1450" y="178" key="Maven.ArtifactSearchDialog" timestamp="1603053077658">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1450" y="178" key="Maven.ArtifactSearchDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053077658" />
-    <state x="366" y="146" width="998" height="829" key="SettingsEditor" timestamp="1603699431080">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="366" y="146" width="998" height="829" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1603699431080" />
-    <state x="872" y="252" key="Vcs.Push.Dialog.v2" timestamp="1603680238044">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="872" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603680238044" />
-    <state x="1736" y="301" width="556" height="445" key="chooseDestDirectoryDialog" timestamp="1603052716524">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1736" y="301" width="556" height="445" key="chooseDestDirectoryDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603052716524" />
-    <state x="1615" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1603053245887">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1615" y="343" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1603053245887" />
-    <state x="1097" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603679428513">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1097" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603679428513" />
-    <state x="1470" y="221" key="new project wizard" timestamp="1603480985188">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1470" y="221" key="new project wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1603480985188" />
-    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603649906868">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1603649906868" />
-  </component>
-  <component name="XDebuggerManager">
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="org.springframework.data.mongodb.core.aggregation.Aggregation" memberName="pipeline" />
-      </pinned-members>
-    </pin-to-top-manager>
+    <state x="917" y="180" key="new project wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1604878186203" />
   </component>
 </project>

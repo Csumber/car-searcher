@@ -1,0 +1,9 @@
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    vehicle:
+      path: /vehicle/**
+      url: http://localhost:8088
+    oauth:
+      path: /oauth2/**
+      url: http://localhost:9000/oauth2

@@ -3,7 +3,17 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/car-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/entrepreneur-service/entrepreneur-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/entrepreneur-service/entrepreneur-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/investment-service/investment-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/startup-service/startup-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/startup-service/startup-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vc-service/vc-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vc-service/vc-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vehicle-service/vehicle-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vehicle-service/vehicle-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vehicle-service/vehicle-core/src/main/resources" charset="UTF-8" />
   </component>
 </project>
