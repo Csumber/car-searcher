@@ -1,3 +1,8 @@
+# Car-searcher
+This project was created as a [BSc Thesis Work](https://www.aut.bme.hu/Education/BScInfo/Szakdolgozat) at Budapest University of Technology and Economics.
+
+Supervisor: [Jánoky László Viktor BME-AUT](https://www.aut.bme.hu/Staff/jlaci) 
+
 # Microservices architektúrájú gépjármű konfigurációs alkalmazás fejlesztése
 A közelmúlt ígéretes új megközelítése a jól skálázódó, magas rendelkezésre állású rendszerek tervezéséhez a microservices architektúra. A hallgató feladata egy ilyen architektúrájú alkalmazás tervezése és fejlesztése. Az alkalmazás célja különböző gépjármű gyártók termékeinek kezelése, keresés és összehasonlítás támogatása.
 
@@ -22,6 +27,27 @@ technikai döntések indoklására.
 |User |to make statistics from my saved searches| I can get recommendations|
 |Manufacturer |admin page|I can add or edit my vehicles|
  
- ## Architektúra 
- ![final architecture](architektúra.jpg)
- 
+## Architektúra 
+![final architecture](architektúra.jpg)
+
+### Swagger-ui
+Swagger ui is available at http://localhost:8080/swagger-ui/.
+
+## Szolgáltatások
+
+### api-gateway
+
+### auth-server
+
+### common
+
+### config-server
+
+### entrepreneur-service
+
+### investment-service
+
+### startup-service
+
+
+### vc-service

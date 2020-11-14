@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>api-gateway</module>
-        <module>car-service</module>
-        <module>common</module>
-        <module>auth-server</module>
-    </modules>
+
+    <!-- A Spring Boot parent-bol szarmazunk, igy egy csomo beallitast megkapunk alapbol -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>hu.bme.vik.ambrustorok</groupId>
     <artifactId>car-searcher</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>car-searcher</name>
-    <description>Demo project for Spring Boot</description>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
 
+    <!-- Bizonyos konstansok tobb helyen is elofordulnak a projektben, igy erdemes oket kiemelni proeprtybe -->
     <properties>
-        <java.version>11</java.version>
-        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-        <maven.compiler.release>11</maven.compiler.release>
-        <io.springfox.version>3.0.0</io.springfox.version>
         <mapstruct.version>1.4.0.Final</mapstruct.version>
+        <io.springfox.version>3.0.0</io.springfox.version>
     </properties>
 
+    <!-- Itt vannak felsorolva a projekt gyerek moduljai -->
+	<modules>
+        <module>api-gateway</module>
+        <module>auth-server</module>
+        <module>common</module>
+        <module>config-server</module>
+        <module>vehicle-service</module>
+	</modules>
+
+    <!-- Itt definialjuk, hogy ha valamelyik almodul SpringCloud-os dependenciat huz be, akkor azt hogyan tegye, lasd:
+    https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Management -->
     <dependencyManagement>
         <dependencies>
             <!-- Saját közös library -->
             <dependency>
                 <groupId>hu.bme.vik.ambrustorok</groupId>
                 <artifactId>common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
 
             <!-- Spring Cloud dependencia kezeles importalasa -->
@@ -45,6 +49,12 @@
                 <version>Hoxton.SR8</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- Az Spring Security OAuth2 verzioja -->
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>2.4.0.RELEASE</version>
             </dependency>
 
             <!-- OpenAPI (Swagger 2) leírás generálás a Controllerek alapján -->
@@ -69,25 +79,22 @@
                 <version>${io.springfox.version}</version>
             </dependency>
 
-            <!-- Apache commons io for io operations -->
+            <!-- Apache commons-->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>2.6</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
+    <!-- Itt talalhatoak a projekt szintu dependenciak (minden modul orokli), ezt erdemes minimalis szinten tartani! -->
     <dependencies>
         <!-- Annotacio alapu kodgeneralas -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- Annotacio alapu validacio -->
@@ -103,17 +110,11 @@
             <version>${mapstruct.version}</version>
         </dependency>
 
-
+        <!-- H2 adatbazis driver -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
         </dependency>
     </dependencies>
 
@@ -142,4 +143,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
