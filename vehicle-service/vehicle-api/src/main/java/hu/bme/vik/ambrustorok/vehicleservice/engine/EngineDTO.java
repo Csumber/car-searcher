@@ -1,6 +1,8 @@
 package hu.bme.vik.ambrustorok.vehicleservice.engine;
 
 
+import hu.bme.vik.ambrustorok.vehicleservice.common.EFuel;
+import hu.bme.vik.ambrustorok.vehicleservice.common.ETransmission;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,4 +42,5 @@ public class EngineDTO {
     @NotNull
     @NotEmpty
     private double price;
+
 }

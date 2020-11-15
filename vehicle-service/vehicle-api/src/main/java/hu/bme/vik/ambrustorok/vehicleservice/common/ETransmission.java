@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice.engine;
+package hu.bme.vik.ambrustorok.vehicleservice.common;
 
 public enum ETransmission {
     Automatic,

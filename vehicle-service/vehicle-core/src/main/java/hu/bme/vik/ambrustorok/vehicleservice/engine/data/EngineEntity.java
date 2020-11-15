@@ -1,7 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.engine.data;
 
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EFuel;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.ETransmission;
+import hu.bme.vik.ambrustorok.vehicleservice.common.EFuel;
+import hu.bme.vik.ambrustorok.vehicleservice.common.ETransmission;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,6 +39,6 @@ public class EngineEntity {
     @Column(nullable = false)
     private double price;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "engines")
     Set<VehicleEntity> vehicles;
 }

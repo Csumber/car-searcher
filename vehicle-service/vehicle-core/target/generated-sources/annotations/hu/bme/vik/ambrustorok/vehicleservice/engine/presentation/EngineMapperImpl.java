@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-11-14T20:01:07+0100",
+    date = "2020-11-15T04:12:46+0100",
     comments = "version: 1.4.0.Final, compiler: javac, environment: Java 14 (Oracle Corporation)"
 )
 @Component
 public class EngineMapperImpl implements EngineMapper {
 
     @Override
-    public EngineDTO engineToDTO(EngineEntity entity) {
+    public EngineDTO EntityToDTO(EngineEntity entity) {
         if ( entity == null ) {
             return null;
         }

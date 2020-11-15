@@ -1,9 +1,9 @@
-package hu.bme.vik.ambrustorok.vehicleservice.engine.presentation;
+package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineRegisterDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.service.EngineService;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.option.service.OptionService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,21 +14,22 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.UUID;
 
-@RestController
-@RequestMapping("/engine")
-@AllArgsConstructor
-public class EngineController {
 
-    private EngineService service;
-    private EngineMapper mapper;
+@RestController
+@RequestMapping("/option")
+@AllArgsConstructor
+public class OptionController {
+
+    private OptionService service;
+    private OptionMapper mapper;
 
     @GetMapping
-    public ResponseEntity<Page<EngineDTO>> findAll(Pageable pageable) {
+    public ResponseEntity<Page<OptionDTO>> findAll(Pageable pageable) {
         return ResponseEntity.ok(service.findAll(pageable).map(mapper::EntityToDTO));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EngineDTO> findOne(@PathVariable UUID id) {
+    public ResponseEntity<OptionDTO> findOne(@PathVariable UUID id) {
         return service
                 .findOne(id)
                 .map(entity -> ResponseEntity.ok(mapper.EntityToDTO(entity)))
@@ -36,11 +37,11 @@ public class EngineController {
     }
 
     @PostMapping
-    public ResponseEntity<EngineDTO> create(@RequestBody EngineRegisterDTO dto, UriComponentsBuilder b) {
+    public ResponseEntity<OptionDTO> create(@RequestBody OptionRegisterDTO dto, UriComponentsBuilder b) {
         try {
-            EngineEntity result = service.create(dto);
+            OptionEntity result = service.create(dto);
 
-             UriComponents uriComponents = b.path("/investor/{id}").buildAndExpand(result.getId());
+            UriComponents uriComponents = b.path("/investor/{id}").buildAndExpand(result.getId());
             return ResponseEntity.created(uriComponents.toUri()).body(mapper.EntityToDTO(result));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
@@ -48,10 +49,10 @@ public class EngineController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EngineDTO> modify(@PathVariable UUID id, @RequestBody EngineDTO dto) {
+    public ResponseEntity<OptionDTO> modify(@PathVariable UUID id, @RequestBody OptionDTO dto) {
 
         try {
-            EngineEntity result = service.update(id, dto);
+            OptionEntity result = service.update(id, dto);
 
             return ResponseEntity.ok(mapper.EntityToDTO(result));
         } catch (Exception e) {
