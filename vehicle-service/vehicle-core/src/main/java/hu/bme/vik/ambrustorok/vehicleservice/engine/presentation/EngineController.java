@@ -2,6 +2,7 @@ package hu.bme.vik.ambrustorok.vehicleservice.engine.presentation;
 
 import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.service.EngineService;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/engine")
 @AllArgsConstructor
-public class EngineController {
+public class EngineController implements EngineServiceIF {
 
     private EngineService service;
     private EngineMapper mapper;

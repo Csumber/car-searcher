@@ -43,11 +43,10 @@ Swagger ui is available at http://localhost:8080/swagger-ui/.
 
 ### config-server
 
-### entrepreneur-service
+### recommender-service
 
-### investment-service
+### search-service
 
-### startup-service
+### vehicle-service
 
 
-### vc-service

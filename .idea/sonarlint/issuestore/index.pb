@@ -113,9 +113,11 @@ E
 config-server/pom.xml,a\2\a2f9618c8ad821b143a07a29a9805fcb0b2df470
 F
 search-service/pom.xml,4\d\4d905620682554155daea19cfbd1bcf34f63de80
-ï
-evehicle-service/vehicle-api/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/VehicleServiceIF.java,2\a\2a324c26db7a48009bab35dff4533721d05eddf0
 è
 _search-service/src/main/java/hu/bme/vik/ambrustorok/searchservice/SearchServiceApplication.java,3\6\36b8c9c1f7f992ab0f3d192c7721b76a1407c60d
 í
 bsearch-service/src/main/java/hu/bme/vik/ambrustorok/searchservice/controller/SearchController.java,8\3\833d79749d125516a474357339e8c416f1fe010e
+Q
+!search-service/search-service.iml,2\0\20ea0f9bb123baf380cb38f9506ed0779b198fe7
+ù
+mvehicle-service/vehicle-api/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/vehicle/VehicleServiceIF.java,8\3\83fcc3545c48a98d379cdee10bc424dfc7ec2dcf

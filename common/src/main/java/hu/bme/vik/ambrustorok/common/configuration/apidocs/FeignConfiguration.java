@@ -20,10 +20,10 @@ public class FeignConfiguration {
     @Value("${cs.auth-sever-url}")
     private String authServerUrl;
 
-    @Value("${cs.security.client-id}")
+    @Value("${cs.client-id}")
     private String clientId;
 
-    @Value("${cs.security.client-secret}")
+    @Value("${cs.client-secret}")
     private String clientSecret;
 
     @Bean

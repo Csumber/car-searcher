@@ -12,6 +12,7 @@
 
     <artifactId>vehicle-core</artifactId>
     <packaging>jar</packaging>
+
   <dependencies>	<!-- Every Core module should depend on its API module -->
 		<dependency>
 			<groupId>hu.bme.vik.ambrustorok</groupId>

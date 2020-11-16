@@ -11,6 +11,7 @@
 
     <artifactId>search-service</artifactId>
     <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>hu.bme.vik.ambrustorok</groupId>
@@ -80,6 +81,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-openfeign-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>hu.bme.vik.ambrustorok</groupId>
+            <artifactId>vehicle-api</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

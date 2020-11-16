@@ -2,6 +2,7 @@ package hu.bme.vik.ambrustorok.vehicleservice.vehicle.presentation;
 
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.service.VehicleService;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/vehicle")
 @AllArgsConstructor
-public class VehicleController {
+public class VehicleController implements VehicleServiceIF {
 
     private VehicleService service;
     private VehicleMapper mapper;

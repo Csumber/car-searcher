@@ -1,9 +1,8 @@
 # A ConfigServer lokalis fejlesztesi profil beallitasai
 
 cs:
-  security:
-    client-secret: f3c2557d-ab7c-4b9f-a287-9e5b9b5eb599
-    client-id: vehicle-service
+  client-secret: f3c2557d-ab7c-4b9f-a287-9e5b9b5eb599
+  client-id: vehicle-service
   auth-sever-url: http://localhost:9000/oauth2
 
 spring:

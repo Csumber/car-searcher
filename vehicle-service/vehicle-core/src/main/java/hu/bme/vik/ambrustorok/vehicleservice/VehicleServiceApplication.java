@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Import;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@Import({ApiDocsConfiguration.class, ResourceServerWebSecurityConfig.class})
+@Import({ApiDocsConfiguration.class,
+        ResourceServerWebSecurityConfig.class})
 @Slf4j
 @EnableSwagger2
 @EnableFeignClients

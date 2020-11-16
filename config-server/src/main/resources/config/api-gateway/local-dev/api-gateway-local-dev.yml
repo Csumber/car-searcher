@@ -1,11 +1,11 @@
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
-    vehicle:
-      path: /vehicle/**
+    vehicle-api:
+      path: /vehicle-api/**
       url: http://localhost:8088
-    search:
-      path: /search/**
+    search-api:
+      path: /search-api/**
       url: http://localhost:8089
     oauth:
       path: /oauth2/**

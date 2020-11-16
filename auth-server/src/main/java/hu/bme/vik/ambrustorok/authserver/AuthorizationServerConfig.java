@@ -78,6 +78,7 @@ public class AuthorizationServerConfig {
 		return new InMemoryRegisteredClientRepository(
 				frontendClient,
 				apiGateway,
+				searchService,
 				vehicleService
 		);
 	}
