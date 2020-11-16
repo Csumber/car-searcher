@@ -4,6 +4,9 @@ zuul:
     vehicle:
       path: /vehicle/**
       url: http://localhost:8088
+    search:
+      path: /search/**
+      url: http://localhost:8089
     oauth:
       path: /oauth2/**
       url: http://localhost:9000/oauth2

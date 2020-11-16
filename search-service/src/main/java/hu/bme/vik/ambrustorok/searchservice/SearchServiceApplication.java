@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice;
+package hu.bme.vik.ambrustorok.searchservice;
 
 import hu.bme.vik.ambrustorok.common.configuration.apidocs.ApiDocsConfiguration;
 import hu.bme.vik.ambrustorok.common.configuration.apidocs.ResourceServerWebSecurityConfig;
@@ -14,10 +14,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Slf4j
 @EnableSwagger2
 @EnableFeignClients
-public class VehicleServiceApplication {
+public class SearchServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(VehicleServiceApplication.class, args);
+        SpringApplication.run(SearchServiceApplication.class, args);
         log.info("VehicleService has started successfully!");
     }
 }

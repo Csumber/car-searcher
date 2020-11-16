@@ -28,8 +28,9 @@
         <module>auth-server</module>
         <module>common</module>
         <module>config-server</module>
+        <module>search-service</module>
         <module>vehicle-service</module>
-	</modules>
+    </modules>
 
     <!-- Itt definialjuk, hogy ha valamelyik almodul SpringCloud-os dependenciat huz be, akkor azt hogyan tegye, lasd:
     https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Management -->

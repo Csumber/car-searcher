@@ -1,0 +1,25 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:file:~/SearchDB;FILE_LOCK=FS;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    initialization-mode: always
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show_sql: true
+    use_sql_comments: true
+    format_sql: true
+
+server:
+  port: 8089
+
+

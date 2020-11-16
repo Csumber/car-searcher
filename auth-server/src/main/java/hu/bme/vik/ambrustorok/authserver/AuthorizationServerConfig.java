@@ -66,6 +66,14 @@ public class AuthorizationServerConfig {
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.build();
 
+		// vehicle service
+		RegisteredClient searchService = RegisteredClient.withId("67126549-50dd-4c5f-92c8-2b53fb2b764c")
+				.clientId("search-service")
+				.clientSecret("f3c2557d-ab7c-4c9f-a287-9e5b9b5eb599")
+				.clientAuthenticationMethod(ClientAuthenticationMethod.BASIC)
+				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+				.build();
+
 
 		return new InMemoryRegisteredClientRepository(
 				frontendClient,
