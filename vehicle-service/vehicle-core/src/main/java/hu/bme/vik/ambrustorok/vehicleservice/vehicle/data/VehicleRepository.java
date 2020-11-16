@@ -8,6 +8,6 @@ import java.util.UUID;
 
 public interface VehicleRepository extends JpaRepository<VehicleEntity, UUID> {
 
-    @Query(value = "select v from VehicleEntity v inner join fetch v.engines ")
-    List<VehicleEntity> fetchAllJoinEngines();
+    @Query(value = "select v from VehicleEntity v join fetch v.engines join fetch v.options ")
+    List<VehicleEntity> fetchAllWithJoins();
 }

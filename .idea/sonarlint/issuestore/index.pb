@@ -109,3 +109,7 @@ rvehicle-service/vehicle-core/src/main/java/hu/bme/vik/ambrustorok/vehicleservic
 xvehicle-service/vehicle-core/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/vehicle/presentation/VehicleMapper.java,9\2\92c42409f9fa8bbd19693ec81ba0969348e5f048
 §
 tvehicle-service/vehicle-core/src/main/java/hu/bme/vik/ambrustorok/vehicleservice/vehicle/service/VehicleService.java,f\a\fa9af135538610783c28cf2afab6cb3813608e25
+è
+_config-server/src/main/resources/config/vehicle-service/local-dev/vehicle-service-local-dev.yml,5\6\5688180ec4276552bec474b419236b1d0811d221
+j
+:config-server/src/main/resources/application-local-dev.yml,a\d\ada9e2ec7c307478767fa1c00a5acc4a9cea5f50

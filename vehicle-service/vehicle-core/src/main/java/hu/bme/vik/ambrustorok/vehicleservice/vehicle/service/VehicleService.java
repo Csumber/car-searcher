@@ -3,6 +3,8 @@ package hu.bme.vik.ambrustorok.vehicleservice.vehicle.service;
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
+import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleRegisterDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
@@ -30,6 +32,7 @@ public class VehicleService {
 
     private VehicleRepository repository;
     private EngineRepository engineRepository;
+    private OptionRepository optionRepository;
 
     @PostConstruct
     public void mock() {
@@ -58,13 +61,21 @@ public class VehicleService {
         entity2.setWidth(2.2);
         entity2.setWarranty(3);
 
-        List<EngineEntity> engines = engineRepository.findAll();
+        repository.save(entity1);
+        repository.save(entity2);
 
+        List<EngineEntity> engines = engineRepository.findAll();
         entity1.setEngines(new HashSet<>(engines));
         entity2.setEngines(new HashSet<>(engines));
         engines.forEach(engine -> engine.setVehicles(Stream.of(entity1,entity2).collect(Collectors.toSet())));
 
+        List<OptionEntity> options = optionRepository.findAll();
+        entity1.setOptions(new HashSet<>(options));
+        entity2.setOptions(new HashSet<>(options));
+        options.forEach(option -> option.setVehicles(Stream.of(entity1,entity2).collect(Collectors.toSet())));
+
         engineRepository.saveAll(engines);
+        optionRepository.saveAll(options);
         repository.save(entity1);
         repository.save(entity2);
     }
@@ -75,8 +86,7 @@ public class VehicleService {
     }
 
     public Page<VehicleEntity> findAll(Pageable pageable) {
-//        return repository.findAll(pageable);
-        List<VehicleEntity> list = repository.fetchAllJoinEngines();
+        List<VehicleEntity> list = repository.fetchAllWithJoins();
         return new PageImpl<>(list, pageable, list.size());
     }
 
