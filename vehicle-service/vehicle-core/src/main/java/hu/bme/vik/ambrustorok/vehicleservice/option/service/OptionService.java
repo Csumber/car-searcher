@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -27,16 +28,23 @@ public class OptionService {
         OptionEntity entity1 = new OptionEntity();
         OptionEntity entity2 = new OptionEntity();
 
+        entity1.setId(UUID.fromString("61638f8c-8e62-4a76-8fab-4e1650f9e1cb"));
         entity1.setName("AC");
         entity1.setValue("Automatic");
         entity1.setPrice(1500);
-        repository.save(entity1);
 
+        entity2.setId(UUID.fromString("c885829c-8c4b-4413-96f6-34c3d9f70ab5"));
         entity2.setName("AC");
         entity2.setValue("Manual");
         entity2.setPrice(500);
-        repository.save(entity2);
 
+        repository.save(entity1);
+        repository.save(entity2);
+    }
+
+    @PreDestroy
+    public void reset() {
+        repository.deleteAll();
     }
 
     public Page<OptionEntity> findAll(Pageable pageable) {

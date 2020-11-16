@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -28,21 +29,29 @@ public class EngineService {
         EngineEntity entity1 = new EngineEntity();
         EngineEntity entity2 = new EngineEntity();
 
+        entity1.setId(UUID.fromString("9f590248-56f7-4718-9bf6-b4fe569bdbc4"));
         entity1.setConsumption(69.420);
         entity1.setCylinderCapacity(1955);
         entity1.setFuel(EFuel.Diesel);
         entity1.setTransmission(ETransmission.Manual);
         entity1.setHorsepower(500);
         entity1.setPrice(1500);
-        repository.save(entity1);
 
+        entity2.setId(UUID.fromString("50743572-a573-4cd0-91b4-28046e8be762"));
         entity2.setConsumption(50);
         entity2.setCylinderCapacity(2455);
         entity2.setFuel(EFuel.Gasoline);
         entity2.setTransmission(ETransmission.Automatic);
         entity2.setHorsepower(650);
         entity2.setPrice(2000);
+
+        repository.save(entity1);
         repository.save(entity2);
+    }
+
+    @PreDestroy
+    public void reset() {
+        repository.deleteAll();
     }
 
     public Page<EngineEntity> findAll(Pageable pageable) {
@@ -78,6 +87,7 @@ public class EngineService {
         return repository.save(entity);
 
     }
+
     public boolean delete(UUID id) {
         boolean exists = repository.existsById(id);
         if (exists) {

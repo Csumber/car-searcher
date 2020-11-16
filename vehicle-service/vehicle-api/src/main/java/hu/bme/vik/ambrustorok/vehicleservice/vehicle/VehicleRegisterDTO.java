@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class VehicleRegisterDTO {
 
-    private double basePrice;
+    private double price;
 
     private int numberOfDoors;
 
@@ -27,8 +27,4 @@ public class VehicleRegisterDTO {
     private double width;
 
     private int warranty;
-//
-//    Set<EngineDTO> engines;
-//
-//    Set<OptionDTO> options;
 }

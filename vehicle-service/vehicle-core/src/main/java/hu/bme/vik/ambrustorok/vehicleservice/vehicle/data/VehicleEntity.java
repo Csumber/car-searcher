@@ -22,7 +22,7 @@ public class VehicleEntity {
     private UUID id = UUID.randomUUID();
 
     @Column(nullable = false)
-    private double basePrice;
+    private double price;
 
     @Column(nullable = false)
     private int numberOfDoors;

@@ -1,12 +1,15 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
+import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -19,7 +22,7 @@ public class VehicleDTO {
 
     @NotNull
     @NotEmpty
-    private double basePrice;
+    private double price;
 
     @NotNull
     @NotEmpty
@@ -52,12 +55,12 @@ public class VehicleDTO {
     @NotNull
     @NotEmpty
     private int warranty;
-//
-//    @NotNull
-//    @NotEmpty
-//    Set<EngineDTO> engines;
-//
-//    @NotNull
-//    @NotEmpty
-//    Set<OptionDTO> options;
+
+    @NotNull
+    @NotEmpty
+    Set<EngineDTO> engines;
+
+    @NotNull
+    @NotEmpty
+    Set<OptionDTO> options;
 }

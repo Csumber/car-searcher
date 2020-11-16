@@ -1,14 +1,25 @@
 spring:
+  h2:
+    console:
+      enabled: true
   datasource:
-    url: jdbc:h2:mem:.
+    url: jdbc:h2:file:~/CarDB;FILE_LOCK=FS;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
     password: password
+    initialization-mode: always
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show_sql: true
+    use_sql_comments: true
+    format_sql: true
 
 server:
   port: 8088
 
-cs:
-  security:
-    client-secret: f3c2557d-ab7c-4b9f-a287-9e5b9b5eb599
-    client-id: vehicle-service
+
