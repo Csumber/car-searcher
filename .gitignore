@@ -26,6 +26,8 @@ hs_err_pid*
 /car-service/target/
 /auth-server/target/
 
+target/
+
 /common/common.iml/
 /api-gateway/api-gateway.iml/
 /car-service/car-service.iml/

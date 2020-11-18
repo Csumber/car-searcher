@@ -2,6 +2,8 @@ package hu.bme.vik.ambrustorok.searchservice.controller;
 
 import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineServiceIF;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleServiceIF;
 import lombok.AllArgsConstructor;
@@ -22,6 +24,7 @@ public class SearchController {
 
     private VehicleServiceIF vehicleServiceIF;
     private EngineServiceIF engineServiceIF;
+    private OptionServiceIF optionServiceIF;
 
     @GetMapping
     public ResponseEntity<String> Helo() {
@@ -46,6 +49,16 @@ public class SearchController {
     @GetMapping("/engine")
     public ResponseEntity<Page<EngineDTO>> findAllEngines(Pageable pageable) {
         return engineServiceIF.findAll(pageable);
+    }
+
+    @GetMapping("engine/{id}")
+    public ResponseEntity<OptionDTO> finOneOption(@PathVariable UUID id) {
+        return optionServiceIF.findOne(id);
+    }
+
+    @GetMapping("/engine")
+    public ResponseEntity<Page<OptionDTO>> findAllOptions(Pageable pageable) {
+        return optionServiceIF.findAll(pageable);
     }
 
 }
