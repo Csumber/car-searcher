@@ -2,6 +2,7 @@ package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 
 import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.option.OptionRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.service.OptionService;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/option")
 @AllArgsConstructor
-public class OptionController {
+public class OptionController implements OptionServiceIF {
 
     private OptionService service;
     private OptionMapper mapper;

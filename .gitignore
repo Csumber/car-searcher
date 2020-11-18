@@ -18,17 +18,10 @@
 *.zip
 *.tar.gz
 *.rar
+*.iml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/common/target/
-/api-gateway/target/
-/car-service/target/
-/auth-server/target/
 
-/common/common.iml/
-/api-gateway/api-gateway.iml/
-/car-service/car-service.iml/
-/auth-server/auth-server.iml/
-
-/.idea
+target/
+.idea/

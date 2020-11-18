@@ -2,6 +2,8 @@ package hu.bme.vik.ambrustorok.searchservice.controller;
 
 import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineServiceIF;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleDTO;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleServiceIF;
 import lombok.AllArgsConstructor;
@@ -20,12 +22,13 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SearchController {
 
-    private VehicleServiceIF vehicleServiceIF;
-    private EngineServiceIF engineServiceIF;
+    private final VehicleServiceIF vehicleServiceIF;
+    private final EngineServiceIF engineServiceIF;
+    private final OptionServiceIF optionServiceIF;
 
     @GetMapping
-    public ResponseEntity<String> Helo() {
-        return ResponseEntity.ok("Helo");
+    public ResponseEntity<String> Hello() {
+        return ResponseEntity.ok("Hello");
     }
 
     @GetMapping("vehicle/{id}")
@@ -46,6 +49,15 @@ public class SearchController {
     @GetMapping("/engine")
     public ResponseEntity<Page<EngineDTO>> findAllEngines(Pageable pageable) {
         return engineServiceIF.findAll(pageable);
+    }
+    @GetMapping("option/{id}")
+    public ResponseEntity<OptionDTO> finOneOption(@PathVariable UUID id) {
+        return optionServiceIF.findOne(id);
+    }
+
+    @GetMapping("/option")
+    public ResponseEntity<Page<OptionDTO>> findAllOptions(Pageable pageable) {
+        return optionServiceIF.findAll(pageable);
     }
 
 }
