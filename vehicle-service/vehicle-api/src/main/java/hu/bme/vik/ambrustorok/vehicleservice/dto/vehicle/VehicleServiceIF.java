@@ -1,12 +1,11 @@
-package hu.bme.vik.ambrustorok.vehicleservice.vehicle;
+package hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
 import java.util.UUID;
 
 @FeignClient(
@@ -14,9 +13,9 @@ import java.util.UUID;
         url = "localhost:8088/vehicle")
 public interface VehicleServiceIF {
     @GetMapping("{id}")
-    ResponseEntity<VehicleDTO> findOne(@PathVariable UUID id);
+    ResponseEntity<VehicleResponse> findOne(@PathVariable UUID id);
 
     @GetMapping
-    ResponseEntity<Page<VehicleDTO>> findAll(Pageable pageable);
+    ResponseEntity<List<VehicleResponse>> findAll();
 
 }

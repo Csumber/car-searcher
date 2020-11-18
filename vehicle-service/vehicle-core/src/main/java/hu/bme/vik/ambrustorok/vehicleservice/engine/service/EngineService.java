@@ -2,18 +2,17 @@ package hu.bme.vik.ambrustorok.vehicleservice.engine.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EFuel;
 import hu.bme.vik.ambrustorok.vehicleservice.common.ETransmission;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -54,15 +53,15 @@ public class EngineService {
         repository.deleteAll();
     }
 
-    public Page<EngineEntity> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+    public List<EngineEntity> findAll() {
+        return repository.findAll();
     }
 
     public Optional<EngineEntity> findOne(UUID id) {
         return repository.findById(id);
     }
 
-    public EngineEntity create(EngineRegisterDTO dto) {
+    public EngineEntity create(EngineRequest dto) {
         log.debug("Creating new Engine {}", dto);
 
         EngineEntity entity = new EngineEntity();
@@ -76,7 +75,7 @@ public class EngineService {
         return repository.save(entity);
     }
 
-    public EngineEntity update(UUID id, EngineDTO dto) {
+    public EngineEntity update(UUID id, EngineResponse dto) {
         EngineEntity entity = repository.getOne(id);
         entity.setConsumption(dto.getConsumption());
         entity.setCylinderCapacity(dto.getCylinderCapacity());

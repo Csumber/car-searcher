@@ -22,12 +22,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/common/target/
-/api-gateway/target/
-/car-service/target/
-/auth-server/target/
 
 target/
+<<<<<<< HEAD
 
 /.idea
 .idea
+=======
+.idea/
+>>>>>>> 3dad08e25e2fbdf2571680ee3d65a085abf33ca1

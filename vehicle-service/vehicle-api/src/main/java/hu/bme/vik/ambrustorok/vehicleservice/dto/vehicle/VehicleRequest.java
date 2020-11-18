@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice.vehicle;
+package hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VehicleRegisterDTO {
+public class VehicleRequest {
 
     private double price;
 

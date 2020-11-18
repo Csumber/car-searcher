@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice.option;
+package hu.bme.vik.ambrustorok.vehicleservice.dto.option;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OptionDTO {
+public class OptionResponse {
 
     @NotNull
     private UUID id;

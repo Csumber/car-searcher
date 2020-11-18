@@ -1,19 +1,19 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleRegisterDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleServiceIF;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.service.VehicleService;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/vehicle")
@@ -24,12 +24,12 @@ public class VehicleController implements VehicleServiceIF {
     private VehicleMapper mapper;
 
     @GetMapping
-    public ResponseEntity<Page<VehicleDTO>> findAll(Pageable pageable) {
-        return ResponseEntity.ok(service.findAll(pageable).map(mapper::EntityToDTO));
+    public ResponseEntity<List<VehicleResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll().stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<VehicleDTO> findOne(@PathVariable UUID id) {
+    public ResponseEntity<VehicleResponse> findOne(@PathVariable UUID id) {
         return service
                 .findOne(id)
                 .map(entity -> ResponseEntity.ok(mapper.EntityToDTO(entity)))
@@ -37,7 +37,7 @@ public class VehicleController implements VehicleServiceIF {
     }
 
     @PostMapping
-    public ResponseEntity<VehicleDTO> create(@RequestBody VehicleRegisterDTO dto, UriComponentsBuilder b) {
+    public ResponseEntity<VehicleResponse> create(@RequestBody VehicleRequest dto, UriComponentsBuilder b) {
         try {
             VehicleEntity result = service.create(dto);
 
@@ -49,7 +49,7 @@ public class VehicleController implements VehicleServiceIF {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<VehicleDTO> modify(@PathVariable UUID id, @RequestBody VehicleDTO dto) {
+    public ResponseEntity<VehicleResponse> modify(@PathVariable UUID id, @RequestBody VehicleResponse dto) {
 
         try {
             VehicleEntity result = service.update(id, dto);

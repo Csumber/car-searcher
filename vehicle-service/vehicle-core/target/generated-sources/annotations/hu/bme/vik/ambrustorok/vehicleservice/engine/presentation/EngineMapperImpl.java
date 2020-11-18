@@ -1,6 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.engine.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
@@ -14,12 +14,12 @@ import org.springframework.stereotype.Component;
 public class EngineMapperImpl implements EngineMapper {
 
     @Override
-    public EngineDTO EntityToDTO(EngineEntity entity) {
+    public EngineResponse EntityToDTO(EngineEntity entity) {
         if ( entity == null ) {
             return null;
         }
 
-        EngineDTO engineDTO = new EngineDTO();
+        EngineResponse engineDTO = new EngineResponse();
 
         engineDTO.setId( entity.getId() );
         engineDTO.setConsumption( entity.getConsumption() );

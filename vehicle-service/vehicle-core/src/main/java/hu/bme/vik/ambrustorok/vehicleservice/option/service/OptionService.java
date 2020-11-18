@@ -1,17 +1,16 @@
 package hu.bme.vik.ambrustorok.vehicleservice.option.service;
 
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -47,15 +46,15 @@ public class OptionService {
         repository.deleteAll();
     }
 
-    public Page<OptionEntity> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+    public List<OptionEntity> findAll() {
+        return repository.findAll();
     }
 
     public Optional<OptionEntity> findOne(UUID id) {
         return repository.findById(id);
     }
 
-    public OptionEntity create(OptionRegisterDTO dto) {
+    public OptionEntity create(OptionRequest dto) {
         log.debug("Creating new Option {}", dto);
 
         OptionEntity entity = new OptionEntity();
@@ -66,7 +65,7 @@ public class OptionService {
         return repository.save(entity);
     }
 
-    public OptionEntity update(UUID id, OptionDTO dto) {
+    public OptionEntity update(UUID id, OptionResponse dto) {
         OptionEntity entity = repository.getOne(id);
         entity.setName((dto.getName()));
         entity.setValue(dto.getValue());
