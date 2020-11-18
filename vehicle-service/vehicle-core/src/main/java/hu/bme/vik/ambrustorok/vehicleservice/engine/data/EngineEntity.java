@@ -18,27 +18,20 @@ import java.util.UUID;
 @Setter
 public class EngineEntity {
 
-    @Id
-    private UUID id = UUID.randomUUID();
-
-    @Column(nullable = false)
-    private double consumption;
-
-    @Column(nullable = false)
-    private int cylinderCapacity;
-
-    @Column(nullable = false)
-    private EFuel fuel;
-
-    @Column(nullable = false)
-    private ETransmission transmission;
-
-    @Column(nullable = false)
-    private int horsepower;
-
-    @Column(nullable = false)
-    private double price;
-
     @ManyToMany(mappedBy = "engines")
     Set<VehicleEntity> vehicles;
+    @Id
+    private UUID id = UUID.randomUUID();
+    @Column(nullable = false)
+    private double consumption;
+    @Column(nullable = false)
+    private int cylinderCapacity;
+    @Column(nullable = false)
+    private EFuel fuel;
+    @Column(nullable = false)
+    private ETransmission transmission;
+    @Column(nullable = false)
+    private int horsepower;
+    @Column(nullable = false)
+    private double price;
 }

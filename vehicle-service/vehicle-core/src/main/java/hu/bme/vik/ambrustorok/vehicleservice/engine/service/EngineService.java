@@ -2,8 +2,8 @@ package hu.bme.vik.ambrustorok.vehicleservice.engine.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EFuel;
 import hu.bme.vik.ambrustorok.vehicleservice.common.ETransmission;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
 import lombok.AllArgsConstructor;

@@ -1,14 +1,8 @@
 package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 
-<<<<<<< HEAD
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionRegisterDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionServiceIF;
-=======
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceIF;
->>>>>>> 3dad08e25e2fbdf2571680ee3d65a085abf33ca1
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.service.OptionService;
 import lombok.AllArgsConstructor;

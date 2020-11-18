@@ -54,6 +54,7 @@ public class ApiDocsConfiguration {
 
     /**
      * A security scheme mondja meg hogy működik a security.
+     *
      * @return
      */
     private SecurityScheme securityScheme() {
@@ -69,11 +70,12 @@ public class ApiDocsConfiguration {
 
     /**
      * A security context mondja meg, mikor kell a security-t használni. Most akkor használjuk ha a végpontban nincs /public
+     *
      * @return
      */
     private SecurityContext securityContext() {
         return SecurityContext.builder()
-                .securityReferences(Collections.singletonList(new SecurityReference("spring_oauth", new AuthorizationScope[] {})))
+                .securityReferences(Collections.singletonList(new SecurityReference("spring_oauth", new AuthorizationScope[]{})))
                 .operationSelector(s -> !s.requestMappingPattern().matches(".*/public.*"))
                 .build();
     }

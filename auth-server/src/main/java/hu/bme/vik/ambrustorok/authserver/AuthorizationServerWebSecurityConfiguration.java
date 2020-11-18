@@ -19,6 +19,12 @@ import static org.springframework.security.config.Customizer.withDefaults;
  */
 public class AuthorizationServerWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+    private static RequestMatcher tokenEndpointMatcher() {
+        return new AntPathRequestMatcher(
+                OAuth2TokenEndpointFilter.DEFAULT_TOKEN_ENDPOINT_URI,
+                HttpMethod.POST.name());
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         OAuth2AuthorizationServerConfigurer<HttpSecurity> authorizationServerConfigurer =
@@ -37,12 +43,6 @@ public class AuthorizationServerWebSecurityConfiguration extends WebSecurityConf
                 .formLogin(withDefaults())
                 .csrf(csrf -> csrf.ignoringRequestMatchers(tokenEndpointMatcher()))
                 .apply(authorizationServerConfigurer);
-    }
-
-    private static RequestMatcher tokenEndpointMatcher() {
-        return new AntPathRequestMatcher(
-                OAuth2TokenEndpointFilter.DEFAULT_TOKEN_ENDPOINT_URI,
-                HttpMethod.POST.name());
     }
 
 }

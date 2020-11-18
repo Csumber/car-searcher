@@ -1,7 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.service.VehicleService;

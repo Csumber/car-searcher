@@ -18,40 +18,29 @@ import java.util.UUID;
 @Setter
 public class VehicleEntity {
 
-    @Id
-    private UUID id = UUID.randomUUID();
-
-    @Column(nullable = false)
-    private double price;
-
-    @Column(nullable = false)
-    private int numberOfDoors;
-
-    @Column(nullable = false)
-    private double length;
-
-    @Column(nullable = false)
-    private String manufacturer;
-
-    @Column(nullable = false)
-    private String model;
-
-    @Column(nullable = false)
-    private EStyle style;
-
-    @Column(nullable = false)
-    private double weight;
-
-    @Column(nullable = false)
-    private double width;
-
-    @Column(nullable = false)
-    private int warranty;
-
     @ManyToMany
     Set<EngineEntity> engines;
-
     @ManyToMany
     Set<OptionEntity> options;
+    @Id
+    private UUID id = UUID.randomUUID();
+    @Column(nullable = false)
+    private double price;
+    @Column(nullable = false)
+    private int numberOfDoors;
+    @Column(nullable = false)
+    private double length;
+    @Column(nullable = false)
+    private String manufacturer;
+    @Column(nullable = false)
+    private String model;
+    @Column(nullable = false)
+    private EStyle style;
+    @Column(nullable = false)
+    private double weight;
+    @Column(nullable = false)
+    private double width;
+    @Column(nullable = false)
+    private int warranty;
 
 }

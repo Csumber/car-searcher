@@ -24,10 +24,4 @@
 hs_err_pid*
 
 target/
-<<<<<<< HEAD
-
-/.idea
-.idea
-=======
 .idea/
->>>>>>> 3dad08e25e2fbdf2571680ee3d65a085abf33ca1

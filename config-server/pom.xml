@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-		<groupId>hu.bme.vik.ambrustorok</groupId>
-		<artifactId>car-searcher</artifactId>
-		<version>1.0.0</version>
+        <groupId>hu.bme.vik.ambrustorok</groupId>
+        <artifactId>car-searcher</artifactId>
+        <version>1.0.0</version>
     </parent>
 
-	<artifactId>config-server</artifactId>
-	<packaging>jar</packaging>
+    <artifactId>config-server</artifactId>
+    <packaging>jar</packaging>
 
-	<dependencies>
-		<!-- Every service providing a REST API should use the WEB starter -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+    <dependencies>
+        <!-- Every service providing a REST API should use the WEB starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-		<!-- A kozponti konfiguracios szerver futtatasahoz szukseges dependencia -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
-	</dependencies>
+        <!-- A kozponti konfiguracios szerver futtatasahoz szukseges dependencia -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+    </dependencies>
 
-	<!-- Runnable services should use the following plugin -->
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <!-- Runnable services should use the following plugin -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -1,12 +1,12 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionRepository;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleRepository;
 import lombok.AllArgsConstructor;
@@ -64,12 +64,12 @@ public class VehicleService {
         List<EngineEntity> engines = engineRepository.findAll();
         entity1.setEngines(new HashSet<>(engines));
         entity2.setEngines(new HashSet<>(engines));
-        engines.forEach(engine -> engine.setVehicles(Stream.of(entity1,entity2).collect(Collectors.toSet())));
+        engines.forEach(engine -> engine.setVehicles(Stream.of(entity1, entity2).collect(Collectors.toSet())));
 
         List<OptionEntity> options = optionRepository.findAll();
         entity1.setOptions(new HashSet<>(options));
         entity2.setOptions(new HashSet<>(options));
-        options.forEach(option -> option.setVehicles(Stream.of(entity1,entity2).collect(Collectors.toSet())));
+        options.forEach(option -> option.setVehicles(Stream.of(entity1, entity2).collect(Collectors.toSet())));
 
         engineRepository.saveAll(engines);
         optionRepository.saveAll(options);
