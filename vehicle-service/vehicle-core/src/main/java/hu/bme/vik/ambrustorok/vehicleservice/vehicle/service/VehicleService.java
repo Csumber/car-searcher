@@ -5,15 +5,12 @@ import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionRepository;
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.VehicleRegisterDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -85,16 +82,15 @@ public class VehicleService {
         repository.deleteAll();
     }
 
-    public Page<VehicleEntity> findAll(Pageable pageable) {
-        List<VehicleEntity> list = repository.fetchAllWithJoins();
-        return new PageImpl<>(list, pageable, list.size());
+    public List<VehicleEntity> findAll() {
+        return repository.findAll();
     }
 
     public Optional<VehicleEntity> findOne(UUID id) {
         return repository.findById(id);
     }
 
-    public VehicleEntity create(VehicleRegisterDTO dto) {
+    public VehicleEntity create(VehicleRequest dto) {
         log.debug("Creating new Vehicle {}", dto);
 
         VehicleEntity entity = new VehicleEntity();
@@ -112,7 +108,7 @@ public class VehicleService {
         return repository.save(entity);
     }
 
-    public VehicleEntity update(UUID id, VehicleDTO dto) {
+    public VehicleEntity update(UUID id, VehicleResponse dto) {
         VehicleEntity entity = repository.getOne(id);
         entity.setPrice(dto.getPrice());
         entity.setNumberOfDoors(dto.getNumberOfDoors());

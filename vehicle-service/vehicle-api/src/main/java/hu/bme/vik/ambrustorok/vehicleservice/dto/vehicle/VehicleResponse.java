@@ -1,8 +1,8 @@
-package hu.bme.vik.ambrustorok.vehicleservice.vehicle;
+package hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionDTO;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VehicleDTO {
+public class VehicleResponse {
 
     @NotNull
     private UUID id;
@@ -58,9 +58,9 @@ public class VehicleDTO {
 
     @NotNull
     @NotEmpty
-    Set<EngineDTO> engines;
+    Set<EngineResponse> engines;
 
     @NotNull
     @NotEmpty
-    Set<OptionDTO> options;
+    Set<OptionResponse> options;
 }

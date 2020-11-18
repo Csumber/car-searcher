@@ -1,19 +1,19 @@
 package hu.bme.vik.ambrustorok.vehicleservice.engine.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineRegisterDTO;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.EngineServiceIF;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.service.EngineService;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/engine")
@@ -24,12 +24,12 @@ public class EngineController implements EngineServiceIF {
     private EngineMapper mapper;
 
     @GetMapping
-    public ResponseEntity<Page<EngineDTO>> findAll(Pageable pageable) {
-        return ResponseEntity.ok(service.findAll(pageable).map(mapper::EntityToDTO));
+    public ResponseEntity<List<EngineResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll().stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EngineDTO> findOne(@PathVariable UUID id) {
+    public ResponseEntity<EngineResponse> findOne(@PathVariable UUID id) {
         return service
                 .findOne(id)
                 .map(entity -> ResponseEntity.ok(mapper.EntityToDTO(entity)))
@@ -37,7 +37,7 @@ public class EngineController implements EngineServiceIF {
     }
 
     @PostMapping
-    public ResponseEntity<EngineDTO> create(@RequestBody EngineRegisterDTO dto, UriComponentsBuilder b) {
+    public ResponseEntity<EngineResponse> create(@RequestBody EngineRequest dto, UriComponentsBuilder b) {
         try {
             EngineEntity result = service.create(dto);
 
@@ -49,7 +49,7 @@ public class EngineController implements EngineServiceIF {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EngineDTO> modify(@PathVariable UUID id, @RequestBody EngineDTO dto) {
+    public ResponseEntity<EngineResponse> modify(@PathVariable UUID id, @RequestBody EngineResponse dto) {
 
         try {
             EngineEntity result = service.update(id, dto);
