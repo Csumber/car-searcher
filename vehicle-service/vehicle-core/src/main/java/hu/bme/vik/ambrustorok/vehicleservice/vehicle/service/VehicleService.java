@@ -77,11 +77,13 @@ public class VehicleService {
         List<EngineEntity> engines = engineRepository.findAll();
         entity1.setEngines(new HashSet<>(engines));
         entity2.setEngines(new HashSet<>(engines));
+        entity3.setEngines(new HashSet<>(engines));
         engines.forEach(engine -> engine.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
 
         List<OptionEntity> options = optionRepository.findAll();
         entity1.setOptions(new HashSet<>(options));
         entity2.setOptions(new HashSet<>(options));
+        entity3.setOptions(new HashSet<>(options));
         options.forEach(option -> option.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
 
         engineRepository.saveAll(engines);

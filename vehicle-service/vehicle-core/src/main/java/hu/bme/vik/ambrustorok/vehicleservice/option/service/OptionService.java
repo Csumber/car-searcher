@@ -2,6 +2,7 @@ package hu.bme.vik.ambrustorok.vehicleservice.option.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionRepository;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -26,6 +28,7 @@ public class OptionService {
     public void mock() {
         OptionEntity entity1 = new OptionEntity();
         OptionEntity entity2 = new OptionEntity();
+        OptionEntity entity3 = new OptionEntity();
 
         entity1.setId(UUID.fromString("61638f8c-8e62-4a76-8fab-4e1650f9e1cb"));
         entity1.setName("AC");
@@ -37,8 +40,14 @@ public class OptionService {
         entity2.setValue("Manual");
         entity2.setPrice(500);
 
+        entity3.setId(UUID.fromString("c999999c-8c4b-4413-96f6-34c3d9f70ab5"));
+        entity3.setName("AC");
+        entity3.setValue("Manual");
+        entity3.setPrice(200);
+
         repository.save(entity1);
         repository.save(entity2);
+        repository.save(entity3);
     }
 
     @PreDestroy
@@ -81,5 +90,10 @@ public class OptionService {
             repository.deleteById(id);
         }
         return exists;
+    }
+
+    public List<OptionResponseNoPrice> findAllOptionsWithoutPrice() {
+        var list = repository.findAllOptionsWithoutPrice();
+        return list.stream().map(optionResponse -> new OptionResponseNoPrice(optionResponse.getName(), optionResponse.getValue())).distinct().collect(Collectors.toList());
     }
 }
