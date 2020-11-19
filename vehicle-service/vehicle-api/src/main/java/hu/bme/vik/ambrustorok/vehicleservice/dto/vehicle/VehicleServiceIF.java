@@ -18,4 +18,7 @@ public interface VehicleServiceIF {
     @GetMapping
     ResponseEntity<List<VehicleResponse>> findAll();
 
+    @GetMapping("manufacturers")
+    ResponseEntity<List<String>> findManufacturers();
+
 }

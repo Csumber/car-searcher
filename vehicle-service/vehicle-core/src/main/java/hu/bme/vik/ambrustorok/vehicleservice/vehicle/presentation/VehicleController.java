@@ -28,6 +28,16 @@ public class VehicleController implements VehicleServiceIF {
         return ResponseEntity.ok(service.findAll().stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
+    @GetMapping("manufacturers")
+    public ResponseEntity<List<String>> findManufacturers() {
+        return ResponseEntity.ok(service.findManufacturers());
+    }
+
+    @GetMapping("manufacturers/{manufacturer}")
+    public ResponseEntity<List<String>> findModelsByManufacturer(@PathVariable String manufacturer) {
+        return ResponseEntity.ok(service.findModelsByManufacturer(manufacturer));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<VehicleResponse> findOne(@PathVariable UUID id) {
         return service

@@ -3,9 +3,9 @@ package hu.bme.vik.ambrustorok.searchservice.controller;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceIF;
-import hu.bme.vik.ambrustorok.vehicleservice.option.OptionServiceIF;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,6 +59,5 @@ public class SearchController {
     public ResponseEntity<List<OptionResponse>> findAllOptions() {
         return optionServiceIF.findAll();
     }
-
 
 }

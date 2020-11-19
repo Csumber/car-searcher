@@ -35,6 +35,7 @@ public class VehicleService {
     public void mock() {
         VehicleEntity entity1 = new VehicleEntity();
         VehicleEntity entity2 = new VehicleEntity();
+        VehicleEntity entity3 = new VehicleEntity();
 
         entity1.setId(UUID.fromString("6060fdbb-919c-4157-bc5a-c5ca858a44ae"));
         entity1.setPrice(5000);
@@ -58,23 +59,36 @@ public class VehicleService {
         entity2.setWidth(2.2);
         entity2.setWarranty(3);
 
+        entity3.setId(UUID.fromString("a8d4eab0-9cd4-4442-ae85-85f439136015"));
+        entity3.setPrice(7500);
+        entity3.setNumberOfDoors(5);
+        entity3.setLength(2);
+        entity3.setManufacturer("Audi");
+        entity3.setModel("A7");
+        entity3.setStyle(EStyle.Coupe);
+        entity3.setWeight(2700);
+        entity3.setWidth(2.2);
+        entity3.setWarranty(3);
+
         repository.save(entity1);
         repository.save(entity2);
+        repository.save(entity3);
 
         List<EngineEntity> engines = engineRepository.findAll();
         entity1.setEngines(new HashSet<>(engines));
         entity2.setEngines(new HashSet<>(engines));
-        engines.forEach(engine -> engine.setVehicles(Stream.of(entity1, entity2).collect(Collectors.toSet())));
+        engines.forEach(engine -> engine.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
 
         List<OptionEntity> options = optionRepository.findAll();
         entity1.setOptions(new HashSet<>(options));
         entity2.setOptions(new HashSet<>(options));
-        options.forEach(option -> option.setVehicles(Stream.of(entity1, entity2).collect(Collectors.toSet())));
+        options.forEach(option -> option.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
 
         engineRepository.saveAll(engines);
         optionRepository.saveAll(options);
         repository.save(entity1);
         repository.save(entity2);
+        repository.save(entity3);
     }
 
     @PreDestroy
@@ -84,6 +98,14 @@ public class VehicleService {
 
     public List<VehicleEntity> findAll() {
         return repository.findAll();
+    }
+
+    public List<String> findManufacturers() {
+        return repository.findManufacturers();
+    }
+
+    public List<String> findModelsByManufacturer(String manufacturer) {
+        return repository.findModelsByManufacturer(manufacturer);
     }
 
     public Optional<VehicleEntity> findOne(UUID id) {
@@ -132,4 +154,6 @@ public class VehicleService {
         }
         return exists;
     }
+
+
 }

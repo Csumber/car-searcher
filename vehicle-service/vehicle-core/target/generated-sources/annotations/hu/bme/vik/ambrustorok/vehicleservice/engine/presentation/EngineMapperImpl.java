@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-11-16T12:30:02+0100",
+    date = "2020-11-19T01:31:31+0100",
     comments = "version: 1.4.0.Final, compiler: javac, environment: Java 14 (Oracle Corporation)"
 )
 @Component
@@ -19,16 +19,16 @@ public class EngineMapperImpl implements EngineMapper {
             return null;
         }
 
-        EngineResponse engineDTO = new EngineResponse();
+        EngineResponse engineResponse = new EngineResponse();
 
-        engineDTO.setId( entity.getId() );
-        engineDTO.setConsumption( entity.getConsumption() );
-        engineDTO.setCylinderCapacity( entity.getCylinderCapacity() );
-        engineDTO.setFuel( entity.getFuel() );
-        engineDTO.setTransmission( entity.getTransmission() );
-        engineDTO.setHorsepower( entity.getHorsepower() );
-        engineDTO.setPrice( entity.getPrice() );
+        engineResponse.setId( entity.getId() );
+        engineResponse.setConsumption( entity.getConsumption() );
+        engineResponse.setCylinderCapacity( entity.getCylinderCapacity() );
+        engineResponse.setFuel( entity.getFuel() );
+        engineResponse.setTransmission( entity.getTransmission() );
+        engineResponse.setHorsepower( entity.getHorsepower() );
+        engineResponse.setPrice( entity.getPrice() );
 
-        return engineDTO;
+        return engineResponse;
     }
 }
