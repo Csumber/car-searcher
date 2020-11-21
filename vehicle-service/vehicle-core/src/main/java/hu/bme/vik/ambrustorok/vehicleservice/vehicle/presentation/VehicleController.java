@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.presentation;
 
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceIF;
@@ -36,6 +37,11 @@ public class VehicleController implements VehicleServiceIF {
     @GetMapping("manufacturers/{manufacturer}")
     public ResponseEntity<List<String>> findModelsByManufacturer(@PathVariable String manufacturer) {
         return ResponseEntity.ok(service.findModelsByManufacturer(manufacturer));
+    }
+
+    @GetMapping("manufacturers/{manufacturer}/options")
+    public ResponseEntity<List<OptionResponseNoPrice>> findOptionsByManufacturer(@PathVariable String manufacturer) {
+        return ResponseEntity.ok(service.findOptionsByManufacturer(manufacturer));
     }
 
     @GetMapping("/{id}")

@@ -1,6 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
@@ -109,6 +110,10 @@ public class VehicleService {
     public List<String> findModelsByManufacturer(String manufacturer) {
         return repository.findModelsByManufacturer(manufacturer);
     }
+    public List<OptionResponseNoPrice> findOptionsByManufacturer(String manufacturer) {
+        var list = repository.findOptionsByManufacturer(manufacturer);
+        return list.stream().map(optionResponse -> new OptionResponseNoPrice(optionResponse.getName(), optionResponse.getValue())).distinct().collect(Collectors.toList());
+    }
 
     public Optional<VehicleEntity> findOne(UUID id) {
         return repository.findById(id);
@@ -143,7 +148,6 @@ public class VehicleService {
         entity.setWeight(dto.getWeight());
         entity.setWidth(dto.getWidth());
         entity.setWarranty(dto.getWarranty());
-
 
         return repository.save(entity);
 
