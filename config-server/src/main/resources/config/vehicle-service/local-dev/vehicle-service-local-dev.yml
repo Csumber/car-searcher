@@ -4,7 +4,7 @@ spring:
       enabled: true
   datasource:
     url: jdbc:h2:file:~/CarDB;FILE_LOCK=FS;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
+    driverClassName: org.h2.Driver
     username: sa
     password: password
     initialization-mode: always

@@ -1,26 +1,41 @@
 package hu.bme.vik.ambrustorok.authserver;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.keys.KeyManager;
 import org.springframework.security.crypto.keys.StaticKeyGeneratingKeyManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.server.authorization.client.InMemoryRegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import javax.sql.DataSource;
+
 @EnableWebSecurity
 public class AuthorizationServerConfig {
+
+    @Value("${spring.datasource.driverClassName}")
+    private String jdbcDriverClassName;
+    @Value("${spring.datasource.url}")
+    private String jdbcURl;
+    @Value("${spring.datasource.username}")
+    private String dbUsername;
+    @Value("${spring.datasource.password}")
+    private String dbPassword;
 
     @Bean
     public WebSecurityConfigurer<WebSecurity> defaultOAuth2AuthorizationServerSecurity() {
@@ -91,11 +106,46 @@ public class AuthorizationServerConfig {
 
     @Bean
     public UserDetailsService users() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user);
+//        UserDetails user = User.withDefaultPasswordEncoder()
+//                .username("user")
+//                .password("password")
+//                .roles("USER")
+//                .build();
+//        UserDetails admin = User.withDefaultPasswordEncoder()
+//                .username("admin")
+//                .password("admin")
+//                .roles("ADMIN", "USER")
+//                .build();
+//        return new InMemoryUserDetailsManager(user, admin);
+        return userDetailsService();
     }
+
+    @Bean
+    public JdbcDaoImpl userDetailsService() {
+        JdbcDaoImpl jdbcDaoImpl = new JdbcDaoImpl();
+        jdbcDaoImpl.setDataSource(dataSource());
+        return jdbcDaoImpl;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder;
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(jdbcDriverClassName);
+        dataSource.setUrl(jdbcURl);
+        dataSource.setUsername(dbUsername);
+        dataSource.setPassword(dbPassword);
+        return dataSource;
+    }
+
+    @Autowired
+    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception
+    {
+        auth.jdbcAuthentication().dataSource(dataSource()).passwordEncoder(passwordEncoder());
+                    }
 }
