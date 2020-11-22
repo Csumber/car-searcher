@@ -13,8 +13,9 @@ public class VehicleServiceWebSecurityConfig extends WebSecurityConfigurerAdapte
         http
                 .authorizeRequests()
                 .antMatchers("/swagger-resources/**", "/swagger-ui/", "/webjars/springfox-swagger-ui/**", "/v2/api-docs**", "/swagger**").permitAll()
-                .antMatchers("/vehicle-api/vehicle/**", "/vehicle-api/engine/**").hasRole("ADMIN")
-                .antMatchers("/vehicle-api/option/**").hasRole("USER")
+                .antMatchers("/vehicle/**").hasRole("ADMIN")
+                .antMatchers("/option/**").hasAnyRole("ADMIN", "USER", "MANUFACTURER")
+                .antMatchers("/engine/**").permitAll()
                 .anyRequest().authenticated()
                 .and().oauth2ResourceServer().jwt();
     }

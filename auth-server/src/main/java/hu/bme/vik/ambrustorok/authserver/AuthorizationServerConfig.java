@@ -2,7 +2,9 @@ package hu.bme.vik.ambrustorok.authserver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
@@ -106,17 +108,6 @@ public class AuthorizationServerConfig {
 
     @Bean
     public UserDetailsService users() {
-//        UserDetails user = User.withDefaultPasswordEncoder()
-//                .username("user")
-//                .password("password")
-//                .roles("USER")
-//                .build();
-//        UserDetails admin = User.withDefaultPasswordEncoder()
-//                .username("admin")
-//                .password("admin")
-//                .roles("ADMIN", "USER")
-//                .build();
-//        return new InMemoryUserDetailsManager(user, admin);
         return userDetailsService();
     }
 
@@ -124,13 +115,15 @@ public class AuthorizationServerConfig {
     public JdbcDaoImpl userDetailsService() {
         JdbcDaoImpl jdbcDaoImpl = new JdbcDaoImpl();
         jdbcDaoImpl.setDataSource(dataSource());
+        jdbcDaoImpl.setEnableGroups(false);
+        jdbcDaoImpl.setEnableAuthorities(true);
+        jdbcDaoImpl.setMessageSource(messageSource());
         return jdbcDaoImpl;
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        return passwordEncoder;
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
@@ -144,8 +137,20 @@ public class AuthorizationServerConfig {
     }
 
     @Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception
-    {
-        auth.jdbcAuthentication().dataSource(dataSource()).passwordEncoder(passwordEncoder());
-                    }
+    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .jdbcAuthentication()
+                .dataSource(dataSource()).passwordEncoder(passwordEncoder());
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource
+                = new ReloadableResourceBundleMessageSource();
+
+        messageSource.setBasename("classpath:messages");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+
 }
