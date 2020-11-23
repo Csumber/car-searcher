@@ -1,7 +1,8 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
+import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
@@ -15,11 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -31,6 +28,7 @@ public class VehicleServiceImpl {
     private final VehicleRepository repository;
     private final EngineRepository engineRepository;
     private final OptionRepository optionRepository;
+    private final OptionVehicleRepository optionVehicleRepository;
 
     @PostConstruct
     public void mock() {
@@ -75,26 +73,36 @@ public class VehicleServiceImpl {
         repository.save(entity2);
         repository.save(entity3);
 
-        Collection<EngineEntity> engines = engineRepository.findAll();
-        entity1.setEngines(new HashSet<>(engines));
-        entity2.setEngines(new HashSet<>(engines));
-        entity3.setEngines(new HashSet<>(engines));
+        List<EngineEntity> engines = engineRepository.findAll();
+        entity1.setEngines(engines);
+        entity2.setEngines(engines);
+        entity3.setEngines(engines);
         engines.forEach(engine -> engine.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
 
-        Collection<OptionEntity> options = optionRepository.findAll();
-        entity1.setOptions(new HashSet<>(options));
-        entity2.setOptions(new HashSet<>(options));
-        entity3.setOptions(new HashSet<>(options));
-        options.forEach(option -> option.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
+        List<OptionEntity> options = new ArrayList<>(optionRepository.findAll());
+
+        addOption(entity1, options.get(0), 500);
+        addOption(entity2, options.get(0), 1000);
+        addOption(entity2, options.get(1), 1500);
+        addOption(entity3, options.get(1), 2000);
 
         engineRepository.saveAll(engines);
-        optionRepository.saveAll(options);
+        //optionRepository.saveAll(options);
         repository.save(entity1);
         repository.save(entity2);
         repository.save(entity3);
     }
 
-    @PreDestroy
+    public void addOption(VehicleEntity vehicleEntity, OptionEntity optionEntity, double price)
+    {
+        OptionVehicleEntity optionVehicleEntity = new OptionVehicleEntity(optionEntity, vehicleEntity);
+        optionVehicleEntity.setPrice(price);
+        vehicleEntity.getOptions().add(optionVehicleEntity);
+        optionEntity.getVehicles().add(optionVehicleEntity);
+        optionVehicleRepository.save(optionVehicleEntity);
+    }
+
+//    @PreDestroy
     public void reset() {
         repository.deleteAll();
     }
@@ -114,11 +122,14 @@ public class VehicleServiceImpl {
     public Collection<String> findModelsByManufacturer(String manufacturer) {
         return repository.findModelsByManufacturer(manufacturer);
     }
-
-    public Collection<OptionResponseNoPrice> findOptionsByManufacturer(String manufacturer) {
-        var list = repository.findOptionsByManufacturer(manufacturer);
-        return list.stream().map(optionResponse -> new OptionResponseNoPrice(optionResponse.getName(), optionResponse.getValue())).distinct().collect(Collectors.toList());
+    public Collection<VehicleEntity> fetchWithOptions() {
+        return repository.fetchWithOptions();
     }
+
+//    public Collection<OptionResponseNoPrice> findOptionsByManufacturer(String manufacturer) {
+//        var list = repository.findOptionsByManufacturer(manufacturer);
+//        return list.stream().map(optionResponse -> new OptionResponseNoPrice(optionResponse.getName(), optionResponse.getValue())).distinct().collect(Collectors.toList());
+//    }
 
     public VehicleEntity create(VehicleRequest dto) {
         log.debug("Creating new Vehicle {}", dto);

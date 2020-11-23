@@ -1,10 +1,9 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceClient;
+import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.service.VehicleServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +27,7 @@ public class VehicleController implements VehicleServiceClient {
     @GetMapping("/{id}")
     public ResponseEntity<VehicleResponse> findOne(@PathVariable UUID id) {
         Optional<VehicleEntity> entity = service.findOne(id);
-        return entity.isPresent() ?  ResponseEntity.ok(mapper.EntityToDTO(entity.get())) : ResponseEntity.notFound().build();
+        return entity.map(vehicleEntity -> ResponseEntity.ok(mapper.EntityToDTO(vehicleEntity))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping
@@ -40,16 +39,20 @@ public class VehicleController implements VehicleServiceClient {
     public ResponseEntity<Collection<String>> findManufacturers() {
         return ResponseEntity.ok(service.findManufacturers());
     }
+    @GetMapping("fetchWithOptions")
+    public ResponseEntity<Collection<VehicleEntity>> fetchWithOptions() {
+        return ResponseEntity.ok(service.fetchWithOptions());
+    }
 
     @GetMapping("manufacturers/{manufacturer}")
     public ResponseEntity<Collection<String>> findModelsByManufacturer(@PathVariable String manufacturer) {
         return ResponseEntity.ok(service.findModelsByManufacturer(manufacturer));
     }
 
-    @GetMapping("manufacturers/{manufacturer}/options")
-    public ResponseEntity<Collection<OptionResponseNoPrice>> findOptionsByManufacturer(@PathVariable String manufacturer) {
-        return ResponseEntity.ok(service.findOptionsByManufacturer(manufacturer));
-    }
+//    @GetMapping("manufacturers/{manufacturer}/options")
+//    public ResponseEntity<Collection<OptionResponseNoPrice>> findOptionsByManufacturer(@PathVariable String manufacturer) {
+//        return ResponseEntity.ok(service.findOptionsByManufacturer(manufacturer));
+//    }
 
     @PostMapping
     public ResponseEntity<VehicleResponse> create(@RequestBody VehicleRequest dto, UriComponentsBuilder b) {

@@ -24,7 +24,4 @@ public class OptionResponse {
     @NotEmpty
     private String value;
 
-    @NotNull
-    @NotEmpty
-    private double price;
 }

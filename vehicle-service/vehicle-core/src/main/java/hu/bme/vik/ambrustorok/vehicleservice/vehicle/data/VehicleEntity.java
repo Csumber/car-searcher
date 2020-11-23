@@ -1,16 +1,14 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.data;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
+import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.Set;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,9 +17,14 @@ import java.util.UUID;
 public class VehicleEntity {
 
     @ManyToMany
-    Set<EngineEntity> engines;
-    @ManyToMany
-    Set<OptionEntity> options;
+    List<EngineEntity> engines;
+    @OneToMany(
+            fetch = FetchType.EAGER,
+            mappedBy = "vehicleEntity",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    List<OptionVehicleEntity> options = new ArrayList<>();
     @Id
     private UUID id = UUID.randomUUID();
     @Column(nullable = false)
@@ -43,4 +46,25 @@ public class VehicleEntity {
     @Column(nullable = false)
     private int warranty;
 
+//    public void addOption(OptionEntity optionEntity, double price) {
+//        OptionVehicleEntity optionVehicleEntity = new OptionVehicleEntity(optionEntity, this);
+//        optionVehicleEntity.setPrice(price);
+//        options.add(optionVehicleEntity);
+//        optionEntity.getVehicles().add(optionVehicleEntity);
+//    }
+//
+//    public void removeOption(OptionEntity optionEntity) {
+//        for (Iterator<OptionVehicleEntity> iterator = options.iterator();
+//             iterator.hasNext(); ) {
+//            OptionVehicleEntity optionVehicleEntity = iterator.next();
+//
+//            if (optionVehicleEntity.getVehicleEntity().equals(this) &&
+//                    optionVehicleEntity.getOptionEntity().equals(optionEntity)) {
+//                iterator.remove();
+//                optionVehicleEntity.getOptionEntity().getVehicles().remove(optionVehicleEntity);
+//                optionVehicleEntity.setVehicleEntity(null);
+//                optionVehicleEntity.setOptionEntity(null);
+//            }
+//        }
+//    }
 }

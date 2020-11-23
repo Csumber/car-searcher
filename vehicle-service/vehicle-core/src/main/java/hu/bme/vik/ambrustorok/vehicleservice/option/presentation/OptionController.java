@@ -2,9 +2,8 @@ package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
-import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceClient;
+import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.service.OptionServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -33,11 +32,6 @@ public class OptionController implements OptionServiceClient {
     @GetMapping("/{id}")
     public ResponseEntity<OptionResponse> findOne(@PathVariable UUID id) {
         return service.findOne(id).map(engineEntity -> ResponseEntity.ok(mapper.EntityToDTO(engineEntity))).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("/noPrice")
-    public ResponseEntity<Collection<OptionResponseNoPrice>> findAllOptionsWithoutPrice() {
-        return ResponseEntity.ok(service.findAllOptionsWithoutPrice());
     }
 
     @PostMapping
