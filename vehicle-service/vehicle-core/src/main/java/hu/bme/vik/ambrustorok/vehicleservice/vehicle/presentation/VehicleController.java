@@ -3,53 +3,52 @@ package hu.bme.vik.ambrustorok.vehicleservice.vehicle.presentation;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.vehicle.service.VehicleService;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceClient;
+import hu.bme.vik.ambrustorok.vehicleservice.vehicle.service.VehicleServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/vehicle")
 @AllArgsConstructor
-public class VehicleController implements VehicleServiceIF {
+public class VehicleController implements VehicleServiceClient {
 
-    private VehicleService service;
-    private VehicleMapper mapper;
+    private final VehicleServiceImpl service;
+    private final VehicleMapper mapper;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<VehicleResponse> findOne(@PathVariable UUID id) {
+        Optional<VehicleEntity> entity = service.findOne(id);
+        return entity.isPresent() ?  ResponseEntity.ok(mapper.EntityToDTO(entity.get())) : ResponseEntity.notFound().build();
+    }
 
     @GetMapping
-    public ResponseEntity<List<VehicleResponse>> findAll() {
+    public ResponseEntity<Collection<VehicleResponse>> findAll() {
         return ResponseEntity.ok(service.findAll().stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
     @GetMapping("manufacturers")
-    public ResponseEntity<List<String>> findManufacturers() {
+    public ResponseEntity<Collection<String>> findManufacturers() {
         return ResponseEntity.ok(service.findManufacturers());
     }
 
     @GetMapping("manufacturers/{manufacturer}")
-    public ResponseEntity<List<String>> findModelsByManufacturer(@PathVariable String manufacturer) {
+    public ResponseEntity<Collection<String>> findModelsByManufacturer(@PathVariable String manufacturer) {
         return ResponseEntity.ok(service.findModelsByManufacturer(manufacturer));
     }
 
     @GetMapping("manufacturers/{manufacturer}/options")
-    public ResponseEntity<List<OptionResponseNoPrice>> findOptionsByManufacturer(@PathVariable String manufacturer) {
+    public ResponseEntity<Collection<OptionResponseNoPrice>> findOptionsByManufacturer(@PathVariable String manufacturer) {
         return ResponseEntity.ok(service.findOptionsByManufacturer(manufacturer));
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<VehicleResponse> findOne(@PathVariable UUID id) {
-        return service
-                .findOne(id)
-                .map(entity -> ResponseEntity.ok(mapper.EntityToDTO(entity)))
-                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping

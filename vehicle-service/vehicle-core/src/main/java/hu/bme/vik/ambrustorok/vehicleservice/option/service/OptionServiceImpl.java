@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class OptionService {
+public class OptionServiceImpl  {
 
     private OptionRepository repository;
 
@@ -55,7 +56,7 @@ public class OptionService {
         repository.deleteAll();
     }
 
-    public List<OptionEntity> findAll() {
+    public Collection<OptionEntity> findAll() {
         return repository.findAll();
     }
 

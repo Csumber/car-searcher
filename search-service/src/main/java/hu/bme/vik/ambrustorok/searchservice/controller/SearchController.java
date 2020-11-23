@@ -1,11 +1,11 @@
 package hu.bme.vik.ambrustorok.searchservice.controller;
 
 import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceIF;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineServiceClient;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceClient;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleServiceClient;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.UUID;
 
 @RestController
@@ -21,43 +21,38 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SearchController {
 
-    private final VehicleServiceIF vehicleServiceIF;
-    private final EngineServiceIF engineServiceIF;
-    private final OptionServiceIF optionServiceIF;
-
-    @GetMapping
-    public ResponseEntity<String> Hello() {
-        return ResponseEntity.ok("Hello");
-    }
+    private final VehicleServiceClient vehicleServiceClient;
+    private final EngineServiceClient engineServiceClient;
+    private final OptionServiceClient optionServiceClient;
 
     @GetMapping("vehicle/{id}")
     public ResponseEntity<VehicleResponse> finOneVehicle(@PathVariable UUID id) {
-        return vehicleServiceIF.findOne(id);
+        return vehicleServiceClient.findOne(id);
     }
 
     @GetMapping("/vehicle")
-    public ResponseEntity<List<VehicleResponse>> findAllVehicles() {
-        return vehicleServiceIF.findAll();
+    public ResponseEntity<Collection<VehicleResponse>> findAllVehicles() {
+        return vehicleServiceClient.findAll();
     }
 
     @GetMapping("engine/{id}")
     public ResponseEntity<EngineResponse> finOneEngine(@PathVariable UUID id) {
-        return engineServiceIF.findOne(id);
+        return engineServiceClient.findOne(id);
     }
 
     @GetMapping("/engine")
-    public ResponseEntity<List<EngineResponse>> findAllEngines() {
-        return engineServiceIF.findAll();
+    public ResponseEntity<Collection<EngineResponse>> findAllEngines() {
+        return engineServiceClient.findAll();
     }
 
     @GetMapping("option/{id}")
     public ResponseEntity<OptionResponse> finOneOption(@PathVariable UUID id) {
-        return optionServiceIF.findOne(id);
+        return optionServiceClient.findOne(id);
     }
 
     @GetMapping("/option")
-    public ResponseEntity<List<OptionResponse>> findAllOptions() {
-        return optionServiceIF.findAll();
+    public ResponseEntity<Collection<OptionResponse>> findAllOptions() {
+        return optionServiceClient.findAll();
     }
 
 }

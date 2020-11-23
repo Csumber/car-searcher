@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import java.util.List;
+import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
 @AllArgsConstructor
 @Slf4j
-public class EngineService {
+public class EngineServiceImpl {
 
     private EngineRepository repository;
 
@@ -53,7 +53,7 @@ public class EngineService {
         repository.deleteAll();
     }
 
-    public List<EngineEntity> findAll() {
+    public Collection<EngineEntity> findAll() {
         return repository.findAll();
     }
 

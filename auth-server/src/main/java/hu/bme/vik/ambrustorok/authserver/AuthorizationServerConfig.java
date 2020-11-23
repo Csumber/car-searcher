@@ -138,9 +138,12 @@ public class AuthorizationServerConfig {
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .jdbcAuthentication()
-                .dataSource(dataSource()).passwordEncoder(passwordEncoder());
+        auth.jdbcAuthentication().dataSource(dataSource())
+                .usersByUsernameQuery("select username, password, enabled"
+                        + " from users where username=?")
+                .authoritiesByUsernameQuery("select username, authority "
+                        + "from authorities where username=?")
+                .passwordEncoder(passwordEncoder());
     }
 
     @Bean

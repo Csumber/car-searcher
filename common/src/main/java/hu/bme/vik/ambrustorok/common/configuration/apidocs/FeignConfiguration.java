@@ -1,7 +1,9 @@
 package hu.bme.vik.ambrustorok.common.configuration.apidocs;
 
+import feign.Contract;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.openfeign.support.SpringMvcContract;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +13,7 @@ import org.springframework.security.oauth2.client.token.grant.client.ClientCrede
 
 /**
  * In applications, where we want to call another service services we should import that service's api module.
- * This configuration will mae feign find the declared feign clients in those packeges too.
+ * This configuration will mae feign find the declared feign clients in those packages too.
  */
 @Configuration
 @EnableFeignClients(basePackages = "hu.bme.vik.ambrustorok")
@@ -19,12 +21,15 @@ public class FeignConfiguration {
 
     @Value("${cs.auth-sever-url}")
     private String authServerUrl;
-
     @Value("${cs.client-id}")
     private String clientId;
-
     @Value("${cs.client-secret}")
     private String clientSecret;
+
+    @Bean
+    public Contract feignContract() {
+        return new SpringMvcContract();
+    }
 
     @Bean
     public OAuth2FeignRequestInterceptor oauth2schemeRequestInterceptor() {

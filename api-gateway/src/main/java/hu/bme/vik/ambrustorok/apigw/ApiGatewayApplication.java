@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.apigw;
 
+import hu.bme.vik.ambrustorok.apigw.config.GatewayWebSecurityConfig;
 import hu.bme.vik.ambrustorok.common.configuration.apidocs.ApiDocsConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Import;
 
 @EnableZuulProxy
 @SpringBootApplication
-@Import(ApiDocsConfiguration.class)
+@Import({ApiDocsConfiguration.class, GatewayWebSecurityConfig.class})
 @Slf4j
 public class ApiGatewayApplication {
 
@@ -18,3 +19,5 @@ public class ApiGatewayApplication {
         log.info("API Gateway has started successfully!");
     }
 }
+
+

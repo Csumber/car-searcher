@@ -3,16 +3,16 @@ package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponseNoPrice;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceIF;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.option.service.OptionService;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceClient;
+import hu.bme.vik.ambrustorok.vehicleservice.option.service.OptionServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -20,26 +20,23 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/option")
 @AllArgsConstructor
-public class OptionController implements OptionServiceIF {
+public class OptionController implements OptionServiceClient {
 
-    private OptionService service;
-    private OptionMapper mapper;
+    private final OptionServiceImpl service;
+    private final OptionMapper mapper;
 
     @GetMapping
-    public ResponseEntity<List<OptionResponse>> findAll() {
+    public ResponseEntity<Collection<OptionResponse>> findAll() {
         return ResponseEntity.ok(service.findAll().stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<OptionResponse> findOne(@PathVariable UUID id) {
-        return service
-                .findOne(id)
-                .map(entity -> ResponseEntity.ok(mapper.EntityToDTO(entity)))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        return service.findOne(id).map(engineEntity -> ResponseEntity.ok(mapper.EntityToDTO(engineEntity))).orElseGet(() -> ResponseEntity.notFound().build());
     }
-    
+
     @GetMapping("/noPrice")
-    public ResponseEntity<List<OptionResponseNoPrice>> findAllOptionsWithoutPrice() {
+    public ResponseEntity<Collection<OptionResponseNoPrice>> findAllOptionsWithoutPrice() {
         return ResponseEntity.ok(service.findAllOptionsWithoutPrice());
     }
 
