@@ -34,6 +34,20 @@ public class OptionController implements OptionServiceClient {
         return service.findOne(id).map(engineEntity -> ResponseEntity.ok(mapper.EntityToDTO(engineEntity))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("vehicle/{id}")
+    ResponseEntity<Collection<OptionEntity>> getOptionEntityBy(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.getOptionEntityBy(id));
+    }
+
+    @GetMapping("OptionVehicleEntity/{id}")
+    ResponseEntity<OptionEntity> getOptionVehiclesById(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.getOptionVehiclesById(id));
+    }
+    @GetMapping("getOptionVehiclesById2/{id}")
+    ResponseEntity<Collection<OptionEntity>> getOptionVehiclesById2(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.getOptionVehiclesById2(id));
+    }
+
     @PostMapping
     public ResponseEntity<OptionResponse> create(@RequestBody OptionRequest dto, UriComponentsBuilder b) {
         try {

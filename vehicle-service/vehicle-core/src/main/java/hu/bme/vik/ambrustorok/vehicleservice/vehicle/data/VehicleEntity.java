@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.data;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
 import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
@@ -17,12 +18,13 @@ import java.util.UUID;
 public class VehicleEntity {
 
     @ManyToMany
+    @JsonManagedReference
     List<EngineEntity> engines;
+    @JsonManagedReference
     @OneToMany(
-            fetch = FetchType.EAGER,
+            fetch = FetchType.LAZY,
             mappedBy = "vehicleEntity",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            cascade = CascadeType.REFRESH
     )
     List<OptionVehicleEntity> options = new ArrayList<>();
     @Id
@@ -45,26 +47,4 @@ public class VehicleEntity {
     private double width;
     @Column(nullable = false)
     private int warranty;
-
-//    public void addOption(OptionEntity optionEntity, double price) {
-//        OptionVehicleEntity optionVehicleEntity = new OptionVehicleEntity(optionEntity, this);
-//        optionVehicleEntity.setPrice(price);
-//        options.add(optionVehicleEntity);
-//        optionEntity.getVehicles().add(optionVehicleEntity);
-//    }
-//
-//    public void removeOption(OptionEntity optionEntity) {
-//        for (Iterator<OptionVehicleEntity> iterator = options.iterator();
-//             iterator.hasNext(); ) {
-//            OptionVehicleEntity optionVehicleEntity = iterator.next();
-//
-//            if (optionVehicleEntity.getVehicleEntity().equals(this) &&
-//                    optionVehicleEntity.getOptionEntity().equals(optionEntity)) {
-//                iterator.remove();
-//                optionVehicleEntity.getOptionEntity().getVehicles().remove(optionVehicleEntity);
-//                optionVehicleEntity.setVehicleEntity(null);
-//                optionVehicleEntity.setOptionEntity(null);
-//            }
-//        }
-//    }
 }

@@ -2,14 +2,14 @@ package hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionInVehicleResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
+import java.util.Collection;
 import java.util.UUID;
 
 @Data
@@ -19,10 +19,10 @@ public class VehicleResponse {
 
     @NotNull
     @NotEmpty
-    Set<EngineResponse> engines;
+    Collection<EngineResponse> engines;
     @NotNull
     @NotEmpty
-    Set<OptionResponse> options;
+    Collection<OptionInVehicleResponse> options;
     @NotNull
     private UUID id;
     @NotNull

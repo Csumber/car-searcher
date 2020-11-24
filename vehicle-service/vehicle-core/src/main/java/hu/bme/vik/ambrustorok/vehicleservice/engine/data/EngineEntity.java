@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.engine.data;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import hu.bme.vik.ambrustorok.vehicleservice.common.EFuel;
 import hu.bme.vik.ambrustorok.vehicleservice.common.ETransmission;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
@@ -19,6 +20,7 @@ import java.util.UUID;
 public class EngineEntity {
 
     @ManyToMany(mappedBy = "engines")
+    @JsonBackReference
     Set<VehicleEntity> vehicles;
     @Id
     private UUID id = UUID.randomUUID();

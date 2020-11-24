@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.option.data;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,11 +14,11 @@ import java.util.UUID;
 @Getter
 @Setter
 public class OptionEntity {
+    @JsonManagedReference
     @OneToMany(
-            fetch = FetchType.EAGER,
+            fetch = FetchType.LAZY,
             mappedBy = "optionEntity",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            cascade = CascadeType.REFRESH
     )
     List<OptionVehicleEntity> vehicles = new ArrayList<>();
     @Column(nullable = false)
@@ -26,27 +27,4 @@ public class OptionEntity {
     String value;
     @Id
     private UUID id = UUID.randomUUID();
-
-//    @Transactional
-//    public void addVehicle(VehicleEntity vehicleEntity, double price) {
-//        OptionVehicleEntity optionVehicleEntity = new OptionVehicleEntity(this, vehicleEntity);
-//        optionVehicleEntity.setPrice(price);
-//        vehicles.add(optionVehicleEntity);
-//        vehicleEntity.getOptions().add(optionVehicleEntity);
-//    }
-//
-//    public void removeVehicle(VehicleEntity vehicleEntity) {
-//        for (Iterator<OptionVehicleEntity> iterator = vehicles.iterator();
-//             iterator.hasNext(); ) {
-//            OptionVehicleEntity optionVehicleEntity = iterator.next();
-//
-//            if (optionVehicleEntity.getOptionEntity().equals(this) &&
-//                    optionVehicleEntity.getVehicleEntity().equals(vehicleEntity)) {
-//                iterator.remove();
-//                optionVehicleEntity.getVehicleEntity().getOptions().remove(optionVehicleEntity);
-//                optionVehicleEntity.setOptionEntity(null);
-//                optionVehicleEntity.setVehicleEntity(null);
-//            }
-//        }
-//    }
 }

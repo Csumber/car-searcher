@@ -39,10 +39,6 @@ public class VehicleController implements VehicleServiceClient {
     public ResponseEntity<Collection<String>> findManufacturers() {
         return ResponseEntity.ok(service.findManufacturers());
     }
-    @GetMapping("fetchWithOptions")
-    public ResponseEntity<Collection<VehicleEntity>> fetchWithOptions() {
-        return ResponseEntity.ok(service.fetchWithOptions());
-    }
 
     @GetMapping("manufacturers/{manufacturer}")
     public ResponseEntity<Collection<String>> findModelsByManufacturer(@PathVariable String manufacturer) {

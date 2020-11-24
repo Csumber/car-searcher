@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -59,6 +60,18 @@ public class OptionServiceImpl  {
         entity.setValue(dto.getValue());
 
         return repository.save(entity);
+    }
+
+    public List<OptionEntity> getOptionEntityBy(UUID id){
+        return repository.getOptionEntityBy(id);
+    }
+
+    public OptionEntity getOptionVehiclesById(UUID id){
+        return repository.getOptionVehiclesById(id);
+    }
+
+    public List<OptionEntity> getOptionVehiclesById2(UUID id){
+        return repository.getOptionVehiclesById2(id);
     }
 
     public OptionEntity update(UUID id, OptionResponse dto) {

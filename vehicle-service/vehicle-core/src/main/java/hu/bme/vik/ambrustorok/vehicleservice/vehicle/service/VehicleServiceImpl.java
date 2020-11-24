@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -87,55 +88,50 @@ public class VehicleServiceImpl {
         addOption(entity3, options.get(1), 2000);
 
         engineRepository.saveAll(engines);
-        //optionRepository.saveAll(options);
+        optionRepository.saveAll(options);
         repository.save(entity1);
         repository.save(entity2);
         repository.save(entity3);
     }
 
-    public void addOption(VehicleEntity vehicleEntity, OptionEntity optionEntity, double price)
-    {
+    @Transactional
+    public void addOption(VehicleEntity vehicleEntity, OptionEntity optionEntity, double price) {
+
         OptionVehicleEntity optionVehicleEntity = new OptionVehicleEntity(optionEntity, vehicleEntity);
         optionVehicleEntity.setPrice(price);
+
         vehicleEntity.getOptions().add(optionVehicleEntity);
         optionEntity.getVehicles().add(optionVehicleEntity);
+
         optionVehicleRepository.save(optionVehicleEntity);
+
     }
 
-//    @PreDestroy
+    //    @PreDestroy
     public void reset() {
         repository.deleteAll();
     }
 
     public Optional<VehicleEntity> findOne(UUID id) {
-        return repository.findById(id);
+        return repository.findOneWithOptions(id);
     }
 
     public Collection<VehicleEntity> findAll() {
-        return repository.findAll();
+        return repository.findAllWithOptions();
     }
 
     public Collection<String> findManufacturers() {
-        return repository.findManufacturers();
+        return repository.findAllManufacturers();
     }
 
     public Collection<String> findModelsByManufacturer(String manufacturer) {
-        return repository.findModelsByManufacturer(manufacturer);
+        return repository.findAllModelsByManufacturer(manufacturer);
     }
-    public Collection<VehicleEntity> fetchWithOptions() {
-        return repository.fetchWithOptions();
-    }
-
-//    public Collection<OptionResponseNoPrice> findOptionsByManufacturer(String manufacturer) {
-//        var list = repository.findOptionsByManufacturer(manufacturer);
-//        return list.stream().map(optionResponse -> new OptionResponseNoPrice(optionResponse.getName(), optionResponse.getValue())).distinct().collect(Collectors.toList());
-//    }
 
     public VehicleEntity create(VehicleRequest dto) {
         log.debug("Creating new Vehicle {}", dto);
 
         VehicleEntity entity = new VehicleEntity();
-
         entity.setPrice(dto.getPrice());
         entity.setNumberOfDoors(dto.getNumberOfDoors());
         entity.setLength(dto.getLength());
@@ -160,9 +156,7 @@ public class VehicleServiceImpl {
         entity.setWeight(dto.getWeight());
         entity.setWidth(dto.getWidth());
         entity.setWarranty(dto.getWarranty());
-
         return repository.save(entity);
-
     }
 
     public boolean delete(UUID id) {
@@ -172,6 +166,4 @@ public class VehicleServiceImpl {
         }
         return exists;
     }
-
-
 }
