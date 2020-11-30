@@ -39,8 +39,4 @@ public class EngineResponse {
     @NotEmpty
     private int horsepower;
 
-    @NotNull
-    @NotEmpty
-    private double price;
-
 }

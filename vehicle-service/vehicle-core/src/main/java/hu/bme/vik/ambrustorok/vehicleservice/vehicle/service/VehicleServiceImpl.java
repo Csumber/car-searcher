@@ -1,12 +1,14 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
-import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.engine.connector.EngineVehicleEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.engine.connector.EngineVehicleRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
+import hu.bme.vik.ambrustorok.vehicleservice.option.connector.OptionVehicleEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.option.connector.OptionVehicleRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionRepository;
 import hu.bme.vik.ambrustorok.vehicleservice.vehicle.data.VehicleEntity;
@@ -18,8 +20,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
@@ -30,6 +30,7 @@ public class VehicleServiceImpl {
     private final EngineRepository engineRepository;
     private final OptionRepository optionRepository;
     private final OptionVehicleRepository optionVehicleRepository;
+    private final EngineVehicleRepository engineVehicleRepository;
 
     @PostConstruct
     public void mock() {
@@ -75,13 +76,14 @@ public class VehicleServiceImpl {
         repository.save(entity3);
 
         List<EngineEntity> engines = engineRepository.findAll();
-        entity1.setEngines(engines);
-        entity2.setEngines(engines);
-        entity3.setEngines(engines);
-        engines.forEach(engine -> engine.setVehicles(Stream.of(entity1, entity2, entity3).collect(Collectors.toSet())));
+        addEngine(entity1, engines.get(0), 4000);
+        addEngine(entity1, engines.get(1), 6000);
+        addEngine(entity2, engines.get(0), 80000);
+        addEngine(entity2, engines.get(1), 10000);
+        addEngine(entity3, engines.get(0), 30000);
+        addEngine(entity3, engines.get(1), 32000);
 
         List<OptionEntity> options = new ArrayList<>(optionRepository.findAll());
-
         addOption(entity1, options.get(0), 500);
         addOption(entity2, options.get(0), 1000);
         addOption(entity2, options.get(1), 1500);
@@ -104,6 +106,19 @@ public class VehicleServiceImpl {
         optionEntity.getVehicles().add(optionVehicleEntity);
 
         optionVehicleRepository.save(optionVehicleEntity);
+
+    }
+
+    @Transactional
+    public void addEngine(VehicleEntity vehicleEntity, EngineEntity engineEntity, double price) {
+
+        EngineVehicleEntity engineVehicleEntity = new EngineVehicleEntity(engineEntity, vehicleEntity);
+        engineVehicleEntity.setPrice(price);
+
+        vehicleEntity.getEngines().add(engineVehicleEntity);
+        engineEntity.getVehicles().add(engineVehicleEntity);
+
+        engineVehicleRepository.save(engineVehicleEntity);
 
     }
 

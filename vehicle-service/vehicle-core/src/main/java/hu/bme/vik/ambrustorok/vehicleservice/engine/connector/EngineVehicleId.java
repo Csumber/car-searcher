@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice.connector;
+package hu.bme.vik.ambrustorok.vehicleservice.engine.connector;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,10 +16,10 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OptionVehicleId implements Serializable {
+public class EngineVehicleId implements Serializable {
 
     @Column
-    private UUID optionId;
+    private UUID engineId;
 
     @Column
     private UUID vehicleId;
@@ -31,13 +31,13 @@ public class OptionVehicleId implements Serializable {
         if (o == null || getClass() != o.getClass())
             return false;
 
-        OptionVehicleId that = (OptionVehicleId) o;
-        return Objects.equals(optionId, that.optionId) &&
+        EngineVehicleId that = (EngineVehicleId) o;
+        return Objects.equals(engineId, that.engineId) &&
                 Objects.equals(vehicleId, that.vehicleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(optionId, vehicleId);
+        return Objects.hash(engineId, vehicleId);
     }
 }

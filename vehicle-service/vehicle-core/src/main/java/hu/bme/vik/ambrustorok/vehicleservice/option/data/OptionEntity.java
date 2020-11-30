@@ -1,7 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.option.data;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.option.connector.OptionVehicleEntity;
 import lombok.Getter;
 import lombok.Setter;
 

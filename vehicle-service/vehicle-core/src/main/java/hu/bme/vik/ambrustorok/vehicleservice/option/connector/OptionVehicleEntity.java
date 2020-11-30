@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice.connector;
+package hu.bme.vik.ambrustorok.vehicleservice.option.connector;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;

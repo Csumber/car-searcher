@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
@@ -34,7 +33,6 @@ public class EngineServiceImpl {
         entity1.setFuel(EFuel.Diesel);
         entity1.setTransmission(ETransmission.Manual);
         entity1.setHorsepower(500);
-        entity1.setPrice(1500);
 
         entity2.setId(UUID.fromString("50743572-a573-4cd0-91b4-28046e8be762"));
         entity2.setConsumption(50);
@@ -42,7 +40,6 @@ public class EngineServiceImpl {
         entity2.setFuel(EFuel.Gasoline);
         entity2.setTransmission(ETransmission.Automatic);
         entity2.setHorsepower(650);
-        entity2.setPrice(2000);
 
         repository.save(entity1);
         repository.save(entity2);
@@ -70,7 +67,6 @@ public class EngineServiceImpl {
         entity.setFuel(dto.getFuel());
         entity.setTransmission(dto.getTransmission());
         entity.setHorsepower(dto.getHorsepower());
-        entity.setPrice(dto.getPrice());
 
         return repository.save(entity);
     }
@@ -82,7 +78,6 @@ public class EngineServiceImpl {
         entity.setFuel(dto.getFuel());
         entity.setTransmission(dto.getTransmission());
         entity.setHorsepower(dto.getHorsepower());
-        entity.setPrice(dto.getPrice());
         return repository.save(entity);
 
     }

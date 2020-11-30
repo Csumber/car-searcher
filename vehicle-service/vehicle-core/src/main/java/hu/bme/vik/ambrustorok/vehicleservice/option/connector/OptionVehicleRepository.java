@@ -1,4 +1,4 @@
-package hu.bme.vik.ambrustorok.vehicleservice.connector;
+package hu.bme.vik.ambrustorok.vehicleservice.option.connector;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

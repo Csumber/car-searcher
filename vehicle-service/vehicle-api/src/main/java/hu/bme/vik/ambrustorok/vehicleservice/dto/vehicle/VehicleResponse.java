@@ -1,7 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineInVehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionInVehicleResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +19,7 @@ public class VehicleResponse {
 
     @NotNull
     @NotEmpty
-    Collection<EngineResponse> engines;
+    Collection<EngineInVehicleResponse> engines;
     @NotNull
     @NotEmpty
     Collection<OptionInVehicleResponse> options;

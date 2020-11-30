@@ -43,6 +43,7 @@ public class OptionController implements OptionServiceClient {
     ResponseEntity<OptionEntity> getOptionVehiclesById(@PathVariable UUID id) {
         return ResponseEntity.ok(service.getOptionVehiclesById(id));
     }
+
     @GetMapping("getOptionVehiclesById2/{id}")
     ResponseEntity<Collection<OptionEntity>> getOptionVehiclesById2(@PathVariable UUID id) {
         return ResponseEntity.ok(service.getOptionVehiclesById2(id));

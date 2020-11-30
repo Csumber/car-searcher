@@ -2,8 +2,8 @@ package hu.bme.vik.ambrustorok.vehicleservice.vehicle.data;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
-import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.engine.connector.EngineVehicleEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.option.connector.OptionVehicleEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,9 +17,13 @@ import java.util.UUID;
 @Setter
 public class VehicleEntity {
 
-    @ManyToMany
     @JsonManagedReference
-    List<EngineEntity> engines;
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            mappedBy = "vehicleEntity",
+            cascade = CascadeType.REFRESH
+    )
+    List<EngineVehicleEntity> engines = new ArrayList<>();
     @JsonManagedReference
     @OneToMany(
             fetch = FetchType.LAZY,

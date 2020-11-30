@@ -1,7 +1,7 @@
 package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 
-import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleEntity;
-import hu.bme.vik.ambrustorok.vehicleservice.connector.OptionVehicleId;
+import hu.bme.vik.ambrustorok.vehicleservice.option.connector.OptionVehicleEntity;
+import hu.bme.vik.ambrustorok.vehicleservice.option.connector.OptionVehicleId;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionInVehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.option.data.OptionEntity;
