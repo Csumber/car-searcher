@@ -10,7 +10,8 @@ import java.util.UUID;
 
 @FeignClient(
         name = "vehicle-service-engine-v1",
-        url = "localhost:8088/engine",decode404 = true)
+        url = "localhost:8085/engine",
+        decode404 = true)
 public interface EngineServiceClient {
 
     @GetMapping("/{id}")
@@ -20,3 +21,4 @@ public interface EngineServiceClient {
     ResponseEntity<Collection<EngineResponse>> findAll();
 
 }
+

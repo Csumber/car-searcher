@@ -13,12 +13,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 @Service
 @AllArgsConstructor
 @Slf4j
-public class OptionServiceImpl  {
+public class OptionServiceImpl {
 
     private final OptionRepository repository;
 
@@ -39,7 +40,7 @@ public class OptionServiceImpl  {
         repository.save(entity2);
     }
 
-//    @PreDestroy
+    //    @PreDestroy
     public void reset() {
         repository.deleteAll();
     }
@@ -62,16 +63,8 @@ public class OptionServiceImpl  {
         return repository.save(entity);
     }
 
-    public List<OptionEntity> getOptionEntityBy(UUID id){
-        return repository.getOptionEntityBy(id);
-    }
-
-    public OptionEntity getOptionVehiclesById(UUID id){
-        return repository.getOptionVehiclesById(id);
-    }
-
-    public List<OptionEntity> getOptionVehiclesById2(UUID id){
-        return repository.getOptionVehiclesById2(id);
+    public List<OptionEntity> getOptionsByVehicle(UUID id) {
+        return repository.getOptionsByVehicle(id).get().getOptions().stream().map(v -> v.getOptionEntity()).collect(Collectors.toList());
     }
 
     public OptionEntity update(UUID id, OptionResponse dto) {
@@ -80,7 +73,6 @@ public class OptionServiceImpl  {
         entity.setValue(dto.getValue());
 
         return repository.save(entity);
-
     }
 
     public boolean delete(UUID id) {
@@ -92,3 +84,4 @@ public class OptionServiceImpl  {
     }
 
 }
+

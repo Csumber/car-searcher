@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @FeignClient(
         name = "vehicle-service-vehicle-v1",
-        url = "localhost:8088/vehicle",
+        url = "localhost:8085/vehicle",
         decode404 = true)
 public interface VehicleServiceClient {
 
@@ -24,3 +24,4 @@ public interface VehicleServiceClient {
     ResponseEntity<Collection<String>> findManufacturers();
 
 }
+

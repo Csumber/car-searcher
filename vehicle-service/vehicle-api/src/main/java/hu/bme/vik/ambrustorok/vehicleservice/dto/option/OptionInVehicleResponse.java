@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 import java.util.UUID;
 
 @Data
@@ -28,4 +29,9 @@ public class OptionInVehicleResponse {
     @NotEmpty
     private double price;
 
+    public boolean equals(OptionResponse o) {
+        return Objects.equals(name, o.getName()) &&
+                Objects.equals(value, o.getValue());
+    }
 }
+

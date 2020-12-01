@@ -10,7 +10,8 @@ import java.util.UUID;
 
 @FeignClient(
         name = "vehicle-service-option-v1",
-        url = "localhost:8088/option",decode404 = true)
+        url = "localhost:8085/option",
+        decode404 = true)
 public interface OptionServiceClient {
 
     @GetMapping("/{id}")
@@ -20,3 +21,4 @@ public interface OptionServiceClient {
     ResponseEntity<Collection<OptionResponse>> findAll();
 
 }
+

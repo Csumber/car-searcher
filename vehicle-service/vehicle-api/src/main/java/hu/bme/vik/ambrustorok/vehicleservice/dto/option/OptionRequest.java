@@ -12,4 +12,7 @@ public class OptionRequest {
     private String name;
 
     private String value;
+
+    private double price;
 }
+

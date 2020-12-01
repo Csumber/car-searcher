@@ -20,4 +20,6 @@ public class EngineRequest {
     private ETransmission transmission;
 
     private int horsepower;
+
+    private double price;
 }

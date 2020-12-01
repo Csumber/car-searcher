@@ -1,6 +1,8 @@
 package hu.bme.vik.ambrustorok.vehicleservice.vehicle.service;
 
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineRequest;
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.vehicle.VehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.connector.EngineVehicleEntity;
@@ -20,6 +22,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -122,13 +125,51 @@ public class VehicleServiceImpl {
 
     }
 
+    @Transactional
+    public void addNewOption(VehicleEntity vehicleEntity, OptionRequest optionDTO, double price) {
+        OptionEntity optionEntity = new OptionEntity();
+        optionEntity.setName((optionDTO.getName()));
+        optionEntity.setValue(optionDTO.getValue());
+        optionRepository.save(optionEntity);
+
+
+        OptionVehicleEntity optionVehicleEntity = new OptionVehicleEntity(optionEntity, vehicleEntity);
+        optionVehicleEntity.setPrice(price);
+
+        vehicleEntity.getOptions().add(optionVehicleEntity);
+        optionEntity.getVehicles().add(optionVehicleEntity);
+
+        optionVehicleRepository.save(optionVehicleEntity);
+
+    }
+
+    @Transactional
+    public void addNewEngine(VehicleEntity vehicleEntity, EngineRequest engineDTO, double price) {
+        EngineEntity engineEntity = new EngineEntity();
+        engineEntity.setConsumption(engineDTO.getConsumption());
+        engineEntity.setCylinderCapacity(engineDTO.getCylinderCapacity());
+        engineEntity.setFuel(engineDTO.getFuel());
+        engineEntity.setTransmission(engineDTO.getTransmission());
+        engineEntity.setHorsepower(engineDTO.getHorsepower());
+        engineRepository.save(engineEntity);
+
+        EngineVehicleEntity engineVehicleEntity = new EngineVehicleEntity(engineEntity, vehicleEntity);
+        engineVehicleEntity.setPrice(price);
+
+        vehicleEntity.getEngines().add(engineVehicleEntity);
+        engineEntity.getVehicles().add(engineVehicleEntity);
+
+        engineVehicleRepository.save(engineVehicleEntity);
+
+    }
+
     //    @PreDestroy
     public void reset() {
         repository.deleteAll();
     }
 
     public Optional<VehicleEntity> findOne(UUID id) {
-        return repository.findOneWithOptions(id);
+        return repository.findOne(id);
     }
 
     public Collection<VehicleEntity> findAll() {
@@ -181,4 +222,22 @@ public class VehicleServiceImpl {
         }
         return exists;
     }
+
+    public Collection<VehicleEntity> findAllByOption(UUID id) {
+        return repository.findAllByOption(id).get().getVehicles().stream().map(v -> v.getVehicleEntity()).collect(Collectors.toList());
+    }
+
+    public Collection<VehicleEntity> findAllbyEngine(UUID id) {
+        return repository.findAllbyEngine(id).get().getVehicles().stream().map(v -> v.getVehicleEntity()).collect(Collectors.toList());
+    }
+
+    public Optional<EngineEntity> checkEngineExistence(EngineRequest engineDTO) {
+        return repository.checkEngineExistence(engineDTO.getConsumption(), engineDTO.getCylinderCapacity(), engineDTO.getFuel(), engineDTO.getTransmission(), engineDTO.getHorsepower());
+    }
+
+    public Optional<OptionEntity> checkOptionExistence(OptionRequest optionDTO) {
+        return repository.checkOptionExistence(optionDTO.getName(), optionDTO.getValue());
+    }
+
 }
+

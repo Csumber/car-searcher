@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.vehicleservice.option.presentation;
 
+import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionInVehicleResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionRequest;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.option.OptionServiceClient;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -29,26 +32,6 @@ public class OptionController implements OptionServiceClient {
         return ResponseEntity.ok(service.findAll().stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<OptionResponse> findOne(@PathVariable UUID id) {
-        return service.findOne(id).map(engineEntity -> ResponseEntity.ok(mapper.EntityToDTO(engineEntity))).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("vehicle/{id}")
-    ResponseEntity<Collection<OptionEntity>> getOptionEntityBy(@PathVariable UUID id) {
-        return ResponseEntity.ok(service.getOptionEntityBy(id));
-    }
-
-    @GetMapping("OptionVehicleEntity/{id}")
-    ResponseEntity<OptionEntity> getOptionVehiclesById(@PathVariable UUID id) {
-        return ResponseEntity.ok(service.getOptionVehiclesById(id));
-    }
-
-    @GetMapping("getOptionVehiclesById2/{id}")
-    ResponseEntity<Collection<OptionEntity>> getOptionVehiclesById2(@PathVariable UUID id) {
-        return ResponseEntity.ok(service.getOptionVehiclesById2(id));
-    }
-
     @PostMapping
     public ResponseEntity<OptionResponse> create(@RequestBody OptionRequest dto, UriComponentsBuilder b) {
         try {
@@ -59,6 +42,11 @@ public class OptionController implements OptionServiceClient {
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<OptionResponse> findOne(@PathVariable UUID id) {
+        return service.findOne(id).map(engineEntity -> ResponseEntity.ok(mapper.EntityToDTO(engineEntity))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
@@ -85,4 +73,25 @@ public class OptionController implements OptionServiceClient {
         return ResponseEntity.ok().build();
 
     }
+
+    @GetMapping("vehicle/{id}")
+    ResponseEntity<Collection<OptionInVehicleResponse>> getOptionsByVehicle(@PathVariable UUID id) {
+        List<OptionEntity> options = service.getOptionsByVehicle(id);
+        var v = new ArrayList<OptionInVehicleResponse>();
+        for (var vv : options) {
+            OptionInVehicleResponse optionInVehicleResponse = new OptionInVehicleResponse();
+            for (var vvv : vv.getVehicles()) {
+                if (vvv.getVehicleEntity().getId().equals(id)) {
+                    optionInVehicleResponse.setPrice(vvv.getPrice());
+                }
+            }
+            optionInVehicleResponse.setId(vv.getId());
+            optionInVehicleResponse.setValue(vv.getValue());
+            optionInVehicleResponse.setName(vv.getName());
+            v.add(optionInVehicleResponse);
+        }
+        return ResponseEntity.ok(v);
+    }
+
 }
+
