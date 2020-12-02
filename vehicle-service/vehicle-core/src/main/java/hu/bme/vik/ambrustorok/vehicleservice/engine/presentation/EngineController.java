@@ -33,7 +33,7 @@ public class EngineController implements EngineServiceClient {
         try {
             EngineEntity result = service.create(dto);
 
-            UriComponents uriComponents = b.path("/investor/{id}").buildAndExpand(result.getId());
+            UriComponents uriComponents = b.path("/engine/{id}").buildAndExpand(result.getId());
             return ResponseEntity.created(uriComponents.toUri()).body(mapper.EntityToDTO(result));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
@@ -46,7 +46,7 @@ public class EngineController implements EngineServiceClient {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EngineResponse> modify(@PathVariable UUID id, @RequestBody EngineResponse dto) {
+    public ResponseEntity<EngineResponse> modify(@PathVariable UUID id, @RequestBody EngineRequest dto) {
 
         try {
             EngineEntity result = service.update(id, dto);

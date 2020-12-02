@@ -185,7 +185,6 @@ public class VehicleServiceImpl {
     }
 
     public VehicleEntity create(VehicleRequest dto) {
-        log.debug("Creating new Vehicle {}", dto);
 
         VehicleEntity entity = new VehicleEntity();
         entity.setPrice(dto.getPrice());

@@ -18,6 +18,5 @@ public class VehicleServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(VehicleServiceApplication.class, args);
-        log.info("VehicleService has started successfully!");
     }
 }

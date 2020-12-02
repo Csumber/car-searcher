@@ -37,7 +37,7 @@ public class OptionController implements OptionServiceClient {
         try {
             OptionEntity result = service.create(dto);
 
-            UriComponents uriComponents = b.path("/investor/{id}").buildAndExpand(result.getId());
+            UriComponents uriComponents = b.path("/option/{id}").buildAndExpand(result.getId());
             return ResponseEntity.created(uriComponents.toUri()).body(mapper.EntityToDTO(result));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();

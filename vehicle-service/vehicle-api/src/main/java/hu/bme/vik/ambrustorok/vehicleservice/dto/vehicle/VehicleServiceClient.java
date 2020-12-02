@@ -23,5 +23,13 @@ public interface VehicleServiceClient {
     @GetMapping("manufacturers")
     ResponseEntity<Collection<String>> findManufacturers();
 
+    @GetMapping("manufacturer/{manufacturer}")
+    ResponseEntity<Collection<String>> findModelsByManufacturer(@PathVariable String manufacturer);
+
+    @GetMapping("option/{id}")
+    ResponseEntity<Collection<VehicleResponse>> findAllByOption(@PathVariable UUID id);
+
+    @GetMapping("engine/{id}")
+    ResponseEntity<Collection<VehicleResponse>> findAllbyEngine(@PathVariable UUID id);
 }
 

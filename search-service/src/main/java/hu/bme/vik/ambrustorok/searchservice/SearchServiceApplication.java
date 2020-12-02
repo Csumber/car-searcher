@@ -19,6 +19,5 @@ public class SearchServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SearchServiceApplication.class, args);
-        log.info("SearchService has started successfully!");
     }
 }

@@ -3,7 +3,6 @@ package hu.bme.vik.ambrustorok.vehicleservice.engine.service;
 import hu.bme.vik.ambrustorok.vehicleservice.common.EFuel;
 import hu.bme.vik.ambrustorok.vehicleservice.common.ETransmission;
 import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineRequest;
-import hu.bme.vik.ambrustorok.vehicleservice.dto.engine.EngineResponse;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.engine.data.EngineRepository;
 import lombok.AllArgsConstructor;
@@ -59,7 +58,6 @@ public class EngineServiceImpl {
     }
 
     public EngineEntity create(EngineRequest dto) {
-        log.debug("Creating new Engine {}", dto);
 
         EngineEntity entity = new EngineEntity();
         entity.setConsumption(dto.getConsumption());
@@ -71,7 +69,7 @@ public class EngineServiceImpl {
         return repository.save(entity);
     }
 
-    public EngineEntity update(UUID id, EngineResponse dto) {
+    public EngineEntity update(UUID id, EngineRequest dto) {
         EngineEntity entity = repository.getOne(id);
         entity.setConsumption(dto.getConsumption());
         entity.setCylinderCapacity(dto.getCylinderCapacity());

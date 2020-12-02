@@ -54,7 +54,6 @@ public class OptionServiceImpl {
     }
 
     public OptionEntity create(OptionRequest dto) {
-        log.debug("Creating new Option {}", dto);
 
         OptionEntity entity = new OptionEntity();
         entity.setName((dto.getName()));

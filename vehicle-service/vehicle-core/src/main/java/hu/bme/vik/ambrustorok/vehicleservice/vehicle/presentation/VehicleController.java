@@ -38,7 +38,7 @@ public class VehicleController implements VehicleServiceClient {
         try {
             VehicleEntity result = service.create(dto);
 
-            UriComponents uriComponents = b.path("/investor/{id}").buildAndExpand(result.getId());
+            UriComponents uriComponents = b.path("/vehicle/{id}").buildAndExpand(result.getId());
             return ResponseEntity.created(uriComponents.toUri()).body(mapper.EntityToDTO(result));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
@@ -87,12 +87,12 @@ public class VehicleController implements VehicleServiceClient {
     }
 
     @GetMapping("option/{id}")
-    public ResponseEntity<Collection<VehicleResponse>> findOptionsByVehicle(@PathVariable UUID id) {
+    public ResponseEntity<Collection<VehicleResponse>> findAllByOption(@PathVariable UUID id) {
         return ResponseEntity.ok(service.findAllByOption(id).stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
     @GetMapping("engine/{id}")
-    public ResponseEntity<Collection<VehicleResponse>> findEnginesByVehicle(@PathVariable UUID id) {
+    public ResponseEntity<Collection<VehicleResponse>> findAllbyEngine(@PathVariable UUID id) {
         return ResponseEntity.ok(service.findAllbyEngine(id).stream().map(mapper::EntityToDTO).collect(Collectors.toList()));
     }
 
