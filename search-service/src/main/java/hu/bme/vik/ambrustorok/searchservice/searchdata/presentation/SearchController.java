@@ -24,25 +24,25 @@ public class SearchController {
 
     @PostMapping
     public ResponseEntity<Collection<VehicleResponse>> search(@RequestBody SearchRequest search) {
-        if(!StringUtils.isNullOrEmpty(search.getUsername())){
+        if (!StringUtils.isNullOrEmpty(search.getUsername())) {
 
-            if(search.getLengthMax() < search.getLengthMin())
+            if (search.getLengthMax() < search.getLengthMin())
                 return ResponseEntity.badRequest().build();
-            if(search.getNumberOfDoorsMax() < search.getNumberOfDoorsMin())
+            if (search.getNumberOfDoorsMax() < search.getNumberOfDoorsMin())
                 return ResponseEntity.badRequest().build();
-            if(search.getPriceMax() < search.getPriceMin())
+            if (search.getPriceMax() < search.getPriceMin())
                 return ResponseEntity.badRequest().build();
-            if(search.getWarrantyMax() < search.getWarrantyMin())
+            if (search.getWarrantyMax() < search.getWarrantyMin())
                 return ResponseEntity.badRequest().build();
-            if(search.getWeightMax() < search.getWeightMin())
+            if (search.getWeightMax() < search.getWeightMin())
                 return ResponseEntity.badRequest().build();
-            if(search.getWidthMax() < search.getWidthMin())
+            if (search.getWidthMax() < search.getWidthMin())
                 return ResponseEntity.badRequest().build();
-            if(StringUtils.isNullOrEmpty(search.getManufacturer()))
-            service.create(search);
+            if (StringUtils.isNullOrEmpty(search.getManufacturer()))
+                service.create(search);
         }
         Collection<VehicleResponse> results = service.search(search);
-        if(results == null || results.isEmpty())
+        if (results == null || results.isEmpty())
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(results);
     }

@@ -21,6 +21,7 @@ public class SearchService {
     private final SearchRepository repository;
     private final EngineSearchRepository engineSearchRepository;
     private final OptionSearchRepository optionSearchRepository;
+
     private final EngineServiceClient engineServiceClient;
     private final OptionServiceClient optionServiceClient;
     private final VehicleServiceClient vehicleServiceClient;

@@ -12,13 +12,13 @@ import java.util.UUID;
 @Getter
 @Setter
 public class VehicleClicksEntity {
-    @Id
-    private UUID id = UUID.randomUUID();
     @Column(nullable = false)
     String username;
     @Column(nullable = false)
     UUID vehicleId;
     @Column(nullable = false)
     int clicks;
+    @Id
+    private UUID id = UUID.randomUUID();
 
 }

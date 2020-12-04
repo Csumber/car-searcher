@@ -1,5 +1,6 @@
 package hu.bme.vik.ambrustorok.searchservice.searchdata.presentation;
 
+import hu.bme.vik.ambrustorok.searchservice.searchdata.dto.StatisticsServiceClient;
 import hu.bme.vik.ambrustorok.searchservice.searchdata.service.StatisticsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -11,27 +12,27 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/statistics")
 @AllArgsConstructor
-public class StatisticsController {
+public class StatisticsController implements StatisticsServiceClient {
 
     private StatisticsService service;
 
     @GetMapping("/clicks/user")
-    public ResponseEntity<Map<String,Map<UUID,Integer>>> findAllClicksByUser() {
+    public ResponseEntity<Map<String, Map<UUID, Integer>>> findAllClicksByUser() {
         return ResponseEntity.ok(service.findAllClicksByUser());
     }
 
     @GetMapping("/clicks/vehicle")
-    public ResponseEntity<Map<UUID,Map<String,Integer>>> findAllClicksByVehicle() {
+    public ResponseEntity<Map<UUID, Map<String, Integer>>> findAllClicksByVehicle() {
         return ResponseEntity.ok(service.findAllClicksByVehicle());
     }
 
     @GetMapping("/clicks/user/{username}")
-    public ResponseEntity<Map<UUID,Integer>> findOneClickByUser(@PathVariable String username) {
+    public ResponseEntity<Map<UUID, Integer>> findOneClickByUser(@PathVariable String username) {
         return ResponseEntity.ok(service.findOneClickByUser(username));
     }
 
     @GetMapping("/clicks/vehicle/{id}")
-    public ResponseEntity<Map<String,Integer>> findOneClickByVehicle(@PathVariable UUID id) {
+    public ResponseEntity<Map<String, Integer>> findOneClickByVehicle(@PathVariable UUID id) {
         return ResponseEntity.ok(service.findONeClickByVehicle(id));
     }
 
