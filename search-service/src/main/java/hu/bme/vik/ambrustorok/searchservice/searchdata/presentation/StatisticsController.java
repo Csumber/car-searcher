@@ -31,7 +31,7 @@ public class StatisticsController {
     }
 
     @GetMapping("/clicks/vehicle/{id}")
-    public ResponseEntity<Map<String,Integer>> findONeClickByVehicle(@PathVariable UUID id) {
+    public ResponseEntity<Map<String,Integer>> findOneClickByVehicle(@PathVariable UUID id) {
         return ResponseEntity.ok(service.findONeClickByVehicle(id));
     }
 
