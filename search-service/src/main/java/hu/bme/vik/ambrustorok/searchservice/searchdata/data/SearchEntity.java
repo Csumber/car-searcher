@@ -18,37 +18,37 @@ public class SearchEntity {
 
     @Id
     private UUID id = UUID.randomUUID();
-    @Column(nullable = false)
+    @Column()
     private double lengthMin;
-    @Column(nullable = false)
+    @Column()
     private double lengthMax;
-    @Column(nullable = false)
+    @Column()
     private String manufacturer;
-    @Column(nullable = false)
+    @Column()
     private String model;
-    @Column(nullable = false)
+    @Column()
     private int numberOfDoorsMin;
-    @Column(nullable = false)
+    @Column()
     private int numberOfDoorsMax;
-    @Column(nullable = false)
+    @Column()
     private double priceMin;
-    @Column(nullable = false)
+    @Column()
     private double priceMax;
-    @Column(nullable = false)
+    @Column()
     private EStyle style;
-    @Column(nullable = false)
+    @Column()
     private String username;
-    @Column(nullable = false)
+    @Column()
     private int warrantyMin;
-    @Column(nullable = false)
-    private double weightMin;
-    @Column(nullable = false)
-    private double widthMin;
-    @Column(nullable = false)
+    @Column()
     private int warrantyMax;
-    @Column(nullable = false)
+    @Column()
+    private double weightMin;
+    @Column()
     private double weightMax;
-    @Column(nullable = false)
+    @Column()
+    private double widthMin;
+    @Column()
     private double widthMax;
     @OneToMany(mappedBy = "search")
     private Set<OptionSearchEntity> options;

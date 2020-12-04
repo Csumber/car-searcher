@@ -1,15 +1,11 @@
 package hu.bme.vik.ambrustorok.searchservice.searchdata.presentation;
 
-import hu.bme.vik.ambrustorok.searchservice.searchdata.dto.SearchResponse;
-import hu.bme.vik.ambrustorok.searchservice.searchdata.service.SearchService;
+import hu.bme.vik.ambrustorok.searchservice.searchdata.service.StatisticsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -17,57 +13,111 @@ import java.util.UUID;
 @AllArgsConstructor
 public class StatisticsController {
 
-    private SearchService service;
-    private SearchMapper mapper;
+    private StatisticsService service;
 
     @GetMapping("/clicks/user")
-    public ResponseEntity<Collection<SearchResponse>> findAllClicksByUser() {
-        return null;
+    public ResponseEntity<Map<String,Map<UUID,Integer>>> findAllClicksByUser() {
+        return ResponseEntity.ok(service.findAllClicksByUser());
     }
 
     @GetMapping("/clicks/vehicle")
-    public ResponseEntity<Collection<SearchResponse>> findAllClicksByVehicle() {
-        return null;
+    public ResponseEntity<Map<UUID,Map<String,Integer>>> findAllClicksByVehicle() {
+        return ResponseEntity.ok(service.findAllClicksByVehicle());
     }
 
     @GetMapping("/clicks/user/{username}")
-    public ResponseEntity<Collection<SearchResponse>> findOneClickByUser(@PathVariable String username) {
-        return null;
+    public ResponseEntity<Map<UUID,Integer>> findOneClickByUser(@PathVariable String username) {
+        return ResponseEntity.ok(service.findOneClickByUser(username));
     }
 
     @GetMapping("/clicks/vehicle/{id}")
-    public ResponseEntity<Collection<SearchResponse>> findONeClickByVehicle(@PathVariable UUID id) {
-        return null;
+    public ResponseEntity<Map<String,Integer>> findONeClickByVehicle(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.findONeClickByVehicle(id));
+    }
+
+    @PostMapping("/clicks/vehicle/{id}/user/{username}")
+    public ResponseEntity<Integer> increaseClicks(@PathVariable UUID id, @PathVariable String username) {
+        return ResponseEntity.ok(service.increaseClicks(id, username));
+    }
+
+    @GetMapping("/min/{attribute}")
+    public ResponseEntity<Map<String, ?>> findMinByAttribute(@PathVariable String attribute) {
+        Map<String, ?> ret = service.getMin(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret);
+    }
+
+    @GetMapping("/max/{attribute}")
+    public ResponseEntity<Map<String, ?>> findMaxByAttribute(@PathVariable String attribute) {
+        Map<String, ?> ret = service.getMax(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret);
     }
 
     @GetMapping("/average/{attribute}")
-    public ResponseEntity<Collection<SearchResponse>> findAverageByAttribute(@PathVariable String attribute) {
-        return null;
+    public ResponseEntity<Map<String, ?>> findAverageByAttribute(@PathVariable String attribute) {
+        Map<String, ?> ret = service.getAverage(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret);
+    }
+
+    @GetMapping("/mode/{attribute}")
+    public ResponseEntity<Map<String, ?>> findModeByAttribute(@PathVariable String attribute) {
+        Map<String, ?> ret = service.getMode(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret);
     }
 
     @GetMapping("/median/{attribute}")
-    public ResponseEntity<Collection<SearchResponse>> findMedianByAttribute(@PathVariable String attribute) {
-        return null;
+    public ResponseEntity<Map<String, ?>> findMedianByAttribute(@PathVariable String attribute) {
+        Map<String, ?> ret = service.getMedian(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret);
     }
 
-    @GetMapping("/modus/{attribute}")
-    public ResponseEntity<Collection<SearchResponse>> findModusByAttribute(@PathVariable String attribute) {
-        return null;
+    @GetMapping("/min/{attribute}/user/{username}")
+    public ResponseEntity<?> findMinByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
+        Map<String, ?> ret = service.getMin(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret.get(username));
+    }
+
+    @GetMapping("/max/{attribute}/user/{username}")
+    public ResponseEntity<?> findMaxByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
+        Map<String, ?> ret = service.getMax(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret.get(username));
     }
 
     @GetMapping("/average/{attribute}/user/{username}")
-    public ResponseEntity<Collection<SearchResponse>> findAverageByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
-        return null;
+    public ResponseEntity<?> findAverageByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
+        Map<String, ?> ret = service.getAverage(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret.get(username));
+    }
+
+    @GetMapping("/mode/{attribute}/user/{username}")
+    public ResponseEntity<?> findModeByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
+        Map<String, ?> ret = service.getMode(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret.get(username));
     }
 
     @GetMapping("/median/{attribute}/user/{username}")
-    public ResponseEntity<Collection<SearchResponse>> findMedianByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
-        return null;
-    }
-
-    @GetMapping("/modus/{attribute}/user/{username}")
-    public ResponseEntity<Collection<SearchResponse>> findModusByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
-        return null;
+    public ResponseEntity<?> findMedianByAttributeByUser(@PathVariable String attribute, @PathVariable String username) {
+        Map<String, ?> ret = service.getMedian(attribute);
+        if (ret == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(ret.get(username));
     }
 
 

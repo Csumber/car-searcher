@@ -7,4 +7,5 @@ import java.util.UUID;
 
 public interface SearchRepository extends JpaRepository<SearchEntity, UUID> {
     Collection<SearchEntity> findAllByUsername(String username);
+
 }

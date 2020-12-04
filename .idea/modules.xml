@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/investment-service/investment-api/investment-api.iml" filepath="$PROJECT_DIR$/investment-service/investment-api/investment-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/investment-service/investment-core/investment-core.iml" filepath="$PROJECT_DIR$/investment-service/investment-core/investment-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recommender-service/recommender-service.iml" filepath="$PROJECT_DIR$/recommender-service/recommender-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/search-service/search-service.iml" filepath="$PROJECT_DIR$/search-service/search-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/startup-service/startup-api/startup-api.iml" filepath="$PROJECT_DIR$/startup-service/startup-api/startup-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/startup-service/startup-core/startup-core.iml" filepath="$PROJECT_DIR$/startup-service/startup-core/startup-core.iml" />

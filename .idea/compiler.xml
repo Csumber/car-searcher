@@ -16,6 +16,7 @@
         <module name="auth-server" />
         <module name="vc-core" />
         <module name="startup-core" />
+        <module name="recommender-service" />
         <module name="config-server" />
         <module name="common" />
         <module name="investment-core" />
@@ -42,6 +43,7 @@
       <module name="investment-core" target="11" />
       <module name="investment-service" target="11" />
       <module name="parent" target="11" />
+      <module name="recommender-service" target="11" />
       <module name="search-service" target="11" />
       <module name="startup-api" target="11" />
       <module name="startup-core" target="11" />
@@ -64,6 +66,7 @@
       <module name="entrepreneur-core" options="-parameters" />
       <module name="investment-api" options="-parameters" />
       <module name="investment-core" options="-parameters" />
+      <module name="recommender-service" options="-parameters" />
       <module name="search-service" options="-parameters" />
       <module name="startup-api" options="-parameters" />
       <module name="startup-core" options="-parameters" />

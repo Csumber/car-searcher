@@ -1,14 +1,13 @@
 package hu.bme.vik.ambrustorok.searchservice.searchdata.dto;
 
 
-import hu.bme.vik.ambrustorok.searchservice.searchdata.data.EngineSearchEntity;
-import hu.bme.vik.ambrustorok.searchservice.searchdata.data.OptionSearchEntity;
 import hu.bme.vik.ambrustorok.vehicleservice.common.EStyle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -31,7 +30,7 @@ public class SearchResponse {
     private int warrantyMax;
     private double weightMax;
     private double widthMax;
-    private Set<OptionSearchEntity> options;
-    private Set<EngineSearchEntity> engines;
+    private Set<UUID> options;
+    private Set<UUID> engines;
 
 }

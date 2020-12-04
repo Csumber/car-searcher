@@ -28,6 +28,7 @@
         <module>auth-server</module>
         <module>common</module>
         <module>config-server</module>
+        <module>recommender-service</module>
         <module>search-service</module>
         <module>vehicle-service</module>
     </modules>
