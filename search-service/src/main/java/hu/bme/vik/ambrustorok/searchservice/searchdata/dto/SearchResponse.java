@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.Collection;
 import java.util.UUID;
 
 @Data
@@ -30,7 +30,7 @@ public class SearchResponse {
     private int warrantyMax;
     private double weightMax;
     private double widthMax;
-    private Set<UUID> options;
-    private Set<UUID> engines;
+    private Collection<UUID> options;
+    private Collection<UUID> engines;
 
 }

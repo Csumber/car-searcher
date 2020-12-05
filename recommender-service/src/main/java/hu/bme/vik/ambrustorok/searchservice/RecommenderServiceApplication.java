@@ -13,8 +13,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Import({ApiDocsConfiguration.class,
         ResourceServerWebSecurityConfig.class,
         FeignConfiguration.class})
-@Slf4j
 @EnableSwagger2
+@Slf4j
 public class RecommenderServiceApplication {
 
     public static void main(String[] args) {

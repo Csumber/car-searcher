@@ -18,11 +18,11 @@ import java.util.UUID;
 @NoArgsConstructor
 public class OptionSearchEntity {
 
-    @ManyToOne
-    SearchEntity search;
     @Id
     private UUID id = UUID.randomUUID();
     @Column(nullable = false)
     private UUID optionId;
+    @ManyToOne
+    SearchEntity search;
 
 }

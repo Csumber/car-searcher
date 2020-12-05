@@ -52,11 +52,6 @@ public class ApiDocsConfiguration {
                 .build();
     }
 
-    /**
-     * A security scheme mondja meg hogy működik a security.
-     *
-     * @return
-     */
     private SecurityScheme securityScheme() {
         GrantType grantType = new AuthorizationCodeGrantBuilder()
                 .tokenEndpoint(b -> b.url(authServerUrl + "/token").tokenName("oauthtoken"))
@@ -67,12 +62,6 @@ public class ApiDocsConfiguration {
                 .build();
     }
 
-
-    /**
-     * A security context mondja meg, mikor kell a security-t használni. Most akkor használjuk ha a végpontban nincs /public
-     *
-     * @return
-     */
     private SecurityContext securityContext() {
         return SecurityContext.builder()
                 .securityReferences(Collections.singletonList(new SecurityReference("spring_oauth", new AuthorizationScope[]{})))

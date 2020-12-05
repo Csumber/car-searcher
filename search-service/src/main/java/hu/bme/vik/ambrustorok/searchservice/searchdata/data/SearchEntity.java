@@ -8,7 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.Set;
+import java.util.Collection;
 import java.util.UUID;
 
 @Entity
@@ -51,8 +51,8 @@ public class SearchEntity {
     @Column()
     private double widthMax;
     @OneToMany(mappedBy = "search")
-    private Set<OptionSearchEntity> options;
+    private Collection<OptionSearchEntity> options;
     @OneToMany(mappedBy = "search")
-    private Set<EngineSearchEntity> engines;
+    private Collection<EngineSearchEntity> engines;
 
 }
