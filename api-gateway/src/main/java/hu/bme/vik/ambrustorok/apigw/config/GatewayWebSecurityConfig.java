@@ -12,7 +12,7 @@ public class GatewayWebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/oauth2/**", "/swagger**", "/swagger-resources/**", "/swagger-ui/**", "/webjars/springfox-swagger-ui/**", "/v2/api-docs**", "/**/v2/api-docs").permitAll()
+                .antMatchers("/oauth2/**", "/swagger**", "/swagger-resources/**", "/swagger-ui/**", "/webjars/springfox-swagger-ui/**", "/v2/api-docs**", "/**/v2/api-docs", "/**/register").permitAll()
                 .anyRequest().authenticated()
                 .and().oauth2ResourceServer().jwt();
     }

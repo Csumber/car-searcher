@@ -57,12 +57,14 @@ public class SearchService {
 
         Set<EngineSearchEntity> engines = new HashSet<>();
         Set<OptionSearchEntity> options = new HashSet<>();
-        for (var v : dto.getOptions()) {
-            options.add(new OptionSearchEntity(UUID.randomUUID(), v, entity));
-        }
-        for (var v : dto.getEngines()) {
-            engines.add(new EngineSearchEntity(UUID.randomUUID(), v, entity));
-        }
+        if (dto.getOptions() != null)
+            for (var v : dto.getOptions()) {
+                options.add(new OptionSearchEntity(UUID.randomUUID(), v, entity));
+            }
+        if (dto.getEngines() != null)
+            for (var v : dto.getEngines()) {
+                engines.add(new EngineSearchEntity(UUID.randomUUID(), v, entity));
+            }
 
         entity.setEngines(engines);
         entity.setOptions(options);
@@ -136,11 +138,10 @@ public class SearchService {
         }
 
         if (finalResults != null) {
-
             if (!StringUtils.isNullOrEmpty(search.getManufacturer()))
-                finalResults.removeIf(v -> v.getManufacturer() != search.getManufacturer());
+                finalResults.removeIf(v -> !v.getManufacturer().equalsIgnoreCase(search.getManufacturer()));
             if (!StringUtils.isNullOrEmpty(search.getModel()))
-                finalResults.removeIf(v -> v.getModel() != search.getModel());
+                finalResults.removeIf(v -> !v.getModel().equalsIgnoreCase(search.getModel()));
             if (search.getStyle() != null)
                 finalResults.removeIf(v -> v.getStyle() != search.getStyle());
             if (search.getLengthMin() != 0)

@@ -14,16 +14,16 @@ import java.util.UUID;
 
 public interface VehicleRepository extends JpaRepository<VehicleEntity, UUID> {
 
-    @Query(value = "select distinct v from VehicleEntity v inner join fetch v.options ov join fetch ov.optionEntity ")
+    @Query(value = "select distinct v from VehicleEntity v left join fetch v.options ov left join fetch ov.optionEntity ")
     Collection<VehicleEntity> findAllWithOptions();
 
-    @Query(value = "select distinct v from VehicleEntity v inner join fetch v.options ov join fetch ov.optionEntity where v.id = :id ")
+    @Query(value = "select distinct v from VehicleEntity v left join fetch v.options ov left join fetch ov.optionEntity where v.id = :id ")
     Optional<VehicleEntity> findOne(@Param("id") UUID id);
 
-    @Query(value = "select o from OptionEntity o inner join fetch o.vehicles ov join fetch ov.vehicleEntity where o.id = :id ")
+    @Query(value = "select o from OptionEntity o left join fetch o.vehicles ov left join fetch ov.vehicleEntity where o.id = :id ")
     Optional<OptionEntity> findAllByOption(@Param("id") UUID id);
 
-    @Query(value = "select e from EngineEntity e inner join fetch e.vehicles ev join fetch ev.vehicleEntity where e.id = :id ")
+    @Query(value = "select e from EngineEntity e left join fetch e.vehicles ev left join fetch ev.vehicleEntity where e.id = :id ")
     Optional<EngineEntity> findAllbyEngine(@Param("id") UUID id);
 
     @Query(value = "select distinct v.manufacturer from VehicleEntity v ")

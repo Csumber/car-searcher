@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public interface OptionRepository extends JpaRepository<OptionEntity, UUID> {
 
-    @Query(value = "select distinct v from VehicleEntity v inner join fetch v.options ov join fetch ov.optionEntity where v.id = :id ")
+    @Query(value = "select distinct v from VehicleEntity v left join fetch v.options ov left join fetch ov.optionEntity where v.id = :id ")
     Optional<VehicleEntity> getOptionsByVehicle(@Param("id") UUID id);
 
 }

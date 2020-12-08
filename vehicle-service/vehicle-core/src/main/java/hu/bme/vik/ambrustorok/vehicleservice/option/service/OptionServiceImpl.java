@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +22,7 @@ public class OptionServiceImpl {
 
     private final OptionRepository repository;
 
-    @PostConstruct
+//    @PostConstruct
     public void mock() {
         OptionEntity entity1 = new OptionEntity();
         OptionEntity entity2 = new OptionEntity();

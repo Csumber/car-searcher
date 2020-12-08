@@ -38,8 +38,7 @@ public class SearchController {
                 return ResponseEntity.badRequest().build();
             if (search.getWidthMax() < search.getWidthMin())
                 return ResponseEntity.badRequest().build();
-            if (StringUtils.isNullOrEmpty(search.getManufacturer()))
-                service.create(search);
+            service.create(search);
         }
         Collection<VehicleResponse> results = service.search(search);
         if (results == null || results.isEmpty())

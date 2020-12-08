@@ -21,7 +21,7 @@ public class EngineServiceImpl {
 
     private EngineRepository repository;
 
-    @PostConstruct
+//    @PostConstruct
     public void mock() {
         EngineEntity entity1 = new EngineEntity();
         EngineEntity entity2 = new EngineEntity();

@@ -19,7 +19,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -35,7 +34,12 @@ public class VehicleServiceImpl {
     private final OptionVehicleRepository optionVehicleRepository;
     private final EngineVehicleRepository engineVehicleRepository;
 
-    @PostConstruct
+    //    @PreDestroy
+    public void reset() {
+        repository.deleteAll();
+    }
+
+    //    @PostConstruct
     public void mock() {
         VehicleEntity entity1 = new VehicleEntity();
         VehicleEntity entity2 = new VehicleEntity();
@@ -99,6 +103,35 @@ public class VehicleServiceImpl {
         repository.save(entity3);
     }
 
+    public void addEngine(VehicleEntity vehicleEntity, EngineEntity engineEntity, double price) {
+
+        EngineVehicleEntity engineVehicleEntity = new EngineVehicleEntity(engineEntity, vehicleEntity);
+        engineVehicleEntity.setPrice(price);
+
+        vehicleEntity.getEngines().add(engineVehicleEntity);
+        engineEntity.getVehicles().add(engineVehicleEntity);
+
+        engineVehicleRepository.save(engineVehicleEntity);
+    }
+
+    public void addNewEngine(VehicleEntity vehicleEntity, EngineRequest engineDTO, double price) {
+        EngineEntity engineEntity = new EngineEntity();
+        engineEntity.setConsumption(engineDTO.getConsumption());
+        engineEntity.setCylinderCapacity(engineDTO.getCylinderCapacity());
+        engineEntity.setFuel(engineDTO.getFuel());
+        engineEntity.setTransmission(engineDTO.getTransmission());
+        engineEntity.setHorsepower(engineDTO.getHorsepower());
+        engineRepository.save(engineEntity);
+
+        EngineVehicleEntity engineVehicleEntity = new EngineVehicleEntity(engineEntity, vehicleEntity);
+        engineVehicleEntity.setPrice(price);
+
+        vehicleEntity.getEngines().add(engineVehicleEntity);
+        engineEntity.getVehicles().add(engineVehicleEntity);
+
+        engineVehicleRepository.save(engineVehicleEntity);
+    }
+
     @Transactional
     public void addOption(VehicleEntity vehicleEntity, OptionEntity optionEntity, double price) {
 
@@ -109,19 +142,6 @@ public class VehicleServiceImpl {
         optionEntity.getVehicles().add(optionVehicleEntity);
 
         optionVehicleRepository.save(optionVehicleEntity);
-
-    }
-
-    @Transactional
-    public void addEngine(VehicleEntity vehicleEntity, EngineEntity engineEntity, double price) {
-
-        EngineVehicleEntity engineVehicleEntity = new EngineVehicleEntity(engineEntity, vehicleEntity);
-        engineVehicleEntity.setPrice(price);
-
-        vehicleEntity.getEngines().add(engineVehicleEntity);
-        engineEntity.getVehicles().add(engineVehicleEntity);
-
-        engineVehicleRepository.save(engineVehicleEntity);
 
     }
 
@@ -141,31 +161,6 @@ public class VehicleServiceImpl {
 
         optionVehicleRepository.save(optionVehicleEntity);
 
-    }
-
-    @Transactional
-    public void addNewEngine(VehicleEntity vehicleEntity, EngineRequest engineDTO, double price) {
-        EngineEntity engineEntity = new EngineEntity();
-        engineEntity.setConsumption(engineDTO.getConsumption());
-        engineEntity.setCylinderCapacity(engineDTO.getCylinderCapacity());
-        engineEntity.setFuel(engineDTO.getFuel());
-        engineEntity.setTransmission(engineDTO.getTransmission());
-        engineEntity.setHorsepower(engineDTO.getHorsepower());
-        engineRepository.save(engineEntity);
-
-        EngineVehicleEntity engineVehicleEntity = new EngineVehicleEntity(engineEntity, vehicleEntity);
-        engineVehicleEntity.setPrice(price);
-
-        vehicleEntity.getEngines().add(engineVehicleEntity);
-        engineEntity.getVehicles().add(engineVehicleEntity);
-
-        engineVehicleRepository.save(engineVehicleEntity);
-
-    }
-
-    //    @PreDestroy
-    public void reset() {
-        repository.deleteAll();
     }
 
     public Optional<VehicleEntity> findOne(UUID id) {
