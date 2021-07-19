@@ -11,14 +11,14 @@ The project is based on the already well-known and widely used microservices arc
 The thesis presents the whole development process. From defining the requirements, through the design, to the development process, which we conclude with the evaluation. I consider the clear determination of requirements and the proper execution of the planning to be of paramount importance, as it is also easier to implement a well-defined, flexible system.
 
 ## User stories
-|As a |I want |so that|
+|As a |I want |so I can|
 |:---|:---|:---|
-|Visitor |filtering by parameters|I can search vehicles|
-|Visitor |a comparator page|I can compare vehicles|
+|Visitor |filtering by parameters|search vehicles|
+|Visitor |a comparator page|compare vehicles|
 |User |everything *visitor* has | |
-|User |login| I can save my searches|
-|User |to make statistics from my saved searches| I can get recommendations|
-|Manufacturer |admin page|I can add or edit my vehicles|
+|User |login|save my searches|
+|User |to make statistics from my saved searches| get recommendations|
+|Manufacturer |admin page|add or edit my vehicles|
  
 ## Architektúra 
 ![final architecture](architektúra.jpg)
