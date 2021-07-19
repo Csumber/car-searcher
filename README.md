@@ -3,19 +3,22 @@ This project was created as a [BSc Thesis Work](https://www.aut.bme.hu/Education
 
 Consultant: [Jánoky László Viktor BME-AUT](https://www.aut.bme.hu/Staff/jlaci) 
 
-# Microservices architektúrájú gépjármű konfigurációs alkalmazás fejlesztése
-A közelmúlt ígéretes új megközelítése a jól skálázódó, magas rendelkezésre állású rendszerek tervezéséhez a microservices architektúra. A hallgató feladata egy ilyen architektúrájú alkalmazás tervezése és fejlesztése. Az alkalmazás célja különböző gépjármű gyártók termékeinek kezelése, keresés és összehasonlítás támogatása.
-
-A felhasználók az alkalmazás segítségével megadhatják milyen paraméterekkel keresnek járművet, ami alapján a rendszer találatokat mutat nekik. A korábbi keresések elmenthetők, ezekből statiszták készíthetők, a rendszer ajánlatokat adhat a felhasználói számára. 
-
-Az alkalmazás fejlesztése során a hallgató megismeri a microservices alapú alkalmazások fejlesztésének, telepítésének és üzemeltetésének módszereit, melyeket a gyakorlatban is alkalmaz.
-
-A munka során olyan új és innovatív technológiák kerülnek fehasználásra, melyek az adott architektúrális mintának megfelelő alkalamazások fejlesztését teszik lehetővé. Ilyen technológiák például a Spring keretrendszer, vagy a Docker. A hallgató a munka során ezen technológiák segítségével készíti el az alkalmazást, közben megismerve ezek jellemzőit és előnyeit.
-A hallgató feladatának a következőkre kell kiterjednie:
-- Valósítsa meg a kiválasztott alkalmazást microservices architektúra segítségével.
-- Biztosítsa az alkalmazás komponenseinek horizontális skálázódását.
-- Ismertesse a felhasznált elveket és architektúrális mintákat, térjen ki a meghozott
-technikai döntések indoklására.
+# Developing a microservices application for vehicle configuration
+When making the purchase of a new car, people tend to ignore metrics carefully
+selected by manufacturers and the industry and just simply make this decision based on
+their emotions. It is not in the interest of car manufacturers to try adapting to another
+manufacturer. On the other hand, they usually easily enter into agreements with
+independent partners. Taking advantage of this willingness, my thesis provides a solution
+to the problem presented earlier. This document presents a website where users can
+search, browse, and request recommendations among cars.
+The project is based on the already well-known and widely used microservices
+architecture. As a result, the application is stable, scales well and is easy to maintain and
+improve. The task is implemented in Java, using the Spring framework.
+The thesis presents the whole development process. From defining the
+requirements, through the design, to the development process, which we conclude with
+the evaluation. I consider the clear determination of requirements and the proper
+execution of the planning to be of paramount importance, as it is also easier to implement
+a well-defined, flexible system.
 
 ## User stories
 |As a |I want |so that|
@@ -30,20 +33,5 @@ technikai döntések indoklására.
 ## Architektúra 
 ![final architecture](architektúra.jpg)
 
-## Szolgáltatások
-
-### api-gateway
-
-### auth-server
-
-### common
-
-### config-server
-
-### recommender-service
-
-### search-service
-
-### vehicle-service
 
 
