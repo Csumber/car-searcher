@@ -20,7 +20,7 @@ The thesis presents the whole development process. From defining the requirement
 |User |to make statistics from my saved searches| get recommendations|
 |Manufacturer |admin page|add or edit my vehicles|
  
-## Architektúra 
+## Architecture 
 ![final architecture](architektúra.jpg)
 
 
